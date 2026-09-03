@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loan Calculator — EMI &amp; Amortization Estimator (LKR) | Lankacal</title>
-<meta name="description" content="Free loan &amp; EMI calculator for Sri Lanka. Estimate your monthly installment, total interest, and payoff date for home, vehicle, and personal loans in LKR, with a year-by-year amortization schedule and extra-payment savings.">
-<meta name="keywords" content="loan calculator Sri Lanka, EMI calculator Sri Lanka, LKR loan calculator, home loan calculator Sri Lanka, vehicle loan calculator, personal loan calculator, amortization schedule, reducing balance calculator, monthly installment calculator, Lankacal">
+<title>Sri Lanka Loan Calculator — EMI &amp; Amortization Estimator | Lankacal</title>
+<meta name="description" content="Free Sri Lanka Loan Calculator &amp; EMI estimator. Work out your monthly installment, total interest, and payoff date for home, vehicle, and personal loans in LKR, with a year-by-year amortization schedule and extra-payment savings.">
+<meta name="keywords" content="Sri Lanka loan calculator, loan calculator Sri Lanka, EMI calculator Sri Lanka, LKR loan calculator, home loan calculator Sri Lanka, vehicle loan calculator, personal loan calculator, amortization schedule, reducing balance calculator, monthly installment calculator, Lankacal">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Lankacal">
 <meta http-equiv="content-language" content="en-LK">
@@ -15,12 +15,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lankacal">
 <meta property="og:url" content="https://lankacal.com/loan-calculator.html">
-<meta property="og:title" content="Loan Calculator — EMI &amp; Amortization Estimator | Lankacal">
+<meta property="og:title" content="Sri Lanka Loan Calculator — EMI &amp; Amortization Estimator | Lankacal">
 <meta property="og:description" content="Estimate your monthly loan installment, total interest, and payoff date in LKR, with a full amortization schedule and extra-payment savings calculator.">
 <meta property="og:locale" content="en_LK">
 <meta property="og:image" content="https://lankacal.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Loan Calculator — EMI &amp; Amortization Estimator | Lankacal">
+<meta name="twitter:title" content="Sri Lanka Loan Calculator — EMI &amp; Amortization Estimator | Lankacal">
 <meta name="twitter:description" content="Free EMI &amp; amortization calculator for home, vehicle and personal loans in LKR.">
 <meta name="twitter:image" content="https://lankacal.com/og-image.png">
 <script type="application/ld+json">
@@ -28,7 +28,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "@id": "https://lankacal.com/loan-calculator.html#app",
-  "name": "Loan Calculator",
+  "name": "Sri Lanka Loan Calculator",
   "url": "https://lankacal.com/loan-calculator.html",
   "description": "Free EMI and loan amortization calculator. Estimate monthly installments, total interest, and payoff dates for home, vehicle, and personal loans in LKR, with a year-by-year amortization schedule.",
   "applicationCategory": "FinanceApplication",
@@ -46,7 +46,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Lankacal", "item": "https://lankacal.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Loan Calculator", "item": "https://lankacal.com/loan-calculator.html" }
+    { "@type": "ListItem", "position": 2, "name": "Sri Lanka Loan Calculator", "item": "https://lankacal.com/loan-calculator.html" }
   ]
 }
 </script>
@@ -218,11 +218,14 @@
   }
 
   .masthead-title .coin {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, var(--gold-deep));
-    box-shadow: 0 0 22px rgba(246, 187, 61, 0.5), inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+    width: 32px; height: 32px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--gold), var(--ruby));
+    box-shadow: 0 0 18px rgba(246, 187, 61, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .stamp {
@@ -740,7 +743,7 @@
     .hero-value, .savings-value { animation: none !important; }
 
     .main-grid, .columns-row, .col-left, .col-right { display: block !important; }
-    #entry-card, .split-card, .actions, #related-card { display: none !important; }
+    #entry-card, .split-card, .actions, #faq-card, #related-card { display: none !important; }
     .site-header, .site-footer { display: none !important; }
 
     .stat-tile { border: 1px solid #ccc; background: #fafafa !important; }
@@ -824,7 +827,7 @@
   <main id="main-content">
   <header class="masthead">
     <div class="masthead-titles">
-      <h1 class="masthead-title"><span class="coin"></span>Loan Calculator</h1>
+      <h1 class="masthead-title">Sri Lanka Loan Calculator</h1>
       <p class="masthead-subtitle">EMI &amp; amortization estimator — home, vehicle &amp; personal loans</p>
     </div>
     <span class="stamp">Reducing Balance · LKR</span>
@@ -1022,17 +1025,29 @@
 
   </div>
 
+  <div class="card" id="faq-card">
+    <div class="ledger-heading">
+      <h2>Frequently asked questions</h2>
+    </div>
+    <dl class="notes">
+      <div><dt>What is EMI?</dt> <dd>EMI (Equated Monthly Installment) is the fixed amount you pay every month toward a loan. Each EMI first covers interest on the outstanding balance, and the remainder reduces the principal — as the balance shrinks, more of each payment goes toward principal.</dd></div>
+      <div><dt>How is EMI calculated on a reducing balance loan?</dt> <dd>This calculator uses the standard reducing-balance method: EMI = P × r × (1+r)^n / ((1+r)^n − 1), where P is the loan principal, r is the monthly interest rate, and n is the number of monthly installments.</dd></div>
+      <div><dt>How do extra monthly payments affect my loan?</dt> <dd>Any amount paid above the EMI is applied straight to the outstanding principal in that same month. This shortens the loan term and cuts total interest paid, without needing to refinance.</dd></div>
+      <div><dt>Does this calculator include bank fees or charges?</dt> <dd>No. Processing fees, loan insurance, valuation costs, rate changes on variable-rate loans, and early-settlement charges aren't included in this estimate — confirm the full cost with your lender.</dd></div>
+    </dl>
+  </div>
+
   <div class="card" id="related-card">
     <div class="rc-icon"><svg viewBox="0 0 24 24" style="width:22px;height:22px;stroke:#0b0d24;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
     <div class="rc-text">
       <h3>Want to check your take-home pay too?</h3>
-      <p>Try the Lankacal Tax Calculator for APIT/PAYE, EPF and net salary — IRD 2025/26 rates.</p>
+      <p>Try the Lankacal Tax Calculator for APIT/PAYE, EPF and net salary — IRD 2026/27 rates.</p>
     </div>
-    <a href="tax-calculator.html" class="action-btn is-ghost rc-cta">Open Tax Calculator <span class="arrow">▶</span></a>
+    <a href="tax-calculator.html" class="action-btn is-ghost rc-cta" target="_blank" rel="noopener">Open Tax Calculator <span class="arrow">▶</span></a>
   </div>
 
   <footer class="page-footnote">
-    Estimate only, using the standard reducing-balance (EMI) amortization method. Actual bank quotes may differ due to fees, day-count conventions, or rate changes.<br>For a bank-accurate figure, check with your lender.
+    Estimates only — not financial advice.<br>Uses the standard reducing-balance (EMI) amortization method. Actual bank quotes may differ due to fees, day-count conventions, or rate changes — for a bank-accurate figure, check with your lender.
     <div class="last-updated">Last updated <span id="last-updated-date">—</span></div>
   </footer>
   </main>
@@ -1434,6 +1449,19 @@
       luEl.textContent = isNaN(lm.getTime())
         ? "—"
         : lm.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+      // Prefer the real last-commit date for this file from GitHub, so the
+      // footer updates itself automatically whenever this page is committed
+      // — no manual editing needed. Falls back to the browser-reported date above.
+      fetch("https://api.github.com/repos/dinukainfo92-lang/lankacal/commits?path=loan-calculator.html&page=1&per_page=1")
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data || !data[0]) return;
+          var d = new Date(data[0].commit.committer.date);
+          if (!isNaN(d.getTime())) {
+            luEl.textContent = d.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+          }
+        })
+        .catch(function () { /* offline or rate-limited — keep the fallback date */ });
     }
   })();
 </script>
