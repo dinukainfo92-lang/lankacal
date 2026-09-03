@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sri Lanka Tax Calculator (APIT / PAYE 2025/26) — Lankacal</title>
-<meta name="description" content="Free Sri Lanka Tax Calculator for 2025/2026 — instantly calculate APIT (PAYE) income tax, EPF deduction, and net take-home salary using official IRD Table 01 rates effective 01.04.2025.">
-<meta name="keywords" content="Sri Lanka tax calculator, APIT calculator Sri Lanka, PAYE calculator Sri Lanka, income tax calculator Sri Lanka 2025, salary calculator Sri Lanka, net salary calculator Sri Lanka, take home pay calculator Sri Lanka, EPF calculator Sri Lanka, ETF calculator Sri Lanka, IRD tax table 2025 2026, monthly salary tax Sri Lanka, advance personal income tax Sri Lanka, payslip calculator Sri Lanka, Lankacal">
+<title>Sri Lanka Tax Calculator (APIT / PAYE 2026/27) — Lankacal</title>
+<meta name="description" content="Free Sri Lanka Tax Calculator for Y/A 2026/2027 — instantly calculate APIT (PAYE) income tax, EPF deduction, and net take-home salary using official IRD Table 01 rates, effective 01.04.2025 and current for 2026/27.">
+<meta name="keywords" content="Sri Lanka tax calculator, APIT calculator Sri Lanka, PAYE calculator Sri Lanka, income tax calculator Sri Lanka 2026, salary calculator Sri Lanka, net salary calculator Sri Lanka, take home pay calculator Sri Lanka, EPF calculator Sri Lanka, ETF calculator Sri Lanka, IRD tax table 2025 2026 2027, monthly salary tax Sri Lanka, advance personal income tax Sri Lanka, payslip calculator Sri Lanka, Y/A 2026/27, Lankacal">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Lankacal">
 <meta http-equiv="content-language" content="en-LK">
@@ -15,13 +15,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lankacal">
 <meta property="og:url" content="https://lankacal.com/tax-calculator.html">
-<meta property="og:title" content="Sri Lanka Tax Calculator — APIT / PAYE 2025/2026 | Lankacal">
-<meta property="og:description" content="Calculate your Sri Lanka salary tax (APIT/PAYE), EPF, and net take-home pay instantly — IRD Table 01 rates effective 01.04.2025.">
+<meta property="og:title" content="Sri Lanka Tax Calculator — APIT / PAYE 2026/27 | Lankacal">
+<meta property="og:description" content="Calculate your Sri Lanka salary tax (APIT/PAYE), EPF, and net take-home pay instantly — IRD Table 01 rates, effective 01.04.2025 and current for Y/A 2026/27.">
 <meta property="og:locale" content="en_LK">
 <meta property="og:image" content="https://lankacal.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Sri Lanka Tax Calculator — APIT / PAYE 2025/2026 | Lankacal">
-<meta name="twitter:description" content="Calculate APIT/PAYE income tax, EPF, and net salary for Sri Lanka — IRD rates effective 01.04.2025.">
+<meta name="twitter:title" content="Sri Lanka Tax Calculator — APIT / PAYE 2026/27 | Lankacal">
+<meta name="twitter:description" content="Calculate APIT/PAYE income tax, EPF, and net salary for Sri Lanka — IRD rates effective 01.04.2025, current for Y/A 2026/27.">
 <meta name="twitter:image" content="https://lankacal.com/og-image.png">
 <script type="application/ld+json">
 {
@@ -30,7 +30,7 @@
   "@id": "https://lankacal.com/tax-calculator.html#app",
   "name": "Sri Lanka Tax Calculator",
   "url": "https://lankacal.com/tax-calculator.html",
-  "description": "Free online calculator for Sri Lanka APIT/PAYE income tax, EPF deductions, and net take-home salary, based on IRD Table 01 rates effective 01.04.2025.",
+  "description": "Free online calculator for Sri Lanka APIT/PAYE income tax, EPF deductions, and net take-home salary, based on IRD Table 01 rates effective 01.04.2025 and current for Y/A 2026/27.",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Any",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "LKR" },
@@ -227,11 +227,14 @@
   }
 
   .masthead-title .coin {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, var(--gold-deep));
-    box-shadow: 0 0 22px rgba(246, 187, 61, 0.5), inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+    width: 32px; height: 32px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--gold), var(--ruby));
+    box-shadow: 0 0 18px rgba(246, 187, 61, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .stamp {
@@ -287,6 +290,26 @@
   }
 
   .entry-hint { margin-top: 12px; font-size: 12.5px; color: var(--ink-faint); }
+
+  .itype-toggle { display: flex; gap: 8px; margin-bottom: 18px; }
+  .itype-btn {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    font-family: var(--font-body); font-weight: 700; font-size: 13px;
+    padding: 10px 12px; border-radius: 12px;
+    border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); color: var(--ink-soft);
+    cursor: pointer; transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .itype-btn:hover { border-color: var(--gold); color: var(--gold-bright); }
+  .itype-btn.is-active { background: rgba(246, 187, 61, 0.14); border-color: rgba(246, 187, 61, 0.5); color: var(--gold-bright); }
+  .itype-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .itype-note {
+    margin: -6px 0 18px; font-size: 12px; line-height: 1.6; color: var(--ink-soft);
+    background: rgba(255, 79, 109, 0.08); border: 1px solid rgba(255, 79, 109, 0.3);
+    border-radius: 12px; padding: 12px 14px;
+  }
+  .itype-note a { color: var(--ruby); text-decoration: underline; }
+  .itype-note a:hover { color: var(--gold-bright); }
 
   .presets-label {
     margin-top: 16px;
@@ -649,6 +672,8 @@
   .notes { display: grid; gap: 10px; font-size: 12.5px; color: var(--ink-faint); }
   .notes dt { font-weight: 700; color: var(--ink-soft); display: inline; }
   .notes dd { display: inline; margin: 0; }
+  .notes a { color: var(--gold); text-decoration: underline; }
+  .notes a:hover { color: var(--gold-bright); }
 
   .about-heading { margin: 0 0 10px; font-family: 'Unbounded', sans-serif; font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--ink-soft); }
   .about-text { margin: 0; font-size: 12.5px; line-height: 1.65; color: var(--ink-faint); }
@@ -723,7 +748,7 @@
     .hero-value { animation: none !important; }
 
     .main-grid, .columns-row, .col-left, .col-right { display: block !important; }
-    #entry-card, #hero-card, .split-card, .actions, #about-card, #related-card { display: none !important; }
+    #entry-card, #hero-card, .split-card, .actions, #about-card, #faq-card, #related-card { display: none !important; }
     .site-header, .site-footer { display: none !important; }
 
     .stat-tile { border: 1px solid #ccc; background: #fafafa !important; }
@@ -803,10 +828,10 @@
   <main id="main-content">
   <header class="masthead">
     <div class="masthead-titles">
-      <h1 class="masthead-title"><span class="coin"></span>Sri Lanka Tax Calculator <span class="new-badge">New rates</span></h1>
+      <h1 class="masthead-title">Sri Lanka Tax Calculator <span class="new-badge">New rates</span></h1>
       <p class="masthead-subtitle">APIT / PAYE on salary — effective from 01.04.2025</p>
     </div>
-    <span class="stamp">APIT Table 01 · 2025/26</span>
+    <span class="stamp">APIT Table 01 · Y/A 2026/27</span>
   </header>
 
   <div class="main-grid">
@@ -815,6 +840,13 @@
     <div class="col-left">
 
       <div class="card" id="entry-card">
+        <div class="itype-toggle" role="group" aria-label="Income source">
+          <button type="button" class="itype-btn is-active" id="itype-local" data-type="local" aria-pressed="true">🇱🇰 Local income</button>
+          <button type="button" class="itype-btn" id="itype-foreign" data-type="foreign" aria-pressed="false">🌍 Foreign income</button>
+        </div>
+        <p class="itype-note" id="itype-note" hidden>
+          This calculator uses APIT Table 01, which covers Sri Lanka-sourced employment income withheld monthly by a local employer. Foreign-sourced or foreign-employer income usually isn't deducted through APIT and must be self-assessed separately — the figures below are for illustration only. Check the <a href="https://www.ird.gov.lk/en/publications/sitepages/apit_tax_tables.aspx?menuid=1502" target="_blank" rel="noopener">IRD</a> or a tax advisor for your exact obligations.
+        </p>
         <label class="entry-label">Salary components</label>
         <div class="items" id="items-list"></div>
         <div class="entry-actions">
@@ -922,6 +954,7 @@
       <div><dt>Personal relief.</dt> <dd>Effective from 01.04.2025, the first Rs. 150,000 of monthly employment income (Rs. 1,800,000 a year) is tax-free; only the balance is taxed in bands of 6–36%.</dd></div>
       <div><dt>EPF/ETF.</dt> <dd>APIT is calculated on gross salary before EPF. The 8% employee share still leaves your pay packet, but it's banked in your name; the employer adds EPF 12% and ETF 3% on top, at no cost to you.</dd></div>
       <div><dt>Not covered here.</dt> <dd>Bonuses, gratuity, and other lump sums are taxed separately under Table 02 and aren't part of this monthly estimate.</dd></div>
+      <div><dt>Source.</dt> <dd>Rates from the <a href="https://www.ird.gov.lk/en/publications/sitepages/apit_tax_tables.aspx?menuid=1502" target="_blank" rel="noopener">Inland Revenue Department — APIT Table 01</a>, effective 01.04.2025 and current for Y/A 2026/27.</dd></div>
     </dl>
   </div>
 
@@ -929,7 +962,19 @@
 
   <div class="card" id="about-card">
     <h2 class="about-heading">About this Sri Lanka Tax Calculator</h2>
-    <p class="about-text">This free <b>Sri Lanka Tax Calculator</b> helps employees estimate their monthly <b>APIT (Advance Personal Income Tax)</b> — also known as <b>PAYE tax</b> — under the Inland Revenue Department's Table 01 rates for the <b>2025/2026 year of assessment</b>, effective from 01.04.2025. Enter your basic salary and any allowances to instantly see your income tax, <b>EPF (Employees' Provident Fund)</b> deduction, and <b>net take-home salary</b>, broken down by month and by year. Built for Sri Lankan employees, HR teams, and payroll staff who need a quick, accurate APIT / PAYE tax calculation without manual band-by-band math. This tool is part of <b>Lankacal</b>, a free calculator toolkit built for Sri Lanka.</p>
+    <p class="about-text">This free <b>Sri Lanka Tax Calculator</b> helps employees estimate their monthly <b>APIT (Advance Personal Income Tax)</b> — also known as <b>PAYE tax</b> — under the Inland Revenue Department's Table 01 rates for the <b>2026/2027 year of assessment</b> (in effect since 01.04.2025). Enter your basic salary and any allowances to instantly see your income tax, <b>EPF (Employees' Provident Fund)</b> deduction, and <b>net take-home salary</b>, broken down by month and by year. Built for Sri Lankan employees, HR teams, and payroll staff who need a quick, accurate APIT / PAYE tax calculation without manual band-by-band math. This tool is part of <b>Lankacal</b>, a free calculator toolkit built for Sri Lanka.</p>
+  </div>
+
+  <div class="card" id="faq-card">
+    <div class="ledger-heading">
+      <h2>Frequently asked questions</h2>
+    </div>
+    <dl class="notes">
+      <div><dt>What is APIT in Sri Lanka?</dt> <dd>APIT (Advance Personal Income Tax), also known as PAYE, is the tax an employer deducts each month from an employee's regular profits from employment and remits to the Inland Revenue Department on the employee's behalf.</dd></div>
+      <div><dt>How much of my monthly salary is tax-free?</dt> <dd>Effective from 01.04.2025, the first Rs. 150,000 of monthly employment income (Rs. 1,800,000 a year) is tax-free personal relief. Only the balance above that is taxed in bands from 6% to 36%.</dd></div>
+      <div><dt>Is EPF calculated before or after tax?</dt> <dd>APIT is calculated on gross salary before the 8% employee EPF contribution is deducted. The EPF amount still leaves your pay packet each month, but it's banked in your name, and the employer separately contributes EPF 12% and ETF 3% on top at no cost to you.</dd></div>
+      <div><dt>Does this calculator cover bonuses or gratuity?</dt> <dd>No. Bonuses, gratuity, and other lump-sum payments are taxed separately under IRD Table 02 and aren't part of this monthly APIT estimate.</dd></div>
+    </dl>
   </div>
 
   <div class="card" id="related-card">
@@ -938,11 +983,11 @@
       <h3>Also taking out a loan?</h3>
       <p>Try the Lankacal Loan Calculator for your EMI, total interest and full amortization schedule.</p>
     </div>
-    <a href="loan-calculator.html" class="action-btn is-ghost rc-cta">Open Loan Calculator <span class="arrow">▶</span></a>
+    <a href="loan-calculator.html" class="action-btn is-ghost rc-cta" target="_blank" rel="noopener">Open Loan Calculator <span class="arrow">▶</span></a>
   </div>
 
   <footer class="page-footnote">
-    Figures follow the Inland Revenue Department's APIT Table 01 for regular profits from employment, year of assessment 2025/2026.<br>For a payslip-accurate figure, check with your employer's payroll or a tax advisor.
+    Estimates only — not tax advice. Rates for Y/A 2026/27.<br>Figures follow the Inland Revenue Department's APIT Table 01 for regular profits from employment, effective 01.04.2025. For a payslip-accurate figure, check with your employer's payroll or a tax advisor.
     <div class="last-updated">Last updated <span id="last-updated-date">—</span></div>
   </footer>
   </main>
@@ -1221,6 +1266,21 @@
       });
     });
 
+    /* ---------- Local / Foreign income toggle ---------- */
+    var itypeLocal = document.getElementById("itype-local");
+    var itypeForeign = document.getElementById("itype-foreign");
+    var itypeNote = document.getElementById("itype-note");
+    function setIncomeType(type) {
+      var isForeign = type === "foreign";
+      itypeLocal.classList.toggle("is-active", !isForeign);
+      itypeForeign.classList.toggle("is-active", isForeign);
+      itypeLocal.setAttribute("aria-pressed", String(!isForeign));
+      itypeForeign.setAttribute("aria-pressed", String(isForeign));
+      itypeNote.hidden = !isForeign;
+    }
+    itypeLocal.addEventListener("click", function () { setIncomeType("local"); });
+    itypeForeign.addEventListener("click", function () { setIncomeType("foreign"); });
+
     /* ---------- Totals ---------- */
     function recalc() {
       var totalGross = 0, taxableGross = 0, epfGross = 0;
@@ -1292,6 +1352,19 @@
       luEl.textContent = isNaN(lm.getTime())
         ? "—"
         : lm.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+      // Prefer the real last-commit date for this file from GitHub, so the
+      // footer updates itself automatically whenever this page is committed
+      // — no manual editing needed. Falls back to the browser-reported date above.
+      fetch("https://api.github.com/repos/dinukainfo92-lang/lankacal/commits?path=tax-calculator.html&page=1&per_page=1")
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data || !data[0]) return;
+          var d = new Date(data[0].commit.committer.date);
+          if (!isNaN(d.getTime())) {
+            luEl.textContent = d.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+          }
+        })
+        .catch(function () { /* offline or rate-limited — keep the fallback date */ });
     }
   })();
 </script>
