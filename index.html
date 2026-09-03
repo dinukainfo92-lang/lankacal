@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lankacal — Free Tax, Loan &amp; EMI Calculators for Sri Lanka</title>
-<meta name="description" content="Lankacal is a free calculator toolkit built for Sri Lanka. Calculate your APIT/PAYE income tax and loan EMI instantly using official IRD 2025/26 rates — no sign-up, no spreadsheets, mobile friendly.">
+<meta name="description" content="Lankacal is a free calculator toolkit built for Sri Lanka. Calculate your APIT/PAYE income tax and loan EMI instantly using official IRD 2026/27 rates — no sign-up, no spreadsheets, mobile friendly.">
 <meta name="keywords" content="Sri Lanka calculator, APIT calculator, PAYE calculator Sri Lanka, income tax calculator Sri Lanka, loan calculator Sri Lanka, EMI calculator Sri Lanka, salary calculator Sri Lanka, EPF ETF calculator, IRD tax table 2025 2026, LKR calculator, free calculator Sri Lanka">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Lankacal">
@@ -17,11 +17,11 @@
 <meta property="og:url" content="https://lankacal.com/">
 <meta property="og:locale" content="en_LK">
 <meta property="og:title" content="Lankacal — Free Tax, Loan &amp; EMI Calculators for Sri Lanka">
-<meta property="og:description" content="Free calculators built for Sri Lanka. Instant APIT/PAYE income tax and loan EMI results using official IRD 2025/26 rates. No sign-up.">
+<meta property="og:description" content="Free calculators built for Sri Lanka. Instant APIT/PAYE income tax and loan EMI results using official IRD 2026/27 rates. No sign-up.">
 <meta property="og:image" content="https://lankacal.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lankacal — Free Tax, Loan &amp; EMI Calculators for Sri Lanka">
-<meta name="twitter:description" content="Free calculators built for Sri Lanka. Instant APIT/PAYE income tax and loan EMI results using official IRD 2025/26 rates. No sign-up.">
+<meta name="twitter:description" content="Free calculators built for Sri Lanka. Instant APIT/PAYE income tax and loan EMI results using official IRD 2026/27 rates. No sign-up.">
 <meta name="twitter:image" content="https://lankacal.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,8 +52,8 @@
       "@type": "ItemList",
       "name": "Lankacal tools",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Tax Calculator (APIT/PAYE)", "url": "https://lankacal.com/tax-calculator.html" },
-        { "@type": "ListItem", "position": 2, "name": "Loan Calculator (EMI)", "url": "https://lankacal.com/loan-calculator.html" }
+        { "@type": "ListItem", "position": 1, "name": "Sri Lanka Tax Calculator (APIT/PAYE)", "url": "https://lankacal.com/tax-calculator.html" },
+        { "@type": "ListItem", "position": 2, "name": "Sri Lanka Loan Calculator (EMI)", "url": "https://lankacal.com/loan-calculator.html" }
       ]
     }
   ]
@@ -115,13 +115,16 @@
   .skip-link{position:absolute;top:-48px;left:16px;background:var(--gold);color:#241a03;font-weight:800;padding:10px 16px;border-radius:10px;z-index:200;transition:top .15s ease;}
   .skip-link:focus{top:16px;}
 
-  .btn-primary{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-weight:700;font-size:16px;border-radius:12px;padding:15px 28px;cursor:pointer;background:linear-gradient(175deg,var(--gold-bright),var(--gold));color:#241a03;border:none;box-shadow:0 10px 24px -10px rgba(246,187,61,0.55);transition:box-shadow .2s ease, transform .2s ease;}
-  .btn-primary:hover{box-shadow:0 14px 28px -10px rgba(246,187,61,0.7);transform:translateY(-1px);}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-weight:700;font-size:16px;border-radius:12px;padding:15px 28px;cursor:pointer;background:linear-gradient(175deg,var(--gold-bright),var(--gold));color:#241a03;border:none;box-shadow:0 6px 14px -10px rgba(246,187,61,0.4);transition:box-shadow .2s ease, transform .2s ease;}
+  .btn-primary:hover{box-shadow:0 8px 18px -10px rgba(246,187,61,0.5);transform:translateY(-1px);}
   .btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-weight:700;font-size:16px;border-radius:12px;padding:15px 26px;cursor:pointer;background:rgba(255,255,255,0.03);color:var(--ink);border:1px solid var(--line);transition:border-color .2s ease, color .2s ease;}
   .btn-ghost:hover{border-color:var(--emerald);color:var(--emerald);}
-  nav a:hover{color:var(--gold-bright) !important;}
+  nav a:hover:not(.btn-primary){color:var(--gold-bright) !important;}
+  .btn-primary.is-emerald{background:linear-gradient(175deg,#5eead4,var(--emerald));color:#04231a;box-shadow:0 6px 14px -10px rgba(47,224,172,0.35);}
+  .btn-primary.is-emerald:hover{box-shadow:0 8px 18px -10px rgba(47,224,172,0.45);}
   .icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
-  @keyframes ctaPulse{0%,100%{box-shadow:0 10px 24px -10px rgba(246,187,61,0.55);}50%{box-shadow:0 14px 28px -10px rgba(246,187,61,0.8);}}
+  @keyframes ctaPulse{0%,100%{box-shadow:0 6px 14px -10px rgba(246,187,61,0.4);}50%{box-shadow:0 8px 16px -10px rgba(246,187,61,0.5);}}
+  @keyframes ctaPulseEmerald{0%,100%{box-shadow:0 6px 14px -10px rgba(47,224,172,0.35);}50%{box-shadow:0 8px 16px -10px rgba(47,224,172,0.45);}}
   @keyframes badgeBounce{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-6px) scale(1.06);}}
   @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
   @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
@@ -176,7 +179,7 @@
   .brand-name span{color:var(--ruby);}
   nav.main-nav{display:flex;align-items:center;gap:28px;font-weight:700;font-size:15px;color:var(--ink-soft);}
   .nav-links{display:flex;align-items:center;gap:28px;}
-  .nav-links a{color:var(--ink-soft);}
+  .nav-links a:not(.btn-primary){color:var(--ink-soft);}
   .nav-toggle{display:none;}
 
   @media (max-width: 760px){
@@ -199,6 +202,7 @@
   .hero-sub{font-size:18px;color:var(--ink-soft);margin-top:20px;line-height:1.6;max-width:520px;}
   .hero-ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
   .hero-ctas .btn-primary{animation:ctaPulse 2.6s ease-in-out infinite;}
+  .hero-ctas .btn-primary.is-emerald{animation:ctaPulseEmerald 2.6s ease-in-out infinite;}
 
   .trust-bar{margin-top:34px;display:flex;gap:22px;flex-wrap:wrap;}
   .trust-item{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink-soft);font-weight:600;}
@@ -252,6 +256,7 @@
   .footer-nav{display:flex;gap:24px;font-weight:700;font-size:14px;color:var(--ink-soft);flex-wrap:wrap;}
   .footer-nav a{color:var(--ink-soft);}
   .footer-disclaimer{font-size:11.5px;color:var(--ink-faint);line-height:1.7;border-top:1px solid var(--line-soft);padding-top:18px;}
+  .last-updated{margin-top:10px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.02em;opacity:0.8;color:var(--ink-faint);}
 
   @media (max-width: 900px){
     .cols-4{grid-template-columns:repeat(2,minmax(0,1fr));}
@@ -296,12 +301,12 @@
 
     <div class="hero-wrap">
       <div class="hero-copy">
-        <div class="eyebrow">🇱🇰 Built for Sri Lanka · IRD 2025/26 rates live</div>
+        <div class="eyebrow">🇱🇰 Built for Sri Lanka · IRD 2026/27 rates live</div>
         <h1>Your tax &amp; loan numbers, <span class="accent-gold">sorted in seconds.</span></h1>
         <p class="hero-sub">Lankacal is a free, growing toolkit of calculators built specifically for Sri Lanka. Start with <b style="color:var(--ink);">income tax (APIT)</b> and <b style="color:var(--ink);">loan EMI</b> — instant results, no sign-up, no spreadsheets.</p>
         <div class="hero-ctas">
-          <a href="tax-calculator.html" class="btn-primary">Try Tax Calculator &rarr;</a>
-          <a href="loan-calculator.html" class="btn-ghost">Try Loan Calculator</a>
+          <a href="tax-calculator.html" class="btn-primary" target="_blank" rel="noopener">Try Tax Calculator &rarr;</a>
+          <a href="loan-calculator.html" class="btn-primary is-emerald" target="_blank" rel="noopener">Try Loan Calculator &rarr;</a>
         </div>
         <div class="trust-bar">
           <span class="trust-item"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>100% free, forever</span>
@@ -357,17 +362,17 @@
       </div>
       <div class="tool-grid cols-4">
 
-        <a href="tax-calculator.html" class="tcard">
+        <a href="tax-calculator.html" class="tcard" target="_blank" rel="noopener">
           <span class="tag tag-live"><span class="pulse-dot"></span>Live</span>
           <div class="tcard-top"><div class="badge g1"><svg class="icon" style="stroke:white;" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div><svg class="arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
-          <h3 class="tcard-title">Tax Calculator</h3>
-          <div class="tcard-desc">APIT/PAYE income tax, EPF &amp; net salary — IRD 2025/26 rates.</div>
+          <h3 class="tcard-title">Sri Lanka Tax Calculator</h3>
+          <div class="tcard-desc">APIT/PAYE income tax, EPF &amp; net salary — IRD 2026/27 rates.</div>
         </a>
 
-        <a href="loan-calculator.html" class="tcard">
+        <a href="loan-calculator.html" class="tcard" target="_blank" rel="noopener">
           <span class="tag tag-live"><span class="pulse-dot"></span>Live</span>
           <div class="tcard-top"><div class="badge g2"><svg class="icon" style="stroke:white;" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"></path></svg></div><svg class="arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
-          <h3 class="tcard-title">Loan Calculator</h3>
+          <h3 class="tcard-title">Sri Lanka Loan Calculator</h3>
           <div class="tcard-desc">EMI, total interest &amp; a full year-by-year amortization schedule.</div>
         </a>
 
@@ -426,7 +431,7 @@
       <div class="why-grid">
         <div class="why-card"><div class="badge g1"><svg class="icon" style="stroke:white;width:19px;height:19px;" viewBox="0 0 24 24"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path></svg></div><h3>LKR-native</h3><p>Built around Sri Lankan Rupees, IRD tax tables and EPF/ETF — not a generic global calculator.</p></div>
         <div class="why-card"><div class="badge g2"><svg class="icon" style="stroke:white;width:19px;height:19px;" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div><h3>Always free</h3><p>No sign-up, no paywalls, no email required — every tool is free to use, for as long as Lankacal exists.</p></div>
-        <div class="why-card"><div class="badge g3"><svg class="icon" style="stroke:white;width:19px;height:19px;" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div><h3>Instant &amp; accurate</h3><p>Results update as you type, using the official rates in effect for 2025/26 — no waiting, no page reloads.</p></div>
+        <div class="why-card"><div class="badge g3"><svg class="icon" style="stroke:white;width:19px;height:19px;" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div><h3>Instant &amp; accurate</h3><p>Results update as you type, using the official rates in effect for 2026/27 — no waiting, no page reloads.</p></div>
         <div class="why-card"><div class="badge g4"><svg class="icon" style="stroke:white;width:19px;height:19px;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg></div><h3>Growing every month</h3><p>Tax and Loan calculators are just the start — new Sri Lanka-focused tools are launching regularly.</p></div>
       </div>
     </div>
@@ -464,6 +469,7 @@
       </div>
       <div class="footer-disclaimer">
         Lankacal's calculators provide estimates for general information only and are not affiliated with the Inland Revenue Department, the EPF/ETF, or any Sri Lankan government body. Figures are based on rates believed to be current as of 01.04.2025 and may change — for an official or payslip-accurate figure, check with your employer's payroll or a qualified tax advisor.
+        <div class="last-updated">Last updated <span id="last-updated-date">—</span></div>
       </div>
     </div>
   </footer>
@@ -540,6 +546,26 @@
         }
         requestAnimationFrame(step);
       }
+    }
+
+    /* Last-updated footer date: pulls the real last-commit date for this
+       file from GitHub so it updates itself automatically on every commit. */
+    var luEl = document.getElementById("last-updated-date");
+    if (luEl) {
+      var lm = new Date(document.lastModified);
+      luEl.textContent = isNaN(lm.getTime())
+        ? "—"
+        : lm.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+      fetch("https://api.github.com/repos/dinukainfo92-lang/lankacal/commits?path=index.html&page=1&per_page=1")
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data || !data[0]) return;
+          var d = new Date(data[0].commit.committer.date);
+          if (!isNaN(d.getTime())) {
+            luEl.textContent = d.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+          }
+        })
+        .catch(function () { /* offline or rate-limited — keep the fallback date */ });
     }
   })();
 </script>
