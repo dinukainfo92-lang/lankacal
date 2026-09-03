@@ -829,9 +829,9 @@
   <header class="masthead">
     <div class="masthead-titles">
       <h1 class="masthead-title">Sri Lanka Tax Calculator <span class="new-badge">New rates</span></h1>
-      <p class="masthead-subtitle">APIT / PAYE on salary — effective from 01.04.2025</p>
+      <p class="masthead-subtitle" id="masthead-subtitle">APIT / PAYE on salary — effective from 01.04.2025</p>
     </div>
-    <span class="stamp">APIT Table 01 · Y/A 2026/27</span>
+    <span class="stamp" id="masthead-stamp">APIT Table 01 · Y/A 2026/27</span>
   </header>
 
   <div class="main-grid">
@@ -845,15 +845,15 @@
           <button type="button" class="itype-btn" id="itype-foreign" data-type="foreign" aria-pressed="false">🌍 Foreign income</button>
         </div>
         <p class="itype-note" id="itype-note" hidden>
-          This calculator uses APIT Table 01, which covers Sri Lanka-sourced employment income withheld monthly by a local employer. Foreign-sourced or foreign-employer income usually isn't deducted through APIT and must be self-assessed separately — the figures below are for illustration only. Check the <a href="https://www.ird.gov.lk/en/publications/sitepages/apit_tax_tables.aspx?menuid=1502" target="_blank" rel="noopener">IRD</a> or a tax advisor for your exact obligations.
+          Foreign-currency income earned for services rendered to a person abroad and <b>remitted to Sri Lanka through a licensed local bank</b> qualifies for a concessionary rate: the same Rs. 1,800,000/year personal relief, then 6% on the next Rs. 1,000,000/year, and 15% (capped) on the balance — instead of the standard 6–36% bands. If the income is <b>not</b> remitted through a bank, it's taxed at the regular progressive rates shown under "Local income" instead. EPF/ETF normally don't apply to foreign or freelance income. This is a simplified self-assessment estimate — check the <a href="https://www.ird.gov.lk/en/publications/sitepages/apit_tax_tables.aspx?menuid=1502" target="_blank" rel="noopener">IRD</a> or a tax advisor for your exact obligations.
         </p>
-        <label class="entry-label">Salary components</label>
+        <label class="entry-label" id="entry-label">Salary components</label>
         <div class="items" id="items-list"></div>
         <div class="entry-actions">
           <button class="add-item-btn" type="button" id="btn-add-item">+ Add allowance</button>
           <button class="reset-btn" type="button" id="btn-reset">↺ Reset</button>
         </div>
-        <p class="entry-hint">Tick <b>EPF</b> for pay that counts toward the 8% employee contribution, and <b>Tax</b> for pay that's part of regular monthly profits from employment. Most allowances are taxable but EPF-exempt — check with payroll if unsure.</p>
+        <p class="entry-hint" id="entry-hint">Tick <b>EPF</b> for pay that counts toward the 8% employee contribution, and <b>Tax</b> for pay that's part of regular monthly profits from employment. Most allowances are taxable but EPF-exempt — check with payroll if unsure.</p>
         <div class="presets-label">Basic salary presets</div>
         <div class="presets" role="group" aria-label="Example basic salaries">
           <button class="preset-btn" type="button" data-amount="100000">Rs. 100,000</button>
@@ -935,7 +935,7 @@
 
     <table class="ledger">
       <thead>
-        <tr><th>Monthly Salary (Annual Salary/12)</th><th>Rate</th><th>Tax</th></tr>
+        <tr><th id="ledger-th-income">Monthly Salary (Annual Salary/12)</th><th>Rate</th><th>Tax</th></tr>
       </thead>
       <tbody id="band-rows"></tbody>
       <tfoot>
@@ -950,7 +950,7 @@
   </div>
 
   <div class="card" id="notes-card">
-    <dl class="notes">
+    <dl class="notes" id="notes-list">
       <div><dt>Personal relief.</dt> <dd>Effective from 01.04.2025, the first Rs. 150,000 of monthly employment income (Rs. 1,800,000 a year) is tax-free; only the balance is taxed in bands of 6–36%.</dd></div>
       <div><dt>EPF/ETF.</dt> <dd>APIT is calculated on gross salary before EPF. The 8% employee share still leaves your pay packet, but it's banked in your name; the employer adds EPF 12% and ETF 3% on top, at no cost to you.</dd></div>
       <div><dt>Not covered here.</dt> <dd>Bonuses, gratuity, and other lump sums are taxed separately under Table 02 and aren't part of this monthly estimate.</dd></div>
@@ -1030,6 +1030,18 @@
       { width: Infinity, rate: 0.36 }
     ];
 
+    /* Concessionary rate for foreign-currency service income remitted through a
+       Sri Lankan bank (effective 01.04.2025): same relief, then 6% on the next
+       Rs. 1,000,000/year, capped at 15% above that — instead of the 6-36% bands. */
+    var FOREIGN_BANDS = [
+      { width: BAND1, rate: 0.06 },
+      { width: Infinity, rate: 0.15 }
+    ];
+
+    function formatThousands(digits) {
+      return digits.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     var fmt = new Intl.NumberFormat("en-LK", { maximumFractionDigits: 0 });
     function money(n) { return "Rs. " + fmt.format(Math.round(n)); }
 
@@ -1044,16 +1056,23 @@
       "Above 4,300,000/12"
     ];
 
-    function compute(gross) {
+    var FOREIGN_BAND_LABELS = [
+      "1st 1,000,000/12",
+      "Above 2,800,000/12"
+    ];
+
+    function compute(gross, bands, labels) {
+      bands = bands || BANDS;
+      labels = labels || BAND_LABELS;
       var taxable = Math.max(0, gross - RELIEF);
       var remaining = taxable, total = 0;
       var rows = [{ label: "Up to 1,800,000/12", rateLabel: "Relief", tax: 0, active: true, isRelief: true }];
-      for (var i = 0; i < BANDS.length; i++) {
-        var b = BANDS[i];
+      for (var i = 0; i < bands.length; i++) {
+        var b = bands[i];
         var take = Math.min(remaining, b.width);
         var tax = take * b.rate;
         rows.push({
-          label: BAND_LABELS[i],
+          label: labels[i],
           rateLabel: Math.round(b.rate * 100) + "%",
           tax: tax,
           active: take > 0,
@@ -1197,16 +1216,28 @@
         cur.className = "cur";
         cur.textContent = "Rs.";
         var amountInput = document.createElement("input");
-        amountInput.type = "number";
+        amountInput.type = "text";
+        amountInput.setAttribute("inputmode", "numeric");
         amountInput.className = "item-amount-input";
-        amountInput.min = "0";
-        amountInput.step = "1000";
         amountInput.placeholder = "0";
-        amountInput.value = item.amount || "";
+        amountInput.value = item.amount ? formatThousands(String(item.amount)) : "";
         amountInput.setAttribute("aria-label", item.label + " amount");
         amountInput.addEventListener("input", function () {
-          var v = parseFloat(amountInput.value);
-          item.amount = isNaN(v) || v < 0 ? 0 : v;
+          var oldPos = amountInput.selectionStart;
+          var oldValue = amountInput.value;
+          var digitsBeforeCursor = oldValue.slice(0, oldPos).replace(/[^\d]/g, "").length;
+          var rawDigits = oldValue.replace(/[^\d]/g, "");
+          var formatted = formatThousands(rawDigits);
+          amountInput.value = formatted;
+          var seen = 0, newPos = formatted.length;
+          for (var i = 0; i < formatted.length; i++) {
+            if (/\d/.test(formatted[i])) seen++;
+            if (seen === digitsBeforeCursor) { newPos = i + 1; break; }
+          }
+          if (digitsBeforeCursor === 0) newPos = 0;
+          amountInput.setSelectionRange(newPos, newPos);
+          var v = rawDigits === "" ? 0 : parseInt(rawDigits, 10);
+          item.amount = v < 0 ? 0 : v;
           recalc();
         });
         amountWell.appendChild(cur);
@@ -1270,13 +1301,50 @@
     var itypeLocal = document.getElementById("itype-local");
     var itypeForeign = document.getElementById("itype-foreign");
     var itypeNote = document.getElementById("itype-note");
+    var mastheadSubtitle = document.getElementById("masthead-subtitle");
+    var mastheadStamp = document.getElementById("masthead-stamp");
+    var ledgerThIncome = document.getElementById("ledger-th-income");
+    var entryLabelEl = document.getElementById("entry-label");
+    var entryHintEl = document.getElementById("entry-hint");
+    var notesListEl = document.getElementById("notes-list");
+    var currentIncomeType = "local";
+
+    var NOTES_LOCAL_HTML = notesListEl.innerHTML;
+    var NOTES_FOREIGN_HTML =
+      '<div><dt>Personal relief.</dt> <dd>Same as local income &mdash; the first Rs. 150,000/month (Rs. 1,800,000/year) is tax-free; only the balance is taxed.</dd></div>' +
+      '<div><dt>Concessionary bands.</dt> <dd>The next Rs. 1,000,000/year is taxed at 6%, and everything above that at a capped 15% &mdash; instead of the standard 6&ndash;36% bands.</dd></div>' +
+      '<div><dt>Bank remittance condition.</dt> <dd>This lower rate only applies when the foreign-currency income is remitted to Sri Lanka through a licensed local bank. Income kept or received abroad is taxed at the regular progressive rates instead.</dd></div>' +
+      '<div><dt>EPF/ETF.</dt> <dd>These normally don\'t apply to foreign-sourced or freelance income since there\'s no local employer contribution &mdash; untick <b>EPF</b> on your components if it doesn\'t apply to you.</dd></div>' +
+      '<div><dt>Source.</dt> <dd>Reflects the concessionary tax treatment for foreign-currency service income introduced effective 01.04.2025. This is a simplified self-assessment estimate &mdash; check the <a href="https://www.ird.gov.lk/en/publications/sitepages/apit_tax_tables.aspx?menuid=1502" target="_blank" rel="noopener">IRD</a> or a tax advisor for your exact situation.</dd></div>';
+
     function setIncomeType(type) {
       var isForeign = type === "foreign";
+      currentIncomeType = isForeign ? "foreign" : "local";
       itypeLocal.classList.toggle("is-active", !isForeign);
       itypeForeign.classList.toggle("is-active", isForeign);
       itypeLocal.setAttribute("aria-pressed", String(!isForeign));
       itypeForeign.setAttribute("aria-pressed", String(isForeign));
       itypeNote.hidden = !isForeign;
+
+      if (isForeign) {
+        mastheadSubtitle.textContent = "Foreign income — concessionary rate, effective from 01.04.2025";
+        mastheadStamp.textContent = "Foreign income · 6% / 15% capped · Y/A 2026/27";
+        ledgerThIncome.textContent = "Monthly Income (Annual Income/12)";
+        entryLabelEl.textContent = "Income components";
+        entryHintEl.innerHTML = 'Tick <b>Tax</b> for income that\'s part of this calculation. <b>EPF</b> usually doesn\'t apply to foreign or freelance income &mdash; leave it unticked unless you also have local employment.';
+        notesListEl.innerHTML = NOTES_FOREIGN_HTML;
+        var toggledOff = false;
+        items.forEach(function (it) { if (it.epf) { it.epf = false; toggledOff = true; } });
+        if (toggledOff) renderItems();
+      } else {
+        mastheadSubtitle.textContent = "APIT / PAYE on salary — effective from 01.04.2025";
+        mastheadStamp.textContent = "APIT Table 01 · Y/A 2026/27";
+        ledgerThIncome.textContent = "Monthly Salary (Annual Salary/12)";
+        entryLabelEl.textContent = "Salary components";
+        entryHintEl.innerHTML = 'Tick <b>EPF</b> for pay that counts toward the 8% employee contribution, and <b>Tax</b> for pay that\'s part of regular monthly profits from employment. Most allowances are taxable but EPF-exempt &mdash; check with payroll if unsure.';
+        notesListEl.innerHTML = NOTES_LOCAL_HTML;
+      }
+      recalc();
     }
     itypeLocal.addEventListener("click", function () { setIncomeType("local"); });
     itypeForeign.addEventListener("click", function () { setIncomeType("foreign"); });
@@ -1291,7 +1359,9 @@
         if (it.epf) epfGross += amt;
       });
 
-      var result = compute(taxableGross);
+      var bands = currentIncomeType === "foreign" ? FOREIGN_BANDS : BANDS;
+      var labels = currentIncomeType === "foreign" ? FOREIGN_BAND_LABELS : BAND_LABELS;
+      var result = compute(taxableGross, bands, labels);
       var epf = epfGross * 0.08;
       var net = totalGross - result.apit - epf;
       var keptPct = totalGross > 0 ? (net / totalGross) * 100 : 0;
