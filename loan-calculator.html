@@ -1,0 +1,1442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loan Calculator — EMI &amp; Amortization Estimator (LKR) | Lankacal</title>
+<meta name="description" content="Free loan &amp; EMI calculator for Sri Lanka. Estimate your monthly installment, total interest, and payoff date for home, vehicle, and personal loans in LKR, with a year-by-year amortization schedule and extra-payment savings.">
+<meta name="keywords" content="loan calculator Sri Lanka, EMI calculator Sri Lanka, LKR loan calculator, home loan calculator Sri Lanka, vehicle loan calculator, personal loan calculator, amortization schedule, reducing balance calculator, monthly installment calculator, Lankacal">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lankacal">
+<meta http-equiv="content-language" content="en-LK">
+<meta name="theme-color" content="#05060f">
+<link rel="canonical" href="https://lankacal.com/loan-calculator.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lankacal">
+<meta property="og:url" content="https://lankacal.com/loan-calculator.html">
+<meta property="og:title" content="Loan Calculator — EMI &amp; Amortization Estimator | Lankacal">
+<meta property="og:description" content="Estimate your monthly loan installment, total interest, and payoff date in LKR, with a full amortization schedule and extra-payment savings calculator.">
+<meta property="og:locale" content="en_LK">
+<meta property="og:image" content="https://lankacal.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Loan Calculator — EMI &amp; Amortization Estimator | Lankacal">
+<meta name="twitter:description" content="Free EMI &amp; amortization calculator for home, vehicle and personal loans in LKR.">
+<meta name="twitter:image" content="https://lankacal.com/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://lankacal.com/loan-calculator.html#app",
+  "name": "Loan Calculator",
+  "url": "https://lankacal.com/loan-calculator.html",
+  "description": "Free EMI and loan amortization calculator. Estimate monthly installments, total interest, and payoff dates for home, vehicle, and personal loans in LKR, with a year-by-year amortization schedule.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "inLanguage": "en",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "LKR" },
+  "areaServed": "LK",
+  "isPartOf": { "@type": "WebSite", "name": "Lankacal", "url": "https://lankacal.com/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Lankacal", "item": "https://lankacal.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Loan Calculator", "item": "https://lankacal.com/loan-calculator.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is EMI?",
+      "acceptedAnswer": { "@type": "Answer", "text": "EMI (Equated Monthly Installment) is the fixed amount you pay every month toward a loan. Each EMI first covers interest on the outstanding balance, and the remainder reduces the principal — as the balance shrinks, more of each payment goes toward principal." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is EMI calculated on a reducing balance loan?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This calculator uses the standard reducing-balance method: EMI = P × r × (1+r)^n / ((1+r)^n − 1), where P is the loan principal, r is the monthly interest rate, and n is the number of monthly installments." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do extra monthly payments affect my loan?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Any amount paid above the EMI is applied straight to the outstanding principal in that same month. This shortens the loan term and cuts total interest paid, without needing to refinance." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this calculator include bank fees or charges?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Processing fees, loan insurance, valuation costs, rate changes on variable-rate loans, and early-settlement charges are not included in this estimate — confirm the full cost with your lender." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --void: #05060f;
+    --void-2: #0b0d24;
+    --card: rgba(21, 24, 61, 0.58);
+    --card-2: rgba(28, 32, 79, 0.6);
+    --card-solid: #171a45;
+    --well: #04050f;
+    --line: rgba(228, 231, 255, 0.14);
+    --line-soft: rgba(228, 231, 255, 0.08);
+    --ink: #f7f6ff;
+    --ink-soft: #adb2e6;
+    --ink-faint: #6f75ae;
+
+    --gold: #f6bb3d;
+    --gold-bright: #ffe38f;
+    --gold-deep: #b9791c;
+    --gold-dim: #8a6a24;
+    --ruby: #ff4f6d;
+    --ruby-soft: #3a1626;
+    --emerald: #2fe0ac;
+    --emerald-soft: #0f3a2e;
+
+    --font-display: "Unbounded", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(48vw 34vw at 88% -8%, rgba(246, 187, 61, 0.22), transparent 62%),
+      radial-gradient(40vw 40vw at -4% 18%, rgba(47, 224, 172, 0.13), transparent 60%),
+      radial-gradient(55vw 45vw at 50% 115%, rgba(255, 79, 109, 0.10), transparent 60%),
+      var(--void);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    padding: clamp(14px, 2.4vw, 28px) 16px 0;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  .sheet { max-width: 720px; margin: 0 auto; }
+
+  /* ---------- Layout ---------- */
+  .main-grid { display: flex; flex-direction: column; gap: 28px; }
+  .main-grid .card { margin-bottom: 0; }
+
+  .columns-row { display: contents; }
+  .col-left, .col-right { display: contents; }
+
+  #entry-card { order: 1; }
+  #hero-card { order: 2; }
+  #savings-card { order: 3; }
+  #stat-card { order: 4; }
+  .split-card { order: 5; }
+  #ledger-card { order: 6; }
+  #notes-card { order: 7; }
+  #related-card { order: 8; }
+
+  @media (min-width: 900px) {
+    .sheet { max-width: 1160px; }
+
+    .columns-row {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 26px;
+    }
+    .col-left, .col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      min-width: 0;
+    }
+    .col-left { flex: 0 1 460px; max-width: 460px; }
+    .col-right { flex: 1 1 auto; }
+
+    #hero-card { padding-top: 34px; padding-bottom: 34px; }
+  }
+
+  @media (min-width: 1240px) {
+    .sheet { max-width: 1280px; }
+    .col-left { flex-basis: 500px; max-width: 500px; }
+  }
+
+  /* ---------- Masthead ---------- */
+  header.masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+  }
+
+  .masthead-titles { min-width: 0; }
+
+  .masthead-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(18px, 3.2vw, 25px);
+    letter-spacing: 0.01em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-wrap: balance;
+  }
+
+  .masthead-subtitle {
+    margin: 6px 0 0 38px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    color: var(--ink-faint);
+  }
+
+  .masthead-title .coin {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, var(--gold-deep));
+    box-shadow: 0 0 22px rgba(246, 187, 61, 0.5), inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+  }
+
+  .stamp {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 12px;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  /* ---------- Card shell ---------- */
+  .card {
+    background: linear-gradient(175deg, var(--card-2), var(--card));
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: clamp(18px, 4vw, 26px);
+    margin-bottom: 18px;
+    box-shadow:
+      0 14px 28px -16px rgba(0, 0, 0, 0.7),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    position: relative;
+  }
+
+  /* ---------- Entry ---------- */
+  .entry-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .entry-label .opt {
+    text-transform: none;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--ink-faint);
+    font-size: 11.5px;
+  }
+
+  .entry-hint { margin-top: 12px; font-size: 12.5px; color: var(--ink-faint); }
+
+  .presets-label {
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+  }
+
+  .presets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+  .preset-btn {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    border-radius: 999px;
+    padding: 7px 10px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+
+  @media (max-width: 400px) {
+    .presets { grid-template-columns: repeat(2, 1fr); }
+  }
+  .preset-btn:hover { border-color: var(--gold); color: var(--gold-bright); transform: translateY(-1px); }
+  .preset-btn:active { transform: translateY(0); }
+  .preset-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .preset-btn.is-active { border-color: var(--gold); color: var(--gold-bright); background: rgba(246, 187, 61, 0.08); }
+
+  /* ---------- Fields ---------- */
+  .items { display: flex; flex-direction: column; gap: 8px; }
+
+  .field-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px 12px;
+  }
+
+  .field-label {
+    flex: 1 1 130px;
+    min-width: 100px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--ink);
+    padding: 3px 2px;
+  }
+  .field-label small {
+    display: block;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 10.5px;
+    color: var(--ink-faint);
+    margin-top: 2px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .item-amount-well {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--well);
+    border: 1.5px solid var(--line);
+    border-radius: 11px;
+    padding: 8px 13px;
+    flex-shrink: 0;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .item-amount-well:focus-within { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(246, 187, 61, 0.16); }
+  .item-amount-well .cur { font-family: var(--font-mono); font-size: 12px; color: var(--ink-faint); }
+
+  .item-amount-input {
+    width: 118px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .item-amount-input::-webkit-outer-spin-button, .item-amount-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .item-amount-input::placeholder { color: var(--ink-faint); }
+
+  .item-amount-well.is-primary {
+    background: rgba(246, 187, 61, 0.07);
+    border-color: rgba(246, 187, 61, 0.5);
+  }
+  .item-amount-well.is-primary:focus-within { box-shadow: 0 0 0 3px rgba(246, 187, 61, 0.22); }
+  .item-amount-well.is-primary .cur { color: var(--gold); font-weight: 700; }
+  .item-amount-well.is-primary .item-amount-input { font-size: 19px; font-weight: 800; color: var(--gold-bright); width: 148px; }
+
+  .amount-clear-btn {
+    width: 24px; height: 24px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--ink-faint);
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 2px;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
+  }
+  .amount-clear-btn:hover:not(:disabled) { background: rgba(255, 79, 109, 0.12); border-color: var(--ruby); color: var(--ruby); transform: rotate(-40deg); }
+  .amount-clear-btn:active:not(:disabled) { transform: rotate(-40deg) scale(0.9); }
+  .amount-clear-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .amount-clear-btn:disabled { opacity: 0.28; cursor: default; }
+
+  .item-amount-well.is-emerald { border-color: rgba(47, 224, 172, 0.45); }
+  .item-amount-well.is-emerald:focus-within { border-color: var(--emerald); box-shadow: 0 0 0 3px rgba(47, 224, 172, 0.16); }
+  .item-amount-well.is-emerald .cur { color: var(--emerald); }
+
+  .item-amount-well.has-stepper { padding-right: 8px; gap: 4px; }
+  .stepper { display: flex; flex-direction: column; gap: 3px; margin-left: 4px; }
+  .stepper-btn {
+    width: 20px; height: 15px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 7px;
+    line-height: 1;
+    color: var(--ink-faint);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease, transform 0.08s ease;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .stepper-btn:hover { border-color: var(--gold); color: var(--gold-bright); background: rgba(246, 187, 61, 0.08); }
+  .stepper-btn:active { transform: scale(0.88); background: rgba(246, 187, 61, 0.16); }
+  .stepper-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+  .entry-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+
+  .reset-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 9px 14px;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .reset-btn:hover { background: rgba(255, 79, 109, 0.08); border-color: var(--ruby); color: var(--ruby); }
+  .reset-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* ---------- Stat grid ---------- */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 12px; }
+  .stat-tile {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 17px 18px;
+  }
+  .stat-tile-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin-bottom: 8px; }
+  .stat-tile-value {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    font-family: var(--font-mono);
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-tile-value .cur { font-size: 11px; font-weight: 600; color: var(--ink-faint); flex-shrink: 0; }
+  .stat-tile-value .num { font-weight: 700; font-size: clamp(15px, 2.6vw, 18px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .stat-tile.is-ruby .stat-tile-value .num { color: var(--ruby); }
+  .stat-tile.is-emerald .stat-tile-value .num { color: var(--emerald); }
+
+  /* ---------- Hero payout ---------- */
+  .hero { text-align: center; padding-top: 32px; padding-bottom: 30px; position: relative; overflow: hidden; }
+
+  .hero-glow {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    width: 340px; height: 340px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(247, 189, 60, 0.30), transparent 65%);
+    pointer-events: none;
+    filter: blur(4px);
+    opacity: var(--glow-opacity, 0.6);
+    transition: opacity 0.5s ease;
+  }
+
+  .hero-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    position: relative;
+  }
+
+  .hero-value {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(40px, 10.6vw, 64px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 10px 0 6px;
+    background: linear-gradient(100deg,
+      var(--gold) 0%, var(--gold-bright) 22%, var(--gold) 34%,
+      var(--gold) 66%, var(--gold-bright) 78%, var(--gold) 100%);
+    background-size: 260% 100%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-variant-numeric: tabular-nums;
+    position: relative;
+    display: inline-block;
+    animation: shine 5s ease-in-out infinite;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .hero-value.is-pop { transform: scale(1.045); }
+
+  @keyframes shine {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 0%; }
+  }
+
+  .hero-sub { font-size: 13px; color: var(--ink-faint); position: relative; margin-bottom: 28px; }
+  .hero-sub b { color: var(--ink-soft); font-weight: 600; }
+
+  .stat-pills {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 10px 16px;
+    text-align: left;
+  }
+
+  .pill .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .pill.is-ruby .dot { background: var(--ruby); box-shadow: 0 0 8px rgba(255, 93, 114, 0.7); }
+  .pill.is-emerald .dot { background: var(--emerald); box-shadow: 0 0 8px rgba(52, 219, 160, 0.7); }
+  .pill.is-gold .dot { background: var(--gold); box-shadow: 0 0 8px rgba(246, 187, 61, 0.7); }
+
+  .pill-text { display: flex; flex-direction: column; }
+  .pill-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); }
+  .pill-value {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 16px;
+    font-variant-numeric: tabular-nums;
+  }
+  .pill.is-ruby .pill-value { color: var(--ruby); }
+  .pill.is-emerald .pill-value { color: var(--emerald); }
+  .pill.is-gold .pill-value { color: var(--gold-bright); }
+
+  /* ---------- Split card ---------- */
+  .split-card { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+  .donut-wrap { position: relative; width: 152px; height: 152px; flex-shrink: 0; margin: 0 auto; }
+  .donut {
+    width: 100%; height: 100%; border-radius: 50%;
+    transition: background 0.5s ease;
+    filter: drop-shadow(0 0 18px rgba(246, 187, 61, 0.25));
+  }
+  .donut-hole {
+    position: absolute;
+    inset: 22%;
+    background: linear-gradient(175deg, #1c2050, var(--card-solid));
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+  .donut-pct {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--gold-bright);
+    font-variant-numeric: tabular-nums;
+  }
+  .donut-pct-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin-top: 2px; text-align: center; }
+
+  .legend { flex: 1; min-width: 180px; display: grid; gap: 10px; }
+  .legend-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 13.5px; }
+  .legend-key { display: flex; align-items: center; gap: 9px; color: var(--ink-soft); }
+  .legend-key .sw { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+  .legend-val { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--ink); }
+  .legend-total { padding-top: 9px; border-top: 1px solid var(--line-soft); }
+  .legend-total .legend-key { font-weight: 700; color: var(--ink); padding-left: 19px; }
+  .legend-total .legend-val { font-weight: 700; }
+
+  /* ---------- Savings banner ---------- */
+  #savings-card {
+    border-color: rgba(47, 224, 172, 0.4);
+    background: linear-gradient(175deg, rgba(20, 62, 50, 0.55), rgba(15, 46, 38, 0.4));
+    text-align: center;
+    overflow: hidden;
+  }
+  .savings-glow {
+    position: absolute;
+    top: -60%;
+    left: 50%;
+    width: 320px; height: 320px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(47, 224, 172, 0.28), transparent 65%);
+    pointer-events: none;
+    filter: blur(4px);
+  }
+  .savings-eyebrow {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--emerald);
+    margin-bottom: 10px;
+  }
+  .savings-eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--emerald); box-shadow: 0 0 8px rgba(47, 224, 172, 0.8); }
+  .savings-value {
+    position: relative;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(30px, 6.4vw, 46px);
+    line-height: 1.1;
+    margin: 2px 0 8px;
+    color: var(--emerald);
+    text-shadow: 0 0 26px rgba(47, 224, 172, 0.35);
+    font-variant-numeric: tabular-nums;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .savings-value.is-pop { transform: scale(1.045); }
+  .savings-sub { position: relative; font-size: 13px; color: var(--ink-soft); margin-bottom: 22px; }
+  .savings-sub b { color: var(--emerald); font-weight: 700; }
+
+  /* ---------- Ledger table ---------- */
+  .ledger-heading {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 14px; gap: 8px; flex-wrap: wrap;
+  }
+  .ledger-heading h2 { font-family: var(--font-body); font-weight: 800; font-size: 17px; margin: 0; }
+  .ledger-heading .sub { font-size: 11.5px; color: var(--ink-faint); font-family: var(--font-mono); }
+
+  .table-scroll { overflow-x: auto; overflow-y: auto; max-height: 360px; border-radius: 10px; }
+
+  table.ledger { width: 100%; min-width: 420px; border-collapse: collapse; font-size: 13.5px; }
+  table.ledger thead th {
+    position: sticky; top: 0;
+    background: var(--card-solid);
+    text-align: left; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--ink-faint); border-bottom: 1px solid var(--line); padding: 9px 8px;
+  }
+  table.ledger th:not(:first-child), table.ledger td:not(:first-child) { text-align: right; }
+
+  table.ledger td {
+    padding: 10px 8px; border-bottom: 1px solid var(--line-soft); vertical-align: baseline; color: var(--ink);
+  }
+  table.ledger td.band-label { color: var(--ink-soft); font-weight: 700; }
+  table.ledger td.amt { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  table.ledger tr:last-child td { border-bottom: none; }
+
+  table.ledger tfoot td {
+    border-bottom: none; border-top: 1px solid var(--line); padding-top: 12px;
+    font-weight: 700; font-family: var(--font-mono); color: var(--gold-bright);
+    position: sticky; bottom: 0; background: var(--card-solid);
+  }
+  table.ledger tfoot td:first-child { font-family: var(--font-body); color: var(--ink); }
+
+  /* ---------- Notes ---------- */
+  .notes { display: grid; gap: 10px; font-size: 12.5px; color: var(--ink-faint); }
+  .notes dt { font-weight: 700; color: var(--ink-soft); display: inline; }
+  .notes dd { display: inline; margin: 0; }
+
+  footer.page-footnote { margin-top: 22px; font-size: 11.5px; color: var(--ink-faint); line-height: 1.6; text-align: center; }
+  .last-updated { margin-top: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.02em; opacity: 0.8; }
+
+  /* ---------- Actions ---------- */
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 0; }
+
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13.5px;
+    border-radius: 12px;
+    padding: 11px 18px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .action-btn:active { transform: translateY(1px); }
+  .action-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .action-btn .arrow { font-size: 11px; transition: transform 0.15s ease; }
+  .action-btn:hover .arrow { transform: translateX(2px); }
+
+  .action-btn.is-primary {
+    background: linear-gradient(175deg, var(--gold-bright), var(--gold));
+    color: #241a03;
+    box-shadow: 0 10px 24px -10px rgba(247, 189, 60, 0.55);
+  }
+  .action-btn.is-primary:hover { box-shadow: 0 14px 28px -10px rgba(247, 189, 60, 0.7); }
+
+  .action-btn.is-ghost {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .action-btn.is-ghost:hover { border-color: var(--emerald); color: var(--emerald); }
+
+  @media (max-width: 480px) {
+    .split-card { flex-direction: column; text-align: center; }
+    .legend { width: 100%; }
+  }
+
+  /* ---------- Print / Save as PDF ---------- */
+  @media print {
+    body { background: #ffffff !important; color: #14161f !important; padding: 0 !important; }
+    body::before { display: none !important; }
+    .sheet { max-width: 100%; }
+    .masthead .stamp { border-color: #999; color: #333; background: none; }
+    .masthead-title { color: #14161f; }
+    .masthead-subtitle { color: #444; }
+    .coin { box-shadow: none; }
+
+    .card { background: #ffffff !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; border: 1px solid #ccc !important; box-shadow: none !important; border-radius: 8px; }
+    .hero-value, .savings-value { animation: none !important; }
+
+    .main-grid, .columns-row, .col-left, .col-right { display: block !important; }
+    #entry-card, .split-card, .actions, #related-card { display: none !important; }
+    .site-header, .site-footer { display: none !important; }
+
+    .stat-tile { border: 1px solid #ccc; background: #fafafa !important; }
+    .stat-tile-label { color: #555; }
+    .stat-tile-value .cur { color: #666; }
+    .stat-tile-value .num { color: #14161f; }
+    .stat-tile.is-ruby .stat-tile-value .num { color: #a3402b; }
+    .stat-tile.is-emerald .stat-tile-value .num { color: #157a5c; }
+
+    .ledger-heading .sub, .ledger-heading h2 { color: #14161f; }
+    table.ledger th { color: #333; border-color: #bbb; background: #fff !important; }
+    table.ledger td { color: #14161f; border-color: #ddd; }
+    table.ledger tfoot td { color: #14161f; border-color: #14161f; background: #fff !important; }
+
+    #savings-card { border: 1px solid #ccc !important; background: #fafafa !important; }
+    .savings-value, .savings-sub b, .savings-eyebrow { color: #157a5c !important; text-shadow: none !important; }
+
+    .hero-value { color: #14161f !important; -webkit-text-fill-color: #14161f !important; background: none !important; }
+    .hero-label, .hero-sub { color: #333 !important; }
+    .pill-value { color: #14161f !important; }
+
+    .notes, footer.page-footnote { color: #444; }
+    .notes dt { color: #14161f; }
+  }
+
+  /* ================= Site-wide header / footer (Lankacal brand) ================= */
+  .skip-link{position:absolute;top:-48px;left:16px;background:var(--gold);color:#241a03;font-weight:800;padding:10px 16px;border-radius:10px;z-index:200;transition:top .15s ease;}
+  .skip-link:focus{top:16px;}
+
+  .site-header{width:100%;max-width:1280px;display:flex;justify-content:space-between;align-items:center;margin:0 auto 26px;position:relative;z-index:20;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--ruby));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .brand-name{font-family:var(--font-display);font-weight:700;font-size:19px;color:var(--ink);}
+  .brand-name span{color:var(--ruby);}
+  .header-nav{display:flex;align-items:center;gap:22px;font-weight:700;font-size:14px;color:var(--ink-soft);}
+  .header-nav a{color:var(--ink-soft);text-decoration:none;}
+  .header-nav a:hover{color:var(--gold-bright);}
+
+  #related-card{display:flex;align-items:center;gap:18px;flex-wrap:wrap;border-color:rgba(255,79,109,0.35);}
+  #related-card .rc-icon{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--ruby),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  #related-card .rc-text{flex:1;min-width:200px;}
+  #related-card .rc-text h3{margin:0 0 4px;font-size:15px;font-weight:800;}
+  #related-card .rc-text p{margin:0;color:var(--ink-soft);font-size:12.5px;}
+  #related-card .rc-cta{white-space:nowrap;}
+
+  .site-footer{width:100%;max-width:1280px;margin:34px auto 0;padding:26px 0 0;border-top:1px solid var(--line);}
+  .footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:16px;}
+  .footer-brand{display:flex;align-items:center;gap:9px;}
+  .footer-brand .brand-mark{width:26px;height:26px;border-radius:8px;}
+  .footer-brand-text{font-weight:700;font-size:13.5px;color:var(--ink-soft);}
+  .footer-nav{display:flex;gap:20px;font-weight:700;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;}
+  .footer-nav a{color:var(--ink-soft);text-decoration:none;}
+  .footer-nav a:hover{color:var(--gold-bright);}
+  .footer-disclaimer{font-size:11px;color:var(--ink-faint);line-height:1.7;padding-bottom:26px;}
+
+  @media (max-width: 640px){
+    .header-nav{gap:14px;font-size:12.5px;}
+    .header-nav .btn-hide-xs{display:none;}
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="sheet">
+
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="Lankacal home">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+      </div>
+      <div class="brand-name">lanka<span>cal</span></div>
+    </a>
+    <nav class="header-nav" aria-label="Primary">
+      <a href="index.html#finance" class="btn-hide-xs">All Tools</a>
+      <a href="tax-calculator.html">Tax Calculator</a>
+      <a href="index.html">&larr; Home</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+  <header class="masthead">
+    <div class="masthead-titles">
+      <h1 class="masthead-title"><span class="coin"></span>Loan Calculator</h1>
+      <p class="masthead-subtitle">EMI &amp; amortization estimator — home, vehicle &amp; personal loans</p>
+    </div>
+    <span class="stamp">Reducing Balance · LKR</span>
+  </header>
+
+  <div class="main-grid">
+
+  <div class="columns-row">
+    <div class="col-left">
+
+      <div class="card" id="entry-card">
+        <label class="entry-label">Loan details</label>
+        <div class="items">
+
+          <div class="field-row">
+            <span class="field-label">Loan amount</span>
+            <div class="item-amount-well is-primary">
+              <span class="cur">Rs.</span>
+              <input type="number" class="item-amount-input" id="in-amount" min="0" step="10000" placeholder="0" aria-label="Loan amount">
+              <button type="button" class="amount-clear-btn" id="btn-clear-amount" aria-label="Clear loan amount" title="Clear amount" disabled>↺</button>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <span class="field-label">Interest rate<small>per year, reducing balance</small></span>
+            <div class="item-amount-well has-stepper">
+              <input type="number" class="item-amount-input" id="in-rate" min="0" max="45" step="0.05" value="12" style="width:64px;" aria-label="Annual interest rate">
+              <span class="cur">%</span>
+              <div class="stepper">
+                <button type="button" class="stepper-btn" data-target="in-rate" data-step="0.25" aria-label="Increase interest rate">▲</button>
+                <button type="button" class="stepper-btn" data-target="in-rate" data-step="-0.25" aria-label="Decrease interest rate">▼</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <span class="field-label">Loan term</span>
+            <div class="item-amount-well has-stepper">
+              <input type="number" class="item-amount-input" id="in-term" min="0.5" max="35" step="0.5" value="20" style="width:64px;" aria-label="Loan term in years">
+              <span class="cur">yrs</span>
+              <div class="stepper">
+                <button type="button" class="stepper-btn" data-target="in-term" data-step="1" aria-label="Increase loan term">▲</button>
+                <button type="button" class="stepper-btn" data-target="in-term" data-step="-1" aria-label="Decrease loan term">▼</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="presets-label">Loan amount presets</div>
+        <div class="presets" id="amount-presets" role="group" aria-label="Example loan amounts">
+          <button class="preset-btn" type="button" data-amount="1000000">Rs. 1.0M</button>
+          <button class="preset-btn" type="button" data-amount="2500000">Rs. 2.5M</button>
+          <button class="preset-btn" type="button" data-amount="5000000">Rs. 5.0M</button>
+          <button class="preset-btn" type="button" data-amount="7500000">Rs. 7.5M</button>
+          <button class="preset-btn" type="button" data-amount="10000000">Rs. 10M</button>
+          <button class="preset-btn" type="button" data-amount="15000000">Rs. 15M</button>
+        </div>
+
+        <div class="presets-label">Loan term presets</div>
+        <div class="presets" id="term-presets" role="group" aria-label="Example loan terms">
+          <button class="preset-btn" type="button" data-years="5">5 yrs</button>
+          <button class="preset-btn" type="button" data-years="10">10 yrs</button>
+          <button class="preset-btn" type="button" data-years="15">15 yrs</button>
+          <button class="preset-btn" type="button" data-years="20">20 yrs</button>
+          <button class="preset-btn" type="button" data-years="25">25 yrs</button>
+          <button class="preset-btn" type="button" data-years="30">30 yrs</button>
+        </div>
+
+        <label class="entry-label" style="margin-top:18px;">Extra monthly payment <span class="opt">(optional)</span></label>
+        <div class="field-row">
+          <span class="field-label">Extra towards principal<small>added to every EMI</small></span>
+          <div class="item-amount-well is-emerald">
+            <span class="cur">Rs.</span>
+            <input type="number" class="item-amount-input" id="in-extra" min="0" step="1000" placeholder="0" aria-label="Extra monthly payment">
+          </div>
+        </div>
+        <p class="entry-hint">Extra payments go straight to your outstanding principal the month they're made — shortening your loan and cutting total interest, without refinancing.</p>
+
+        <div class="entry-actions">
+          <button class="reset-btn" type="button" id="btn-reset">↺ Reset</button>
+        </div>
+      </div>
+
+      <div class="card split-card">
+        <div class="donut-wrap">
+          <div class="donut" id="donut"></div>
+          <div class="donut-hole">
+            <span class="donut-pct" id="donut-pct">0%</span>
+            <span class="donut-pct-label">principal</span>
+          </div>
+        </div>
+        <div class="legend">
+          <div class="legend-row">
+            <span class="legend-key"><span class="sw" style="background:var(--gold)"></span>Principal</span>
+            <span class="legend-val" id="leg-principal">Rs. 0</span>
+          </div>
+          <div class="legend-row">
+            <span class="legend-key"><span class="sw" style="background:var(--ruby)"></span>Total interest</span>
+            <span class="legend-val" id="leg-interest">Rs. 0</span>
+          </div>
+          <div class="legend-row legend-total">
+            <span class="legend-key">Total repayment</span>
+            <span class="legend-val" id="leg-total">Rs. 0</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-right">
+
+      <div class="card hero" id="hero-card">
+        <div class="hero-glow" id="hero-glow"></div>
+        <div class="hero-label">Your monthly installment</div>
+        <div class="hero-value" id="out-emi">Rs. 0</div>
+        <div class="hero-sub">for <b id="out-term">0 years</b> at <b id="out-rate">0%</b> interest</div>
+        <div class="stat-pills">
+          <div class="pill is-ruby">
+            <span class="dot"></span>
+            <span class="pill-text"><span class="pill-label">Total interest</span><span class="pill-value" id="out-interest">Rs. 0</span></span>
+          </div>
+          <div class="pill is-emerald">
+            <span class="dot"></span>
+            <span class="pill-text"><span class="pill-label">Loan ends</span><span class="pill-value" id="out-payoff">—</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="savings-card" style="display:none;">
+        <div class="savings-glow"></div>
+        <div class="savings-eyebrow"><span class="dot"></span>Extra payments are working for you</div>
+        <div class="savings-value" id="sv-headline">Rs. 0 saved</div>
+        <div class="savings-sub">and you'll be debt-free <b id="sv-time">0 months</b> sooner</div>
+        <div class="stat-pills">
+          <div class="pill is-emerald">
+            <span class="dot"></span>
+            <span class="pill-text"><span class="pill-label">Interest saved</span><span class="pill-value" id="sv-interest">Rs. 0</span></span>
+          </div>
+          <div class="pill is-gold">
+            <span class="dot"></span>
+            <span class="pill-text"><span class="pill-label">New payoff date</span><span class="pill-value" id="sv-payoff">—</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="stat-card">
+        <div class="ledger-heading">
+          <h2>Loan summary</h2>
+          <span class="sub">reducing balance method</span>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-tile"><div class="stat-tile-label">Loan amount</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-amount">0</span></div></div>
+          <div class="stat-tile"><div class="stat-tile-label">Monthly EMI</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-emi">0</span></div></div>
+          <div class="stat-tile"><div class="stat-tile-label">Loan term</div><div class="stat-tile-value"><span class="num" id="sg-term">0 yrs</span></div></div>
+          <div class="stat-tile is-ruby"><div class="stat-tile-label">Total interest</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-interest">0</span></div></div>
+          <div class="stat-tile"><div class="stat-tile-label">Total repayment</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-total">0</span></div></div>
+          <div class="stat-tile is-emerald"><div class="stat-tile-label">Payoff date</div><div class="stat-tile-value"><span class="num" id="sg-payoff">—</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" id="ledger-card">
+    <div class="ledger-heading">
+      <h2>Year-by-year amortization</h2>
+      <span class="sub" id="ledger-sub">principal vs. interest</span>
+    </div>
+
+    <div class="table-scroll">
+      <table class="ledger">
+        <thead>
+          <tr><th>Year</th><th>Principal paid</th><th>Interest paid</th><th>Balance</th></tr>
+        </thead>
+        <tbody id="year-rows"></tbody>
+        <tfoot>
+          <tr><td>Total</td><td class="amt" id="year-total-principal">Rs. 0</td><td class="amt" id="year-total-interest">Rs. 0</td><td class="amt">Rs. 0</td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="actions">
+      <button class="action-btn is-primary" type="button" id="btn-print">Print <span class="arrow">▶</span></button>
+      <button class="action-btn is-ghost" type="button" id="btn-pdf">Download (PDF) <span class="arrow">▶</span></button>
+    </div>
+  </div>
+
+  <div class="card" id="notes-card">
+    <dl class="notes">
+      <div><dt>EMI.</dt> <dd>Your fixed monthly installment first covers interest on the outstanding balance; the remainder reduces principal. As the balance shrinks, more of each payment goes toward principal.</dd></div>
+      <div><dt>Extra payments.</dt> <dd>Anything you pay above the EMI is applied straight to principal that same month — it shortens your loan term and cuts total interest without needing to refinance.</dd></div>
+      <div><dt>Not covered here.</dt> <dd>Processing fees, loan insurance, valuation costs, rate changes on variable-rate loans, and early-settlement charges aren't included in this estimate — confirm the full cost with your lender.</dd></div>
+    </dl>
+  </div>
+
+  </div>
+
+  <div class="card" id="related-card">
+    <div class="rc-icon"><svg viewBox="0 0 24 24" style="width:22px;height:22px;stroke:#0b0d24;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+    <div class="rc-text">
+      <h3>Want to check your take-home pay too?</h3>
+      <p>Try the Lankacal Tax Calculator for APIT/PAYE, EPF and net salary — IRD 2025/26 rates.</p>
+    </div>
+    <a href="tax-calculator.html" class="action-btn is-ghost rc-cta">Open Tax Calculator <span class="arrow">▶</span></a>
+  </div>
+
+  <footer class="page-footnote">
+    Estimate only, using the standard reducing-balance (EMI) amortization method. Actual bank quotes may differ due to fees, day-count conventions, or rate changes.<br>For a bank-accurate figure, check with your lender.
+    <div class="last-updated">Last updated <span id="last-updated-date">—</span></div>
+  </footer>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+      </div>
+      <div class="footer-brand-text">Lankacal &mdash; free calculators built for Sri Lanka</div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="index.html#finance">All Tools</a>
+      <a href="tax-calculator.html">Tax Calculator</a>
+      <a href="index.html#about">About</a>
+    </nav>
+  </div>
+  <div class="footer-disclaimer">
+    Lankacal's calculators provide estimates for general information only and are not affiliated with any bank, the EPF/ETF, or any Sri Lankan government body. For a bank-accurate figure, check with your lender.
+  </div>
+</footer>
+
+<script>
+  (function () {
+    "use strict";
+
+    var REDUCE_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var fmt = new Intl.NumberFormat("en-LK", { maximumFractionDigits: 0 });
+    function money(n) { return "Rs. " + fmt.format(Math.max(0, Math.round(n))); }
+    function num(n) { return fmt.format(Math.max(0, Math.round(n))); }
+
+    /* ---------- Loan math ---------- */
+    function computeLoan(principal, annualRatePct, months, extra) {
+      var r = annualRatePct / 100 / 12;
+      var n = Math.max(1, months);
+      var emi;
+      if (principal <= 0) {
+        emi = 0;
+      } else if (r === 0) {
+        emi = principal / n;
+      } else {
+        emi = principal * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+      }
+
+      var balance = principal;
+      var totalInterest = 0;
+      var month = 0;
+      var maxMonths = n + 1200;
+      var yearly = [];
+      var yp = 0, yi = 0;
+
+      while (balance > 0.5 && month < maxMonths && principal > 0) {
+        month++;
+        var interestPaid = balance * r;
+        var principalPaid = emi - interestPaid + extra;
+        if (principalPaid > balance) principalPaid = balance;
+        if (principalPaid < 0) principalPaid = 0;
+        balance -= principalPaid;
+        totalInterest += interestPaid;
+        yp += principalPaid;
+        yi += interestPaid;
+        if (month % 12 === 0 || balance <= 0.5) {
+          yearly.push({ year: Math.ceil(month / 12), principal: yp, interest: yi, endBalance: Math.max(0, balance) });
+          yp = 0; yi = 0;
+        }
+      }
+      return {
+        emi: emi,
+        totalInterest: totalInterest,
+        totalPayment: principal + totalInterest,
+        totalMonths: month,
+        yearly: yearly
+      };
+    }
+
+    function addMonths(date, n) {
+      return new Date(date.getFullYear(), date.getMonth() + n, 1);
+    }
+    function formatMonthYear(d) {
+      return d.toLocaleDateString("en-GB", { month: "short", year: "numeric" });
+    }
+    function formatDuration(months) {
+      months = Math.round(months);
+      if (months <= 0) return "0 months";
+      var y = Math.floor(months / 12), m = months % 12;
+      var parts = [];
+      if (y > 0) parts.push(y + (y === 1 ? " year" : " years"));
+      if (m > 0) parts.push(m + (m === 1 ? " month" : " months"));
+      return parts.join(" ") || "0 months";
+    }
+
+    /* ---------- DOM refs ---------- */
+    var inAmount = document.getElementById("in-amount");
+    var inRate = document.getElementById("in-rate");
+    var inTerm = document.getElementById("in-term");
+    var inExtra = document.getElementById("in-extra");
+    var btnClearAmount = document.getElementById("btn-clear-amount");
+
+    var outEmi = document.getElementById("out-emi");
+    var outTerm = document.getElementById("out-term");
+    var outRate = document.getElementById("out-rate");
+    var outInterest = document.getElementById("out-interest");
+    var outPayoff = document.getElementById("out-payoff");
+    var heroGlow = document.getElementById("hero-glow");
+
+    var legPrincipal = document.getElementById("leg-principal");
+    var legInterest = document.getElementById("leg-interest");
+    var legTotal = document.getElementById("leg-total");
+    var donut = document.getElementById("donut");
+    var donutPct = document.getElementById("donut-pct");
+
+    var sgAmount = document.getElementById("sg-amount");
+    var sgEmi = document.getElementById("sg-emi");
+    var sgTerm = document.getElementById("sg-term");
+    var sgInterest = document.getElementById("sg-interest");
+    var sgTotal = document.getElementById("sg-total");
+    var sgPayoff = document.getElementById("sg-payoff");
+
+    var savingsCard = document.getElementById("savings-card");
+    var svHeadline = document.getElementById("sv-headline");
+    var svTime = document.getElementById("sv-time");
+    var svInterest = document.getElementById("sv-interest");
+    var svPayoff = document.getElementById("sv-payoff");
+
+    var yearRows = document.getElementById("year-rows");
+    var yearTotalPrincipal = document.getElementById("year-total-principal");
+    var yearTotalInterest = document.getElementById("year-total-interest");
+    var ledgerSub = document.getElementById("ledger-sub");
+
+    /* ---------- Generic tween ----------
+       Each independent animation (main figures vs. savings banner) gets its
+       own requestAnimationFrame handle in rafMap, keyed by `channel` — so
+       starting one tween never cancels a different one running concurrently. */
+    var current = {};
+    var rafMap = {};
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function tweenTo(channel, targets, onFrame, onDone) {
+      if (rafMap[channel]) cancelAnimationFrame(rafMap[channel]);
+      var keys = Object.keys(targets);
+      var from = {};
+      keys.forEach(function (k) { from[k] = current[k] !== undefined ? current[k] : targets[k]; });
+
+      if (REDUCE_MOTION) {
+        keys.forEach(function (k) { current[k] = targets[k]; });
+        onFrame(targets);
+        if (onDone) onDone();
+        return;
+      }
+
+      var duration = 480;
+      var start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var t = Math.min(1, (ts - start) / duration);
+        var eased = easeOutCubic(t);
+        var frame = {};
+        keys.forEach(function (k) { frame[k] = from[k] + (targets[k] - from[k]) * eased; });
+        onFrame(frame);
+        if (t < 1) {
+          rafMap[channel] = requestAnimationFrame(step);
+        } else {
+          keys.forEach(function (k) { current[k] = targets[k]; });
+          rafMap[channel] = null;
+          if (onDone) onDone();
+        }
+      }
+      rafMap[channel] = requestAnimationFrame(step);
+    }
+
+    function paintDonut(principalPct, interestPct) {
+      donut.style.background =
+        "conic-gradient(var(--gold) 0% " + principalPct + "%, var(--ruby) " + principalPct + "% 100%)";
+    }
+
+    /* ---------- Recalculate ---------- */
+    function recalc() {
+      var principal = parseFloat(inAmount.value) || 0;
+      if (principal < 0) principal = 0;
+      var annualRate = parseFloat(inRate.value) || 0;
+      if (annualRate < 0) annualRate = 0;
+      var years = parseFloat(inTerm.value) || 0;
+      if (years < 0) years = 0;
+      var months = Math.max(1, Math.round(years * 12));
+      var extra = parseFloat(inExtra.value) || 0;
+      if (extra < 0) extra = 0;
+
+      btnClearAmount.disabled = principal <= 0;
+
+      var withExtra = computeLoan(principal, annualRate, months, extra);
+      var totalInterest = withExtra.totalInterest;
+      var totalPayment = withExtra.totalPayment;
+      var principalPct = totalPayment > 0 ? (principal / totalPayment) * 100 : 0;
+      var interestPct = 100 - principalPct;
+
+      var wasZero = !current.emi && !current.totalInterest;
+
+      tweenTo(
+        "main",
+        { emi: withExtra.emi, principal: principal, totalInterest: totalInterest, totalPayment: totalPayment, principalPct: principalPct, interestPct: interestPct },
+        function (v) {
+          outEmi.textContent = money(v.emi);
+          sgEmi.textContent = num(v.emi);
+          sgAmount.textContent = num(v.principal);
+          outInterest.textContent = money(v.totalInterest);
+          sgInterest.textContent = num(v.totalInterest);
+          sgTotal.textContent = num(v.totalPayment);
+          legPrincipal.textContent = money(v.principal);
+          legInterest.textContent = money(v.totalInterest);
+          legTotal.textContent = money(v.totalPayment);
+          donutPct.textContent = Math.round(v.principalPct) + "%";
+          paintDonut(v.principalPct, v.interestPct);
+        },
+        function () {
+          if (!REDUCE_MOTION && !wasZero) {
+            outEmi.classList.add("is-pop");
+            heroGlow.style.setProperty("--glow-opacity", "1");
+            setTimeout(function () {
+              outEmi.classList.remove("is-pop");
+              heroGlow.style.setProperty("--glow-opacity", "0.55");
+            }, 350);
+          }
+        }
+      );
+
+      var rateLabel = (Math.round(annualRate * 100) / 100) + "%";
+      var termLabel = (years % 1 === 0 ? years : years.toFixed(1)) + (years === 1 ? " year" : " years");
+      outTerm.textContent = termLabel;
+      outRate.textContent = rateLabel;
+      sgTerm.textContent = termLabel;
+
+      var payoffDate = principal > 0 ? addMonths(new Date(), withExtra.totalMonths) : null;
+      var payoffLabel = payoffDate ? formatMonthYear(payoffDate) : "—";
+      outPayoff.textContent = payoffLabel;
+      sgPayoff.textContent = payoffLabel;
+
+      /* ---------- Savings banner ---------- */
+      if (extra > 0 && principal > 0) {
+        var baseline = computeLoan(principal, annualRate, months, 0);
+        var interestSaved = Math.max(0, baseline.totalInterest - withExtra.totalInterest);
+        var monthsSaved = Math.max(0, baseline.totalMonths - withExtra.totalMonths);
+        savingsCard.style.display = "";
+        tweenTo("savings", { interestSaved: interestSaved }, function (v) {
+          svHeadline.textContent = money(v.interestSaved) + " saved";
+          svInterest.textContent = money(v.interestSaved);
+        }, function () {
+          if (!REDUCE_MOTION) {
+            var sv = document.getElementById("sv-headline");
+            sv.classList.add("is-pop");
+            setTimeout(function () { sv.classList.remove("is-pop"); }, 350);
+          }
+        });
+        svTime.textContent = formatDuration(monthsSaved);
+        svPayoff.textContent = payoffLabel;
+      } else {
+        savingsCard.style.display = "none";
+      }
+
+      /* ---------- Year-by-year table ---------- */
+      yearRows.innerHTML = "";
+      withExtra.yearly.forEach(function (row) {
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          '<td class="band-label">Year ' + row.year + '</td>' +
+          '<td class="amt">' + money(row.principal) + '</td>' +
+          '<td class="amt">' + money(row.interest) + '</td>' +
+          '<td class="amt">' + money(row.endBalance) + '</td>';
+        yearRows.appendChild(tr);
+      });
+      yearTotalPrincipal.textContent = money(principal);
+      yearTotalInterest.textContent = money(totalInterest);
+      ledgerSub.textContent = withExtra.yearly.length + (withExtra.yearly.length === 1 ? " year to payoff" : " years to payoff");
+    }
+
+    /* ---------- Wiring ---------- */
+    [inAmount, inRate, inTerm, inExtra].forEach(function (el) {
+      el.addEventListener("input", function () {
+        document.querySelectorAll("#amount-presets .preset-btn, #term-presets .preset-btn").forEach(function (b) {
+          b.classList.remove("is-active");
+        });
+        recalc();
+      });
+    });
+
+    document.querySelectorAll("#amount-presets .preset-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        inAmount.value = btn.getAttribute("data-amount");
+        document.querySelectorAll("#amount-presets .preset-btn").forEach(function (b) { b.classList.remove("is-active"); });
+        btn.classList.add("is-active");
+        recalc();
+      });
+    });
+
+    document.querySelectorAll("#term-presets .preset-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        inTerm.value = btn.getAttribute("data-years");
+        document.querySelectorAll("#term-presets .preset-btn").forEach(function (b) { b.classList.remove("is-active"); });
+        btn.classList.add("is-active");
+        recalc();
+      });
+    });
+
+    /* ---------- Stepper (up/down) buttons on rate & term ----------
+       Single click nudges by data-step; holding a button repeats the nudge
+       (short delay, then a steady tick) so a big change doesn't need many taps. */
+    function nudgeField(input, step) {
+      var cur = parseFloat(input.value);
+      if (isNaN(cur)) cur = parseFloat(input.getAttribute("placeholder")) || 0;
+      var next = cur + step;
+      var min = input.min !== "" ? parseFloat(input.min) : -Infinity;
+      var max = input.max !== "" ? parseFloat(input.max) : Infinity;
+      next = Math.min(max, Math.max(min, next));
+      next = Math.round(next * 100) / 100;
+      input.value = next;
+      document.querySelectorAll("#amount-presets .preset-btn, #term-presets .preset-btn").forEach(function (b) {
+        b.classList.remove("is-active");
+      });
+      recalc();
+    }
+
+    document.querySelectorAll(".stepper-btn").forEach(function (btn) {
+      var targetId = btn.getAttribute("data-target");
+      var step = parseFloat(btn.getAttribute("data-step"));
+      var target = document.getElementById(targetId);
+      var repeatTimer = null, holdTimeout = null;
+
+      function stop() {
+        clearTimeout(holdTimeout);
+        clearInterval(repeatTimer);
+        holdTimeout = null;
+        repeatTimer = null;
+      }
+
+      btn.addEventListener("pointerdown", function (e) {
+        e.preventDefault();
+        nudgeField(target, step);
+        holdTimeout = setTimeout(function () {
+          repeatTimer = setInterval(function () { nudgeField(target, step); }, 90);
+        }, 420);
+      });
+      ["pointerup", "pointerleave", "pointercancel"].forEach(function (evt) {
+        btn.addEventListener(evt, stop);
+      });
+      btn.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); nudgeField(target, step); }
+      });
+    });
+
+    btnClearAmount.addEventListener("click", function () {
+      inAmount.value = "";
+      document.querySelectorAll("#amount-presets .preset-btn").forEach(function (b) { b.classList.remove("is-active"); });
+      recalc();
+      inAmount.focus();
+    });
+
+    document.getElementById("btn-reset").addEventListener("click", function () {
+      inAmount.value = "";
+      inRate.value = "12";
+      inTerm.value = "20";
+      inExtra.value = "";
+      document.querySelectorAll(".preset-btn").forEach(function (b) { b.classList.remove("is-active"); });
+      current = {};
+      recalc();
+      inAmount.focus();
+    });
+
+    function triggerPrint(filenameHint) {
+      var prevTitle = document.title;
+      document.title = filenameHint;
+      var restored = false;
+      function restore() {
+        if (restored) return;
+        restored = true;
+        document.title = prevTitle;
+      }
+      window.addEventListener("afterprint", restore, { once: true });
+      setTimeout(restore, 3000);
+      window.print();
+    }
+
+    document.getElementById("btn-print").addEventListener("click", function () {
+      triggerPrint("Loan Amortization Schedule");
+    });
+    document.getElementById("btn-pdf").addEventListener("click", function () {
+      triggerPrint("Loan-Amortization");
+    });
+
+    paintDonut(0, 100);
+    recalc();
+    inAmount.focus();
+
+    var luEl = document.getElementById("last-updated-date");
+    if (luEl) {
+      var lm = new Date(document.lastModified);
+      luEl.textContent = isNaN(lm.getTime())
+        ? "—"
+        : lm.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+    }
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Lanka Tax Calculator (APIT / PAYE 2025/26) — Lankacal</title>
+<meta name="description" content="Free Sri Lanka Tax Calculator for 2025/2026 — instantly calculate APIT (PAYE) income tax, EPF deduction, and net take-home salary using official IRD Table 01 rates effective 01.04.2025.">
+<meta name="keywords" content="Sri Lanka tax calculator, APIT calculator Sri Lanka, PAYE calculator Sri Lanka, income tax calculator Sri Lanka 2025, salary calculator Sri Lanka, net salary calculator Sri Lanka, take home pay calculator Sri Lanka, EPF calculator Sri Lanka, ETF calculator Sri Lanka, IRD tax table 2025 2026, monthly salary tax Sri Lanka, advance personal income tax Sri Lanka, payslip calculator Sri Lanka, Lankacal">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lankacal">
+<meta http-equiv="content-language" content="en-LK">
+<meta name="theme-color" content="#05060f">
+<link rel="canonical" href="https://lankacal.com/tax-calculator.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lankacal">
+<meta property="og:url" content="https://lankacal.com/tax-calculator.html">
+<meta property="og:title" content="Sri Lanka Tax Calculator — APIT / PAYE 2025/2026 | Lankacal">
+<meta property="og:description" content="Calculate your Sri Lanka salary tax (APIT/PAYE), EPF, and net take-home pay instantly — IRD Table 01 rates effective 01.04.2025.">
+<meta property="og:locale" content="en_LK">
+<meta property="og:image" content="https://lankacal.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sri Lanka Tax Calculator — APIT / PAYE 2025/2026 | Lankacal">
+<meta name="twitter:description" content="Calculate APIT/PAYE income tax, EPF, and net salary for Sri Lanka — IRD rates effective 01.04.2025.">
+<meta name="twitter:image" content="https://lankacal.com/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://lankacal.com/tax-calculator.html#app",
+  "name": "Sri Lanka Tax Calculator",
+  "url": "https://lankacal.com/tax-calculator.html",
+  "description": "Free online calculator for Sri Lanka APIT/PAYE income tax, EPF deductions, and net take-home salary, based on IRD Table 01 rates effective 01.04.2025.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "LKR" },
+  "areaServed": "LK",
+  "inLanguage": "en-LK",
+  "isPartOf": { "@type": "WebSite", "name": "Lankacal", "url": "https://lankacal.com/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Lankacal", "item": "https://lankacal.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tax Calculator", "item": "https://lankacal.com/tax-calculator.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is APIT in Sri Lanka?",
+      "acceptedAnswer": { "@type": "Answer", "text": "APIT (Advance Personal Income Tax), also known as PAYE, is the tax an employer deducts each month from an employee's regular profits from employment and remits to the Inland Revenue Department on the employee's behalf." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much of my monthly salary is tax-free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Effective from 01.04.2025, the first Rs. 150,000 of monthly employment income (Rs. 1,800,000 a year) is tax-free personal relief. Only the balance above that is taxed in bands from 6% to 36%." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is EPF calculated before or after tax?",
+      "acceptedAnswer": { "@type": "Answer", "text": "APIT is calculated on gross salary before the 8% employee EPF contribution is deducted. The EPF amount still leaves your pay packet each month, but it is banked in your name, and the employer separately contributes EPF 12% and ETF 3% on top at no cost to you." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this calculator cover bonuses or gratuity?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Bonuses, gratuity, and other lump-sum payments are taxed separately under IRD Table 02 and are not part of this monthly APIT estimate." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --void: #05060f;
+    --void-2: #0b0d24;
+    --card: rgba(21, 24, 61, 0.58);
+    --card-2: rgba(28, 32, 79, 0.6);
+    --card-solid: #171a45;
+    --well: #04050f;
+    --line: rgba(228, 231, 255, 0.14);
+    --line-soft: rgba(228, 231, 255, 0.08);
+    --ink: #f7f6ff;
+    --ink-soft: #adb2e6;
+    --ink-faint: #6f75ae;
+
+    --gold: #f6bb3d;
+    --gold-bright: #ffe38f;
+    --gold-deep: #b9791c;
+    --gold-dim: #8a6a24;
+    --ruby: #ff4f6d;
+    --ruby-soft: #3a1626;
+    --emerald: #2fe0ac;
+    --emerald-soft: #0f3a2e;
+
+    --font-display: "Unbounded", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(48vw 34vw at 88% -8%, rgba(246, 187, 61, 0.22), transparent 62%),
+      radial-gradient(40vw 40vw at -4% 18%, rgba(47, 224, 172, 0.13), transparent 60%),
+      radial-gradient(55vw 45vw at 50% 115%, rgba(255, 79, 109, 0.10), transparent 60%),
+      var(--void);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    padding: clamp(14px, 2.4vw, 28px) 16px 0;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  .sheet { max-width: 720px; margin: 0 auto; }
+
+  /* ---------- Layout: results visible without scrolling ----------
+     .main-grid is a flex column of: columns-row, ledger-card, notes-card.
+     At mobile, columns-row/col-left/col-right collapse via display:contents
+     so all cards become direct flex siblings, ordered by `order` below —
+     each column then keeps its own natural height (no shared grid rows). */
+  .main-grid { display: flex; flex-direction: column; gap: 28px; }
+  .main-grid .card { margin-bottom: 0; }
+
+  .columns-row { display: contents; }
+  .col-left, .col-right { display: contents; }
+
+  #entry-card { order: 1; }
+  #hero-card { order: 2; }
+  #stat-card { order: 3; }
+  .split-card { order: 4; }
+  #ledger-card { order: 5; }
+  #notes-card { order: 6; }
+  #about-card { order: 7; }
+  #related-card { order: 8; }
+
+  @media (min-width: 900px) {
+    .sheet { max-width: 1160px; }
+
+    .columns-row {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 26px;
+    }
+    .col-left, .col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      min-width: 0;
+    }
+    .col-left { flex: 0 1 460px; max-width: 460px; }
+    .col-right { flex: 1 1 auto; }
+
+    /* the last card in each column grows to soak up any leftover height,
+       so both columns' bottom edges land on the same line */
+    .split-card { flex: 1 1 auto; }
+    #stat-card { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; }
+    #stat-card, #hero-card { padding-top: 34px; padding-bottom: 34px; }
+  }
+
+  @media (min-width: 1240px) {
+    .sheet { max-width: 1280px; }
+    .col-left { flex-basis: 500px; max-width: 500px; }
+  }
+
+  /* ---------- Masthead ---------- */
+  header.masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+  }
+
+  .masthead-titles { min-width: 0; }
+
+  .masthead-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(18px, 3.2vw, 25px);
+    letter-spacing: 0.01em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    row-gap: 6px;
+    text-wrap: balance;
+  }
+
+  .masthead-subtitle {
+    margin: 6px 0 0 38px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    color: var(--ink-faint);
+  }
+
+  .masthead-title .coin {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(160deg, var(--gold-bright), var(--gold) 55%, var(--gold-deep));
+    box-shadow: 0 0 22px rgba(246, 187, 61, 0.5), inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+  }
+
+  .stamp {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 12px;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .new-badge {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--emerald);
+    border: 1px solid rgba(47, 224, 172, 0.45);
+    background: var(--emerald-soft);
+    border-radius: 999px;
+    padding: 3px 9px;
+    white-space: nowrap;
+  }
+
+  /* ---------- Card shell ---------- */
+  .card {
+    background: linear-gradient(175deg, var(--card-2), var(--card));
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: clamp(18px, 4vw, 26px);
+    margin-bottom: 18px;
+    box-shadow:
+      0 14px 28px -16px rgba(0, 0, 0, 0.7),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  /* ---------- Entry ---------- */
+  .entry-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+
+  .entry-hint { margin-top: 12px; font-size: 12.5px; color: var(--ink-faint); }
+
+  .presets-label {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+  }
+
+  .presets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+  .preset-btn {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    border-radius: 999px;
+    padding: 7px 10px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+
+  @media (max-width: 400px) {
+    .presets { grid-template-columns: repeat(2, 1fr); }
+  }
+  .preset-btn:hover { border-color: var(--gold); color: var(--gold-bright); transform: translateY(-1px); }
+  .preset-btn:active { transform: translateY(0); }
+  .preset-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* ---------- Salary components ---------- */
+  .items { display: flex; flex-direction: column; gap: 8px; }
+
+  .item-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px 12px;
+  }
+
+  .item-label-input {
+    flex: 1 1 130px;
+    min-width: 100px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed transparent;
+    outline: none;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--ink);
+    padding: 3px 2px;
+  }
+  .item-label-input:hover { border-bottom-color: var(--line); }
+  .item-label-input:focus { border-bottom-color: var(--gold); }
+  .item-label-input::placeholder { color: var(--ink-faint); font-weight: 500; }
+
+  .item-toggles { display: flex; gap: 6px; flex-shrink: 0; }
+
+  .toggle-pill {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--ink-faint);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+  }
+  .toggle-pill:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .toggle-pill.is-on.tone-gold { background: rgba(246, 187, 61, 0.16); border-color: rgba(246, 187, 61, 0.5); color: var(--gold-bright); }
+  .toggle-pill.is-on.tone-ruby { background: rgba(255, 79, 109, 0.14); border-color: rgba(255, 79, 109, 0.48); color: var(--ruby); }
+
+  .item-amount-well {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--well);
+    border: 1.5px solid var(--line);
+    border-radius: 11px;
+    padding: 8px 13px;
+    flex-shrink: 0;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .item-amount-well:focus-within { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(246, 187, 61, 0.16); }
+  .item-amount-well .cur { font-family: var(--font-mono); font-size: 12px; color: var(--ink-faint); }
+
+  .item-amount-input {
+    width: 128px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .item-amount-input::-webkit-outer-spin-button, .item-amount-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .item-amount-input::placeholder { color: var(--ink-faint); }
+
+  .item-amount-well.is-primary {
+    background: rgba(246, 187, 61, 0.07);
+    border-color: rgba(246, 187, 61, 0.5);
+  }
+  .item-amount-well.is-primary:focus-within { box-shadow: 0 0 0 3px rgba(246, 187, 61, 0.22); }
+  .item-amount-well.is-primary .cur { color: var(--gold); font-weight: 700; }
+  .item-amount-well.is-primary .item-amount-input { font-size: 19px; font-weight: 800; color: var(--gold-bright); width: 140px; }
+
+  .item-remove {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: rgba(255, 79, 109, 0.07);
+    color: var(--ruby);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .item-remove:hover { background: var(--ruby); color: #2a0b12; }
+  .item-remove:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .item-remove-spacer { width: 26px; height: 26px; flex-shrink: 0; }
+
+  .entry-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+
+  .add-item-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 12.5px;
+    color: var(--gold-bright);
+    background: rgba(246, 187, 61, 0.06);
+    border: 1px dashed rgba(246, 187, 61, 0.4);
+    border-radius: 12px;
+    padding: 9px 14px;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .add-item-btn:hover { background: rgba(246, 187, 61, 0.12); border-color: var(--gold); }
+  .add-item-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  .reset-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 9px 14px;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .reset-btn:hover { background: rgba(255, 79, 109, 0.08); border-color: var(--ruby); color: var(--ruby); }
+  .reset-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  /* ---------- Stat grid (monthly / annual) ---------- */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 12px; }
+  .stat-tile {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 17px 18px;
+  }
+  .stat-tile-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin-bottom: 8px; }
+  .stat-tile-value {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    font-family: var(--font-mono);
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-tile-value .cur { font-size: 11px; font-weight: 600; color: var(--ink-faint); flex-shrink: 0; }
+  .stat-tile-value .num { font-weight: 700; font-size: clamp(15px, 2.6vw, 18px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .stat-tile.is-ruby .stat-tile-value .num { color: var(--ruby); }
+
+  /* ---------- Hero payout ---------- */
+  .hero { text-align: center; padding-top: 32px; padding-bottom: 30px; position: relative; overflow: hidden; }
+
+  .hero-glow {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    width: 340px; height: 340px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(247, 189, 60, 0.30), transparent 65%);
+    pointer-events: none;
+    filter: blur(4px);
+    opacity: var(--glow-opacity, 0.6);
+    transition: opacity 0.5s ease;
+  }
+
+  .hero-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    position: relative;
+  }
+
+  .hero-value {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(42px, 11.4vw, 68px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 10px 0 6px;
+    background: linear-gradient(100deg,
+      var(--gold) 0%, var(--gold-bright) 22%, var(--gold) 34%,
+      var(--gold) 66%, var(--gold-bright) 78%, var(--gold) 100%);
+    background-size: 260% 100%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-variant-numeric: tabular-nums;
+    position: relative;
+    display: inline-block;
+    animation: shine 5s ease-in-out infinite;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .hero-value.is-pop { transform: scale(1.045); }
+
+  @keyframes shine {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 0%; }
+  }
+
+  .hero-sub { font-size: 13px; color: var(--ink-faint); position: relative; margin-bottom: 28px; }
+  .hero-sub b { color: var(--ink-soft); font-weight: 600; }
+
+  .stat-pills {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 10px 16px;
+    text-align: left;
+  }
+
+  .pill .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .pill.is-ruby .dot { background: var(--ruby); box-shadow: 0 0 8px rgba(255, 93, 114, 0.7); }
+  .pill.is-emerald .dot { background: var(--emerald); box-shadow: 0 0 8px rgba(52, 219, 160, 0.7); }
+
+  .pill-text { display: flex; flex-direction: column; }
+  .pill-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); }
+  .pill-value {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 16px;
+    font-variant-numeric: tabular-nums;
+  }
+  .pill.is-ruby .pill-value { color: var(--ruby); }
+  .pill.is-emerald .pill-value { color: var(--emerald); }
+
+  /* ---------- Split card ---------- */
+  .split-card { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+  .donut-wrap { position: relative; width: 152px; height: 152px; flex-shrink: 0; margin: 0 auto; }
+  .donut {
+    width: 100%; height: 100%; border-radius: 50%;
+    transition: background 0.5s ease;
+    filter: drop-shadow(0 0 18px rgba(246, 187, 61, 0.25));
+  }
+  .donut-hole {
+    position: absolute;
+    inset: 22%;
+    background: linear-gradient(175deg, #1c2050, var(--card-solid));
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+  .donut-pct {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--gold-bright);
+    font-variant-numeric: tabular-nums;
+  }
+  .donut-pct-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin-top: 2px; }
+
+  .legend { flex: 1; min-width: 180px; display: grid; gap: 10px; }
+  .legend-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 13.5px; }
+  .legend-key { display: flex; align-items: center; gap: 9px; color: var(--ink-soft); }
+  .legend-key .sw { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+  .legend-val { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--ink); }
+
+  /* ---------- Ledger table ---------- */
+  .ledger-heading {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 14px; gap: 8px; flex-wrap: wrap;
+  }
+  .ledger-heading h2 { font-family: var(--font-body); font-weight: 800; font-size: 17px; margin: 0; }
+  .ledger-heading .sub { font-size: 11.5px; color: var(--ink-faint); font-family: var(--font-mono); }
+
+  table.ledger { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  table.ledger th {
+    text-align: left; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--ink-faint); border-bottom: 1px solid var(--line); padding: 0 8px 9px 0;
+  }
+  table.ledger th:last-child, table.ledger td:last-child { text-align: right; padding-right: 0; }
+  table.ledger th:nth-child(2), table.ledger td:nth-child(2) { text-align: right; }
+
+  table.ledger td {
+    padding: 10px 8px 10px 0; border-bottom: 1px solid var(--line-soft); vertical-align: baseline; color: var(--ink);
+  }
+  table.ledger td.band-label { color: var(--ink-soft); }
+  table.ledger td.rate { font-family: var(--font-mono); color: var(--gold); }
+  table.ledger td.amt, table.ledger td.tax-amt { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  table.ledger tr.zero td { color: var(--ink-faint); }
+  table.ledger tr.zero td.rate { color: var(--ink-faint); }
+
+  table.ledger tfoot td {
+    border-bottom: none; border-top: 1px solid var(--line); padding-top: 12px;
+    font-weight: 700; font-family: var(--font-mono); color: var(--gold-bright);
+  }
+  table.ledger tfoot td:first-child { font-family: var(--font-body); color: var(--ink); }
+
+  /* ---------- Notes ---------- */
+  .notes { display: grid; gap: 10px; font-size: 12.5px; color: var(--ink-faint); }
+  .notes dt { font-weight: 700; color: var(--ink-soft); display: inline; }
+  .notes dd { display: inline; margin: 0; }
+
+  .about-heading { margin: 0 0 10px; font-family: 'Unbounded', sans-serif; font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; color: var(--ink-soft); }
+  .about-text { margin: 0; font-size: 12.5px; line-height: 1.65; color: var(--ink-faint); }
+  .about-text b { color: var(--ink-soft); font-weight: 600; }
+
+  footer.page-footnote { margin-top: 22px; font-size: 11.5px; color: var(--ink-faint); line-height: 1.6; text-align: center; }
+  .last-updated { margin-top: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.02em; opacity: 0.8; }
+
+  /* ---------- Actions (print / pdf) ---------- */
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; margin: -6px 0 18px; }
+
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13.5px;
+    border-radius: 12px;
+    padding: 11px 18px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .action-btn:active { transform: translateY(1px); }
+  .action-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .action-btn .arrow { font-size: 11px; transition: transform 0.15s ease; }
+  .action-btn:hover .arrow { transform: translateX(2px); }
+
+  .action-btn.is-primary {
+    background: linear-gradient(175deg, var(--gold-bright), var(--gold));
+    color: #241a03;
+    box-shadow: 0 10px 24px -10px rgba(247, 189, 60, 0.55);
+  }
+  .action-btn.is-primary:hover { box-shadow: 0 14px 28px -10px rgba(247, 189, 60, 0.7); }
+
+  .action-btn.is-ghost {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .action-btn.is-ghost:hover { border-color: var(--emerald); color: var(--emerald); }
+
+  @media (max-width: 480px) {
+    .split-card { flex-direction: column; text-align: center; }
+    .legend { width: 100%; }
+  }
+
+  /* ---------- Print / Save as PDF ---------- */
+  @media print {
+    body {
+      background: #ffffff !important;
+      color: #14161f !important;
+      padding: 0 !important;
+    }
+    body::before { display: none !important; }
+    .sheet { max-width: 100%; }
+    .masthead .stamp { border-color: #999; color: #333; background: none; }
+    .masthead-title { color: #14161f; }
+    .masthead-subtitle { color: #444; }
+    .new-badge { border-color: #999; color: #1a6b4f; background: none; }
+    .coin { box-shadow: none; }
+
+    .card {
+      background: #ffffff !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border: 1px solid #ccc !important;
+      box-shadow: none !important;
+      border-radius: 8px;
+    }
+    .hero-value { animation: none !important; }
+
+    .main-grid, .columns-row, .col-left, .col-right { display: block !important; }
+    #entry-card, #hero-card, .split-card, .actions, #about-card, #related-card { display: none !important; }
+    .site-header, .site-footer { display: none !important; }
+
+    .stat-tile { border: 1px solid #ccc; background: #fafafa !important; }
+    .stat-tile-label { color: #555; }
+    .stat-tile-value .cur { color: #666; }
+    .stat-tile-value .num { color: #14161f; }
+    .stat-tile.is-ruby .stat-tile-value .num { color: #a3402b; }
+
+    .ledger-heading .sub, .ledger-heading h2 { color: #14161f; }
+    table.ledger th { color: #333; border-color: #bbb; }
+    table.ledger td { color: #14161f; border-color: #ddd; }
+    table.ledger td.band-label { color: #333; }
+    table.ledger td.rate { color: #14161f; }
+    table.ledger tr.zero td { color: #888; }
+    table.ledger tfoot td { color: #14161f; border-color: #14161f; }
+
+    .notes, footer.page-footnote { color: #444; }
+    .notes dt { color: #14161f; }
+  }
+
+  /* ================= Site-wide header / footer (Lankacal brand) ================= */
+  .skip-link{position:absolute;top:-48px;left:16px;background:var(--gold);color:#241a03;font-weight:800;padding:10px 16px;border-radius:10px;z-index:200;transition:top .15s ease;}
+  .skip-link:focus{top:16px;}
+
+  .site-header{width:100%;max-width:1280px;display:flex;justify-content:space-between;align-items:center;margin:0 auto 26px;position:relative;z-index:20;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--ruby));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .brand-name{font-family:var(--font-display);font-weight:700;font-size:19px;color:var(--ink);}
+  .brand-name span{color:var(--ruby);}
+  .header-nav{display:flex;align-items:center;gap:22px;font-weight:700;font-size:14px;color:var(--ink-soft);}
+  .header-nav a{color:var(--ink-soft);text-decoration:none;}
+  .header-nav a:hover{color:var(--gold-bright);}
+  .breadcrumb{display:none;}
+
+  #related-card{display:flex;align-items:center;gap:18px;flex-wrap:wrap;border-color:rgba(47,224,172,0.35);}
+  #related-card .rc-icon{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--emerald),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  #related-card .rc-text{flex:1;min-width:200px;}
+  #related-card .rc-text h3{margin:0 0 4px;font-size:15px;font-weight:800;}
+  #related-card .rc-text p{margin:0;color:var(--ink-soft);font-size:12.5px;}
+  #related-card .rc-cta{white-space:nowrap;}
+
+  .site-footer{width:100%;max-width:1280px;margin:34px auto 0;padding:26px 0 0;border-top:1px solid var(--line);}
+  .footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:16px;}
+  .footer-brand{display:flex;align-items:center;gap:9px;}
+  .footer-brand .brand-mark{width:26px;height:26px;border-radius:8px;}
+  .footer-brand-text{font-weight:700;font-size:13.5px;color:var(--ink-soft);}
+  .footer-nav{display:flex;gap:20px;font-weight:700;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;}
+  .footer-nav a{color:var(--ink-soft);text-decoration:none;}
+  .footer-nav a:hover{color:var(--gold-bright);}
+  .footer-disclaimer{font-size:11px;color:var(--ink-faint);line-height:1.7;padding-bottom:26px;}
+
+  @media (max-width: 640px){
+    .header-nav{gap:14px;font-size:12.5px;}
+    .header-nav .btn-hide-xs{display:none;}
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="sheet">
+
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="Lankacal home">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+      </div>
+      <div class="brand-name">lanka<span>cal</span></div>
+    </a>
+    <nav class="header-nav" aria-label="Primary">
+      <a href="index.html#finance" class="btn-hide-xs">All Tools</a>
+      <a href="loan-calculator.html">Loan Calculator</a>
+      <a href="index.html">&larr; Home</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+  <header class="masthead">
+    <div class="masthead-titles">
+      <h1 class="masthead-title"><span class="coin"></span>Sri Lanka Tax Calculator <span class="new-badge">New rates</span></h1>
+      <p class="masthead-subtitle">APIT / PAYE on salary — effective from 01.04.2025</p>
+    </div>
+    <span class="stamp">APIT Table 01 · 2025/26</span>
+  </header>
+
+  <div class="main-grid">
+
+  <div class="columns-row">
+    <div class="col-left">
+
+      <div class="card" id="entry-card">
+        <label class="entry-label">Salary components</label>
+        <div class="items" id="items-list"></div>
+        <div class="entry-actions">
+          <button class="add-item-btn" type="button" id="btn-add-item">+ Add allowance</button>
+          <button class="reset-btn" type="button" id="btn-reset">↺ Reset</button>
+        </div>
+        <p class="entry-hint">Tick <b>EPF</b> for pay that counts toward the 8% employee contribution, and <b>Tax</b> for pay that's part of regular monthly profits from employment. Most allowances are taxable but EPF-exempt — check with payroll if unsure.</p>
+        <div class="presets-label">Basic salary presets</div>
+        <div class="presets" role="group" aria-label="Example basic salaries">
+          <button class="preset-btn" type="button" data-amount="100000">Rs. 100,000</button>
+          <button class="preset-btn" type="button" data-amount="200000">Rs. 200,000</button>
+          <button class="preset-btn" type="button" data-amount="350000">Rs. 350,000</button>
+          <button class="preset-btn" type="button" data-amount="400000">Rs. 400,000</button>
+          <button class="preset-btn" type="button" data-amount="500000">Rs. 500,000</button>
+          <button class="preset-btn" type="button" data-amount="600000">Rs. 600,000</button>
+        </div>
+      </div>
+
+      <div class="card split-card">
+        <div class="donut-wrap">
+          <div class="donut" id="donut"></div>
+          <div class="donut-hole">
+            <span class="donut-pct" id="donut-pct">0%</span>
+            <span class="donut-pct-label">kept</span>
+          </div>
+        </div>
+        <div class="legend">
+          <div class="legend-row">
+            <span class="legend-key"><span class="sw" style="background:var(--gold)"></span>Net pay</span>
+            <span class="legend-val" id="leg-net">Rs. 0</span>
+          </div>
+          <div class="legend-row">
+            <span class="legend-key"><span class="sw" style="background:var(--emerald)"></span>EPF (yours later)</span>
+            <span class="legend-val" id="leg-epf">Rs. 0</span>
+          </div>
+          <div class="legend-row">
+            <span class="legend-key"><span class="sw" style="background:var(--ruby)"></span>APIT tax</span>
+            <span class="legend-val" id="leg-apit">Rs. 0</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-right">
+
+      <div class="card hero" id="hero-card">
+        <div class="hero-glow" id="hero-glow"></div>
+        <div class="hero-label">You take home</div>
+        <div class="hero-value" id="out-net">Rs. 0</div>
+        <div class="hero-sub">out of <b id="out-gross">Rs. 0</b> gross, every month</div>
+        <div class="stat-pills">
+          <div class="pill is-ruby">
+            <span class="dot"></span>
+            <span class="pill-text"><span class="pill-label">APIT tax</span><span class="pill-value" id="out-apit">Rs. 0</span></span>
+          </div>
+          <div class="pill is-emerald">
+            <span class="dot"></span>
+            <span class="pill-text"><span class="pill-label">EPF (8%)</span><span class="pill-value" id="out-epf">Rs. 0</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="stat-card">
+        <div class="ledger-heading">
+          <h2>Monthly vs. annual</h2>
+          <span class="sub">×12, before any bonus</span>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-tile"><div class="stat-tile-label">Monthly income</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-m-income">0</span></div></div>
+          <div class="stat-tile"><div class="stat-tile-label">Annual income</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-a-income">0</span></div></div>
+          <div class="stat-tile is-ruby"><div class="stat-tile-label">Monthly tax</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-m-tax">0</span></div></div>
+          <div class="stat-tile is-ruby"><div class="stat-tile-label">Annual tax</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-a-tax">0</span></div></div>
+          <div class="stat-tile"><div class="stat-tile-label">Monthly net</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-m-net">0</span></div></div>
+          <div class="stat-tile"><div class="stat-tile-label">Annual net</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-a-net">0</span></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" id="ledger-card">
+    <div class="ledger-heading">
+      <h2>How the tax stacks up</h2>
+      <span class="sub">w.e.f. 01.04.2025</span>
+    </div>
+
+    <table class="ledger">
+      <thead>
+        <tr><th>Monthly Salary (Annual Salary/12)</th><th>Rate</th><th>Tax</th></tr>
+      </thead>
+      <tbody id="band-rows"></tbody>
+      <tfoot>
+        <tr><td>Total</td><td></td><td class="amt" id="band-total">LKR 0.00</td></tr>
+      </tfoot>
+    </table>
+
+    <div class="actions">
+      <button class="action-btn is-primary" type="button" id="btn-print">Print <span class="arrow">▶</span></button>
+      <button class="action-btn is-ghost" type="button" id="btn-pdf">Download (PDF) <span class="arrow">▶</span></button>
+    </div>
+  </div>
+
+  <div class="card" id="notes-card">
+    <dl class="notes">
+      <div><dt>Personal relief.</dt> <dd>Effective from 01.04.2025, the first Rs. 150,000 of monthly employment income (Rs. 1,800,000 a year) is tax-free; only the balance is taxed in bands of 6–36%.</dd></div>
+      <div><dt>EPF/ETF.</dt> <dd>APIT is calculated on gross salary before EPF. The 8% employee share still leaves your pay packet, but it's banked in your name; the employer adds EPF 12% and ETF 3% on top, at no cost to you.</dd></div>
+      <div><dt>Not covered here.</dt> <dd>Bonuses, gratuity, and other lump sums are taxed separately under Table 02 and aren't part of this monthly estimate.</dd></div>
+    </dl>
+  </div>
+
+  </div>
+
+  <div class="card" id="about-card">
+    <h2 class="about-heading">About this Sri Lanka Tax Calculator</h2>
+    <p class="about-text">This free <b>Sri Lanka Tax Calculator</b> helps employees estimate their monthly <b>APIT (Advance Personal Income Tax)</b> — also known as <b>PAYE tax</b> — under the Inland Revenue Department's Table 01 rates for the <b>2025/2026 year of assessment</b>, effective from 01.04.2025. Enter your basic salary and any allowances to instantly see your income tax, <b>EPF (Employees' Provident Fund)</b> deduction, and <b>net take-home salary</b>, broken down by month and by year. Built for Sri Lankan employees, HR teams, and payroll staff who need a quick, accurate APIT / PAYE tax calculation without manual band-by-band math. This tool is part of <b>Lankacal</b>, a free calculator toolkit built for Sri Lanka.</p>
+  </div>
+
+  <div class="card" id="related-card">
+    <div class="rc-icon"><svg viewBox="0 0 24 24" style="width:22px;height:22px;stroke:#0b0d24;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line></svg></div>
+    <div class="rc-text">
+      <h3>Also taking out a loan?</h3>
+      <p>Try the Lankacal Loan Calculator for your EMI, total interest and full amortization schedule.</p>
+    </div>
+    <a href="loan-calculator.html" class="action-btn is-ghost rc-cta">Open Loan Calculator <span class="arrow">▶</span></a>
+  </div>
+
+  <footer class="page-footnote">
+    Figures follow the Inland Revenue Department's APIT Table 01 for regular profits from employment, year of assessment 2025/2026.<br>For a payslip-accurate figure, check with your employer's payroll or a tax advisor.
+    <div class="last-updated">Last updated <span id="last-updated-date">—</span></div>
+  </footer>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+      </div>
+      <div class="footer-brand-text">Lankacal &mdash; free calculators built for Sri Lanka</div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="index.html#finance">All Tools</a>
+      <a href="loan-calculator.html">Loan Calculator</a>
+      <a href="index.html#about">About</a>
+    </nav>
+  </div>
+  <div class="footer-disclaimer">
+    Lankacal's calculators provide estimates for general information only and are not affiliated with the Inland Revenue Department, the EPF/ETF, or any Sri Lankan government body. For an official or payslip-accurate figure, check with your employer's payroll or a qualified tax advisor.
+  </div>
+</footer>
+
+<script>
+  (function () {
+    "use strict";
+
+    var REDUCE_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var RELIEF = 150000;
+    var BAND1 = 1000000 / 12;
+    var BAND2 = 500000 / 12;
+    var BANDS = [
+      { width: BAND1, rate: 0.06 },
+      { width: BAND2, rate: 0.18 },
+      { width: BAND2, rate: 0.24 },
+      { width: BAND2, rate: 0.30 },
+      { width: Infinity, rate: 0.36 }
+    ];
+
+    var fmt = new Intl.NumberFormat("en-LK", { maximumFractionDigits: 0 });
+    function money(n) { return "Rs. " + fmt.format(Math.round(n)); }
+
+    var fmtLkr = new Intl.NumberFormat("en-LK", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    function lkr(n) { return "LKR " + fmtLkr.format(n); }
+
+    var BAND_LABELS = [
+      "1st 1,000,000/12",
+      "2nd 500,000/12",
+      "3rd 500,000/12",
+      "4th 500,000/12",
+      "Above 4,300,000/12"
+    ];
+
+    function compute(gross) {
+      var taxable = Math.max(0, gross - RELIEF);
+      var remaining = taxable, total = 0;
+      var rows = [{ label: "Up to 1,800,000/12", rateLabel: "Relief", tax: 0, active: true, isRelief: true }];
+      for (var i = 0; i < BANDS.length; i++) {
+        var b = BANDS[i];
+        var take = Math.min(remaining, b.width);
+        var tax = take * b.rate;
+        rows.push({
+          label: BAND_LABELS[i],
+          rateLabel: Math.round(b.rate * 100) + "%",
+          tax: tax,
+          active: take > 0,
+          isRelief: false
+        });
+        total += tax;
+        remaining -= take;
+      }
+      return { rows: rows, apit: total };
+    }
+
+    var outNet = document.getElementById("out-net");
+    var outGross = document.getElementById("out-gross");
+    var outApit = document.getElementById("out-apit");
+    var outEpf = document.getElementById("out-epf");
+    var legNet = document.getElementById("leg-net");
+    var legEpf = document.getElementById("leg-epf");
+    var legApit = document.getElementById("leg-apit");
+    var donut = document.getElementById("donut");
+    var donutPct = document.getElementById("donut-pct");
+    var heroGlow = document.getElementById("hero-glow");
+    var heroValueEl = outNet;
+    var bandRows = document.getElementById("band-rows");
+    var bandTotal = document.getElementById("band-total");
+    var sgMIncome = document.getElementById("sg-m-income");
+    var sgAIncome = document.getElementById("sg-a-income");
+    var sgMTax = document.getElementById("sg-m-tax");
+    var sgATax = document.getElementById("sg-a-tax");
+    var sgMNet = document.getElementById("sg-m-net");
+    var sgANet = document.getElementById("sg-a-net");
+    var itemsList = document.getElementById("items-list");
+
+    var current = { gross: 0, net: 0, apit: 0, epf: 0, keptPct: 0 };
+    var raf = null;
+
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function paintDonut(netPct, epfPct, apitPct) {
+      var p1 = netPct;
+      var p2 = netPct + epfPct;
+      donut.style.background =
+        "conic-gradient(var(--gold) 0% " + p1 + "%, var(--emerald) " + p1 + "% " + p2 + "%, var(--ruby) " + p2 + "% 100%)";
+    }
+
+    function paintFrame(t) {
+      var g = current._fromGross + (current._toGross - current._fromGross) * t;
+      var n = current._fromNet + (current._toNet - current._fromNet) * t;
+      var a = current._fromApit + (current._toApit - current._fromApit) * t;
+      var e = current._fromEpf + (current._toEpf - current._fromEpf) * t;
+      var kp = current._fromKept + (current._toKept - current._fromKept) * t;
+
+      outNet.textContent = money(n);
+      outGross.textContent = money(g);
+      outApit.textContent = money(a);
+      outEpf.textContent = money(e);
+      legNet.textContent = money(n);
+      legEpf.textContent = money(e);
+      legApit.textContent = money(a);
+      donutPct.textContent = Math.round(kp) + "%";
+
+      var netPct = g > 0 ? (n / g) * 100 : 0;
+      var epfPct = g > 0 ? (e / g) * 100 : 0;
+      var apitPct = g > 0 ? (a / g) * 100 : 0;
+      paintDonut(netPct, epfPct, apitPct);
+    }
+
+    function animateTo(target) {
+      if (raf) cancelAnimationFrame(raf);
+
+      current._fromGross = current.gross; current._toGross = target.gross;
+      current._fromNet = current.net; current._toNet = target.net;
+      current._fromApit = current.apit; current._toApit = target.apit;
+      current._fromEpf = current.epf; current._toEpf = target.epf;
+      current._fromKept = current.keptPct; current._toKept = target.keptPct;
+
+      current.gross = target.gross;
+      current.net = target.net;
+      current.apit = target.apit;
+      current.epf = target.epf;
+      current.keptPct = target.keptPct;
+
+      if (REDUCE_MOTION) { paintFrame(1); return; }
+
+      heroGlow.style.setProperty("--glow-opacity", "1");
+      var changed = target.net !== current._fromNet;
+      if (changed) heroValueEl.classList.add("is-pop");
+      var duration = 480;
+      var start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var t = Math.min(1, (ts - start) / duration);
+        paintFrame(easeOutCubic(t));
+        if (t < 1) {
+          raf = requestAnimationFrame(step);
+        } else {
+          heroGlow.style.setProperty("--glow-opacity", "0.55");
+          heroValueEl.classList.remove("is-pop");
+        }
+      }
+      raf = requestAnimationFrame(step);
+    }
+
+    /* ---------- Salary components model ---------- */
+    var nextId = 2;
+    var items = [
+      { id: 1, label: "Basic Salary", amount: 0, epf: true, tax: true, removable: false }
+    ];
+
+    function makeToggle(item, key, text, tone) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "toggle-pill tone-" + tone + (item[key] ? " is-on" : "");
+      btn.textContent = text;
+      btn.setAttribute("aria-pressed", item[key] ? "true" : "false");
+      btn.addEventListener("click", function () {
+        item[key] = !item[key];
+        btn.classList.toggle("is-on", item[key]);
+        btn.setAttribute("aria-pressed", item[key] ? "true" : "false");
+        recalc();
+      });
+      return btn;
+    }
+
+    function renderItems() {
+      itemsList.innerHTML = "";
+      items.forEach(function (item) {
+        var row = document.createElement("div");
+        row.className = "item-row";
+
+        var labelInput = document.createElement("input");
+        labelInput.type = "text";
+        labelInput.className = "item-label-input";
+        labelInput.value = item.label;
+        labelInput.setAttribute("aria-label", "Component name");
+        labelInput.addEventListener("input", function () { item.label = labelInput.value; });
+        row.appendChild(labelInput);
+
+        var amountWell = document.createElement("div");
+        amountWell.className = "item-amount-well" + (item.removable ? "" : " is-primary");
+        var cur = document.createElement("span");
+        cur.className = "cur";
+        cur.textContent = "Rs.";
+        var amountInput = document.createElement("input");
+        amountInput.type = "number";
+        amountInput.className = "item-amount-input";
+        amountInput.min = "0";
+        amountInput.step = "1000";
+        amountInput.placeholder = "0";
+        amountInput.value = item.amount || "";
+        amountInput.setAttribute("aria-label", item.label + " amount");
+        amountInput.addEventListener("input", function () {
+          var v = parseFloat(amountInput.value);
+          item.amount = isNaN(v) || v < 0 ? 0 : v;
+          recalc();
+        });
+        amountWell.appendChild(cur);
+        amountWell.appendChild(amountInput);
+        row.appendChild(amountWell);
+
+        var toggles = document.createElement("div");
+        toggles.className = "item-toggles";
+        toggles.appendChild(makeToggle(item, "epf", "EPF", "gold"));
+        toggles.appendChild(makeToggle(item, "tax", "Tax", "ruby"));
+        row.appendChild(toggles);
+
+        if (item.removable) {
+          var removeBtn = document.createElement("button");
+          removeBtn.type = "button";
+          removeBtn.className = "item-remove";
+          removeBtn.setAttribute("aria-label", "Remove " + item.label);
+          removeBtn.textContent = "✕";
+          removeBtn.addEventListener("click", function () {
+            items = items.filter(function (it) { return it.id !== item.id; });
+            renderItems();
+            recalc();
+          });
+          row.appendChild(removeBtn);
+        } else {
+          var spacer = document.createElement("span");
+          spacer.className = "item-remove-spacer";
+          row.appendChild(spacer);
+        }
+
+        itemsList.appendChild(row);
+      });
+    }
+
+    document.getElementById("btn-reset").addEventListener("click", function () {
+      items = [{ id: 1, label: "Basic Salary", amount: 0, epf: true, tax: true, removable: false }];
+      nextId = 2;
+      renderItems();
+      recalc();
+      var primaryInput = itemsList.querySelector(".item-amount-well.is-primary .item-amount-input");
+      if (primaryInput) { primaryInput.focus(); }
+    });
+
+    document.getElementById("btn-add-item").addEventListener("click", function () {
+      items.push({ id: nextId++, label: "Allowance", amount: 0, epf: false, tax: true, removable: true });
+      renderItems();
+      recalc();
+      var lastInput = itemsList.querySelector(".item-row:last-child .item-label-input");
+      if (lastInput) { lastInput.focus(); lastInput.select(); }
+    });
+
+    document.querySelectorAll(".preset-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        items[0].amount = parseFloat(btn.getAttribute("data-amount"));
+        renderItems();
+        recalc();
+      });
+    });
+
+    /* ---------- Totals ---------- */
+    function recalc() {
+      var totalGross = 0, taxableGross = 0, epfGross = 0;
+      items.forEach(function (it) {
+        var amt = it.amount || 0;
+        totalGross += amt;
+        if (it.tax) taxableGross += amt;
+        if (it.epf) epfGross += amt;
+      });
+
+      var result = compute(taxableGross);
+      var epf = epfGross * 0.08;
+      var net = totalGross - result.apit - epf;
+      var keptPct = totalGross > 0 ? (net / totalGross) * 100 : 0;
+
+      animateTo({ gross: totalGross, net: net, apit: result.apit, epf: epf, keptPct: keptPct });
+
+      bandRows.innerHTML = "";
+      result.rows.forEach(function (row) {
+        var tr = document.createElement("tr");
+        if (!row.active && !row.isRelief) tr.className = "zero";
+        tr.innerHTML =
+          '<td class="band-label">' + row.label + '</td>' +
+          '<td class="rate">' + row.rateLabel + '</td>' +
+          '<td class="tax-amt">' + (row.isRelief ? "-" : lkr(row.tax)) + '</td>';
+        bandRows.appendChild(tr);
+      });
+      bandTotal.textContent = lkr(result.apit);
+
+      sgMIncome.textContent = fmt.format(Math.round(totalGross));
+      sgAIncome.textContent = fmt.format(Math.round(totalGross * 12));
+      sgMTax.textContent = fmt.format(Math.round(result.apit));
+      sgATax.textContent = fmt.format(Math.round(result.apit * 12));
+      sgMNet.textContent = fmt.format(Math.round(net));
+      sgANet.textContent = fmt.format(Math.round(net * 12));
+    }
+
+    function triggerPrint(filenameHint) {
+      var prevTitle = document.title;
+      document.title = filenameHint;
+      var restored = false;
+      function restore() {
+        if (restored) return;
+        restored = true;
+        document.title = prevTitle;
+      }
+      window.addEventListener("afterprint", restore, { once: true });
+      setTimeout(restore, 3000);
+      window.print();
+    }
+
+    document.getElementById("btn-print").addEventListener("click", function () {
+      triggerPrint("APIT Tax Calculation");
+    });
+    document.getElementById("btn-pdf").addEventListener("click", function () {
+      triggerPrint("APIT-Payslip");
+    });
+
+    paintDonut(0, 0, 0);
+    renderItems();
+    recalc();
+
+    var primaryInput = itemsList.querySelector(".item-amount-well.is-primary .item-amount-input");
+    if (primaryInput) primaryInput.focus();
+
+    var luEl = document.getElementById("last-updated-date");
+    if (luEl) {
+      var lm = new Date(document.lastModified);
+      luEl.textContent = isNaN(lm.getTime())
+        ? "—"
+        : lm.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+    }
+  })();
+</script>
+
+</body>
+</html>
