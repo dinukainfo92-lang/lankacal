@@ -1083,6 +1083,32 @@
     function money(n) { return "Rs. " + fmt.format(Math.max(0, Math.round(n))); }
     function num(n) { return fmt.format(Math.max(0, Math.round(n))); }
 
+    function formatThousands(digits) {
+      return digits.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    function parseAmount(str) {
+      return parseFloat(String(str).replace(/,/g, "")) || 0;
+    }
+    function attachThousandsFormat(input) {
+      input.setAttribute("type", "text");
+      input.setAttribute("inputmode", "numeric");
+      input.addEventListener("input", function () {
+        var oldPos = input.selectionStart;
+        var oldValue = input.value;
+        var digitsBeforeCursor = oldValue.slice(0, oldPos).replace(/[^\d]/g, "").length;
+        var rawDigits = oldValue.replace(/[^\d]/g, "");
+        var formatted = formatThousands(rawDigits);
+        input.value = formatted;
+        var seen = 0, newPos = formatted.length;
+        for (var i = 0; i < formatted.length; i++) {
+          if (/\d/.test(formatted[i])) seen++;
+          if (seen === digitsBeforeCursor) { newPos = i + 1; break; }
+        }
+        if (digitsBeforeCursor === 0) newPos = 0;
+        input.setSelectionRange(newPos, newPos);
+      });
+    }
+
     /* ---------- Loan math ---------- */
     function computeLoan(principal, annualRatePct, months, extra) {
       var r = annualRatePct / 100 / 12;
@@ -1149,6 +1175,8 @@
     var inTerm = document.getElementById("in-term");
     var inExtra = document.getElementById("in-extra");
     var btnClearAmount = document.getElementById("btn-clear-amount");
+    attachThousandsFormat(inAmount);
+    attachThousandsFormat(inExtra);
 
     var outEmi = document.getElementById("out-emi");
     var outTerm = document.getElementById("out-term");
@@ -1229,14 +1257,14 @@
 
     /* ---------- Recalculate ---------- */
     function recalc() {
-      var principal = parseFloat(inAmount.value) || 0;
+      var principal = parseAmount(inAmount.value);
       if (principal < 0) principal = 0;
       var annualRate = parseFloat(inRate.value) || 0;
       if (annualRate < 0) annualRate = 0;
       var years = parseFloat(inTerm.value) || 0;
       if (years < 0) years = 0;
       var months = Math.max(1, Math.round(years * 12));
-      var extra = parseFloat(inExtra.value) || 0;
+      var extra = parseAmount(inExtra.value);
       if (extra < 0) extra = 0;
 
       btnClearAmount.disabled = principal <= 0;
@@ -1338,7 +1366,7 @@
 
     document.querySelectorAll("#amount-presets .preset-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        inAmount.value = btn.getAttribute("data-amount");
+        inAmount.value = formatThousands(btn.getAttribute("data-amount"));
         document.querySelectorAll("#amount-presets .preset-btn").forEach(function (b) { b.classList.remove("is-active"); });
         btn.classList.add("is-active");
         recalc();
