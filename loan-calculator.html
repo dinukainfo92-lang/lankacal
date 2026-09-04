@@ -12,6 +12,10 @@
 <meta name="theme-color" content="#05060f">
 <link rel="canonical" href="https://lankacal.com/loan-calculator.html">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="shortcut icon" href="/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lankacal">
 <meta property="og:url" content="https://lankacal.com/loan-calculator.html">
@@ -866,7 +870,7 @@
           <div class="field-row">
             <span class="field-label">Loan term</span>
             <div class="item-amount-well has-stepper">
-              <input type="number" class="item-amount-input" id="in-term" min="0.5" max="35" step="0.5" value="20" style="width:64px;" aria-label="Loan term in years">
+              <input type="number" class="item-amount-input" id="in-term" min="0.5" max="35" step="0.5" value="5" style="width:64px;" aria-label="Loan term in years">
               <span class="cur">yrs</span>
               <div class="stepper">
                 <button type="button" class="stepper-btn" data-target="in-term" data-step="1" aria-label="Increase loan term">▲</button>
@@ -880,21 +884,21 @@
         <div class="presets-label">Loan amount presets</div>
         <div class="presets" id="amount-presets" role="group" aria-label="Example loan amounts">
           <button class="preset-btn" type="button" data-amount="1000000">Rs. 1.0M</button>
+          <button class="preset-btn" type="button" data-amount="1500000">Rs. 1.5M</button>
+          <button class="preset-btn" type="button" data-amount="2000000">Rs. 2.0M</button>
           <button class="preset-btn" type="button" data-amount="2500000">Rs. 2.5M</button>
+          <button class="preset-btn" type="button" data-amount="3000000">Rs. 3.0M</button>
           <button class="preset-btn" type="button" data-amount="5000000">Rs. 5.0M</button>
-          <button class="preset-btn" type="button" data-amount="7500000">Rs. 7.5M</button>
-          <button class="preset-btn" type="button" data-amount="10000000">Rs. 10M</button>
-          <button class="preset-btn" type="button" data-amount="15000000">Rs. 15M</button>
         </div>
 
         <div class="presets-label">Loan term presets</div>
         <div class="presets" id="term-presets" role="group" aria-label="Example loan terms">
+          <button class="preset-btn" type="button" data-years="1">1 yr</button>
+          <button class="preset-btn" type="button" data-years="2">2 yrs</button>
+          <button class="preset-btn" type="button" data-years="3">3 yrs</button>
           <button class="preset-btn" type="button" data-years="5">5 yrs</button>
+          <button class="preset-btn" type="button" data-years="7">7 yrs</button>
           <button class="preset-btn" type="button" data-years="10">10 yrs</button>
-          <button class="preset-btn" type="button" data-years="15">15 yrs</button>
-          <button class="preset-btn" type="button" data-years="20">20 yrs</button>
-          <button class="preset-btn" type="button" data-years="25">25 yrs</button>
-          <button class="preset-btn" type="button" data-years="30">30 yrs</button>
         </div>
 
         <label class="entry-label" style="margin-top:18px;">Extra monthly payment <span class="opt">(optional)</span></label>
@@ -1438,7 +1442,7 @@
     document.getElementById("btn-reset").addEventListener("click", function () {
       inAmount.value = "";
       inRate.value = "12";
-      inTerm.value = "20";
+      inTerm.value = "5";
       inExtra.value = "";
       document.querySelectorAll(".preset-btn").forEach(function (b) { b.classList.remove("is-active"); });
       current = {};
