@@ -1,0 +1,1584 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Lanka Vehicle Import Calculator — Duty, Tax &amp; Landed Cost | Lankacal</title>
+<meta name="description" content="Free Sri Lanka Vehicle Import Calculator. Estimate Customs Import Duty, Excise Duty, Luxury Tax, SSCL and VAT on your car, SUV, van or pickup import — full landed cost breakdown in LKR.">
+<meta name="keywords" content="Sri Lanka vehicle import tax calculator, vehicle import duty Sri Lanka, car import tax calculator, excise duty calculator Sri Lanka, CIF calculator, luxury tax vehicle Sri Lanka, PAL vehicle import, SSCL vehicle, VAT vehicle import, landed cost calculator, Lankacal">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lankacal">
+<meta http-equiv="content-language" content="en-LK">
+<meta name="theme-color" content="#05060f">
+<link rel="canonical" href="https://lankacal.com/vehicle-import-calculator.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lankacal">
+<meta property="og:url" content="https://lankacal.com/vehicle-import-calculator.html">
+<meta property="og:title" content="Sri Lanka Vehicle Import Calculator — Duty, Tax &amp; Landed Cost | Lankacal">
+<meta property="og:description" content="Estimate Customs Import Duty, Excise Duty, Luxury Tax, SSCL and VAT on your vehicle import — full landed cost breakdown in LKR.">
+<meta property="og:locale" content="en_LK">
+<meta property="og:image" content="https://lankacal.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sri Lanka Vehicle Import Calculator — Duty, Tax &amp; Landed Cost | Lankacal">
+<meta name="twitter:description" content="Free CID, Excise, Luxury Tax, SSCL &amp; VAT calculator for importing a car, SUV, van or pickup to Sri Lanka.">
+<meta name="twitter:image" content="https://lankacal.com/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://lankacal.com/vehicle-import-calculator.html#app",
+  "name": "Sri Lanka Vehicle Import Calculator",
+  "url": "https://lankacal.com/vehicle-import-calculator.html",
+  "description": "Free vehicle import cost calculator for Sri Lanka. Estimate Customs Import Duty, Excise Duty, Luxury Tax, SSCL and VAT on a car, SUV, van or pickup import, with a full landed-cost breakdown in LKR.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "inLanguage": "en",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "LKR" },
+  "areaServed": "LK",
+  "isPartOf": { "@type": "WebSite", "name": "Lankacal", "url": "https://lankacal.com/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Lankacal", "item": "https://lankacal.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Sri Lanka Vehicle Import Calculator", "item": "https://lankacal.com/vehicle-import-calculator.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What taxes apply when importing a vehicle to Sri Lanka?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A vehicle import to Sri Lanka is typically subject to Customs Import Duty (CID), Excise Duty, Ports and Airports Levy (PAL), Luxury Tax (above certain CIF thresholds), the Social Security Contribution Levy (SSCL), Value Added Tax (VAT), and a fixed Vehicle Entitlement Levy (VEL). These are calculated in sequence, each on top of the previous total, so the combined tax burden is usually far higher than the vehicle's CIF value." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is CIF value?",
+      "acceptedAnswer": { "@type": "Answer", "text": "CIF stands for Cost, Insurance and Freight — the vehicle's purchase price plus international insurance and shipping cost to a Sri Lankan port. Sri Lanka Customs calculates every import duty and tax as a percentage of, or in addition to, this CIF value." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I import a used vehicle to Sri Lanka?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sri Lanka generally restricts importing used (reconditioned) vehicles to those not exceeding around 3 years from their date of manufacture, with limited exceptions. Always confirm current eligibility with Sri Lanka Customs or a licensed clearing agent before committing to an import." }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is this vehicle import calculator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This is an estimate only, built from publicly available rate information and cross-checked across multiple sources. Sri Lanka's vehicle import duty structure changes frequently through Customs gazette notifications, and exact rates can vary by HS code and vehicle specification. Always confirm the final figure with a licensed customs clearing agent before importing." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --void: #05060f;
+    --void-2: #0b0d24;
+    --card: rgba(21, 24, 61, 0.58);
+    --card-2: rgba(28, 32, 79, 0.6);
+    --card-solid: #171a45;
+    --well: #04050f;
+    --line: rgba(228, 231, 255, 0.14);
+    --line-soft: rgba(228, 231, 255, 0.08);
+    --ink: #f7f6ff;
+    --ink-soft: #adb2e6;
+    --ink-faint: #6f75ae;
+
+    --gold: #f6bb3d;
+    --gold-bright: #ffe38f;
+    --gold-deep: #b9791c;
+    --gold-dim: #8a6a24;
+    --ruby: #ff4f6d;
+    --ruby-soft: #3a1626;
+    --emerald: #2fe0ac;
+    --emerald-soft: #0f3a2e;
+
+    --font-display: "Unbounded", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(48vw 34vw at 88% -8%, rgba(246, 187, 61, 0.22), transparent 62%),
+      radial-gradient(40vw 40vw at -4% 18%, rgba(47, 224, 172, 0.13), transparent 60%),
+      radial-gradient(55vw 45vw at 50% 115%, rgba(255, 79, 109, 0.10), transparent 60%),
+      var(--void);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    padding: clamp(14px, 2.4vw, 28px) 16px 0;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  .sheet { max-width: 720px; margin: 0 auto; }
+
+  /* ---------- Layout ---------- */
+  .main-grid { display: flex; flex-direction: column; gap: 28px; }
+  .main-grid .card { margin-bottom: 0; }
+
+  .columns-row { display: contents; }
+  .col-left, .col-right { display: contents; }
+
+  #entry-card { order: 1; }
+  #hero-card { order: 2; }
+  #stat-card { order: 4; }
+  .split-card { order: 5; }
+  #gallery-card { order: 6; }
+  #ledger-card { order: 7; }
+  #notes-card { order: 8; }
+  #related-card { order: 9; }
+
+  @media (min-width: 900px) {
+    .sheet { max-width: 1160px; }
+
+    .columns-row {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 26px;
+    }
+    .col-left, .col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      min-width: 0;
+    }
+    .col-left { flex: 0 1 460px; max-width: 460px; }
+    .col-right { flex: 1 1 auto; }
+
+    #hero-card { padding-top: 34px; padding-bottom: 34px; }
+
+    /* Let the last card in each column absorb any leftover height so both
+       columns' bottoms line up, instead of leaving blank space below the
+       shorter column. */
+    .col-left #entry-card { flex: 1 1 auto; }
+    .col-right .split-card { flex: 1 1 auto; }
+  }
+
+  @media (min-width: 1240px) {
+    .sheet { max-width: 1280px; }
+    .col-left { flex-basis: 500px; max-width: 500px; }
+  }
+
+  /* ---------- Masthead ---------- */
+  header.masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+  }
+
+  .masthead-titles { min-width: 0; }
+
+  .masthead-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(18px, 3.2vw, 25px);
+    letter-spacing: 0.01em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-wrap: balance;
+  }
+
+  .masthead-subtitle {
+    margin: 6px 0 0 0;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    color: var(--ink-faint);
+  }
+
+  .stamp {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 12px;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  /* ---------- Card shell ---------- */
+  .card {
+    background: linear-gradient(175deg, var(--card-2), var(--card));
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: clamp(18px, 4vw, 26px);
+    margin-bottom: 18px;
+    box-shadow:
+      0 14px 28px -16px rgba(0, 0, 0, 0.7),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    position: relative;
+  }
+
+  /* ---------- Entry ---------- */
+  .entry-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .entry-label .opt {
+    text-transform: none;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--ink-faint);
+    font-size: 11.5px;
+  }
+
+  .entry-hint { margin-top: 12px; font-size: 12.5px; color: var(--ink-faint); }
+
+  .presets-label {
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+  }
+
+  .presets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+  .preset-btn {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    border-radius: 999px;
+    padding: 7px 10px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+
+  @media (max-width: 400px) {
+    .presets { grid-template-columns: repeat(2, 1fr); }
+  }
+  .preset-btn:hover { border-color: var(--gold); color: var(--gold-bright); transform: translateY(-1px); }
+  .preset-btn:active { transform: translateY(0); }
+  .preset-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .preset-btn.is-active { border-color: var(--gold); color: var(--gold-bright); background: rgba(246, 187, 61, 0.08); }
+
+  /* ---------- Fields ---------- */
+  .items { display: flex; flex-direction: column; gap: 8px; }
+
+  .field-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px 12px;
+  }
+
+  .field-label {
+    flex: 1 1 130px;
+    min-width: 100px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--ink);
+    padding: 3px 2px;
+  }
+  .field-label small {
+    display: block;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 10.5px;
+    color: var(--ink-faint);
+    margin-top: 2px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .item-amount-well {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--well);
+    border: 1.5px solid var(--line);
+    border-radius: 11px;
+    padding: 8px 13px;
+    flex-shrink: 0;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .item-amount-well:focus-within { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(246, 187, 61, 0.16); }
+  .item-amount-well .cur { font-family: var(--font-mono); font-size: 12px; color: var(--ink-faint); }
+
+  .item-amount-input {
+    width: 118px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .item-amount-input::-webkit-outer-spin-button, .item-amount-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .item-amount-input::placeholder { color: var(--ink-faint); }
+
+  .item-amount-well.is-primary {
+    background: rgba(246, 187, 61, 0.07);
+    border-color: rgba(246, 187, 61, 0.5);
+  }
+  .item-amount-well.is-primary:focus-within { box-shadow: 0 0 0 3px rgba(246, 187, 61, 0.22); }
+  .item-amount-well.is-primary .cur { color: var(--gold); font-weight: 700; }
+  .item-amount-well.is-primary .item-amount-input { font-size: 19px; font-weight: 800; color: var(--gold-bright); width: 148px; }
+
+  .item-amount-well.is-emerald { border-color: rgba(47, 224, 172, 0.45); }
+  .item-amount-well.is-emerald:focus-within { border-color: var(--emerald); box-shadow: 0 0 0 3px rgba(47, 224, 172, 0.16); }
+  .item-amount-well.is-emerald .cur { color: var(--emerald); }
+
+  .entry-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+
+  .entry-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .entry-card-head .entry-label { margin-bottom: 0; }
+
+  .reset-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 9px 14px;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    flex-shrink: 0;
+  }
+  .reset-btn:hover { background: rgba(255, 79, 109, 0.08); border-color: var(--ruby); color: var(--ruby); }
+  .reset-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  .reset-btn.is-top {
+    padding: 7px 12px;
+    border-radius: 10px;
+    font-size: 11.5px;
+  }
+
+  /* ---------- Select field ---------- */
+  .select-field {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--well);
+    border: 1.5px solid var(--line);
+    border-radius: 11px;
+    padding: 8px 12px;
+    flex-shrink: 0;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .select-field:focus-within { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(246, 187, 61, 0.16); }
+  .select-field select {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--ink);
+    max-width: 168px;
+    cursor: pointer;
+  }
+  .select-field select option { background: var(--card-solid); color: var(--ink); }
+
+  /* ---------- Pill toggle (category / fuel-class / age) ---------- */
+  .pill-toggle { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+  .pill-toggle-btn {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 12.5px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    border-radius: 999px;
+    padding: 9px 15px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  .pill-toggle-btn:hover { border-color: var(--gold); color: var(--gold-bright); }
+  .pill-toggle-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .pill-toggle-btn.is-active { background: rgba(246, 187, 61, 0.14); border-color: rgba(246, 187, 61, 0.5); color: var(--gold-bright); }
+
+  .field-note {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink-faint);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--emerald);
+    border-radius: 10px;
+    padding: 10px 13px;
+    margin-bottom: 10px;
+  }
+  .field-note.is-warning { border-left-color: var(--ruby); }
+  .field-note a { color: var(--gold-bright); }
+  .field-note b { color: var(--ink-soft); }
+
+  /* ---------- Stat grid ---------- */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); gap: 12px; }
+  .stat-tile {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 17px 18px;
+  }
+  .stat-tile-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin-bottom: 8px; }
+  .stat-tile-value {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    font-family: var(--font-mono);
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-tile-value .cur { font-size: 11px; font-weight: 600; color: var(--ink-faint); flex-shrink: 0; }
+  .stat-tile-value .num { font-weight: 700; font-size: clamp(15px, 2.6vw, 18px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .stat-tile.is-ruby .stat-tile-value .num { color: var(--ruby); }
+  .stat-tile.is-emerald .stat-tile-value .num { color: var(--emerald); }
+
+  /* ---------- Hero payout ---------- */
+  .hero { text-align: center; padding-top: 32px; padding-bottom: 30px; position: relative; overflow: hidden; }
+
+  .hero-glow {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    width: 340px; height: 340px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(246, 187, 61, 0.30), transparent 65%);
+    pointer-events: none;
+    filter: blur(4px);
+    opacity: var(--glow-opacity, 0.6);
+    transition: opacity 0.5s ease;
+  }
+
+  .hero-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    position: relative;
+  }
+
+  .hero-value {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(34px, 8.6vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 10px 0 6px;
+    background: linear-gradient(100deg,
+      var(--gold) 0%, var(--gold-bright) 22%, var(--gold) 34%,
+      var(--gold) 66%, var(--gold-bright) 78%, var(--gold) 100%);
+    background-size: 260% 100%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-variant-numeric: tabular-nums;
+    position: relative;
+    display: inline-block;
+    animation: shine 5s ease-in-out infinite;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .hero-value.is-pop { transform: scale(1.045); }
+
+  @keyframes shine {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 0%; }
+  }
+
+  .hero-sub { font-size: 13px; color: var(--ink-faint); position: relative; margin-bottom: 28px; }
+  .hero-sub b { color: var(--ink-soft); font-weight: 600; }
+
+  .stat-pills {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 10px 16px;
+    text-align: left;
+  }
+
+  .pill .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .pill.is-ruby .dot { background: var(--ruby); box-shadow: 0 0 8px rgba(255, 93, 114, 0.7); }
+  .pill.is-emerald .dot { background: var(--emerald); box-shadow: 0 0 8px rgba(52, 219, 160, 0.7); }
+  .pill.is-gold .dot { background: var(--gold); box-shadow: 0 0 8px rgba(246, 187, 61, 0.7); }
+
+  .pill-text { display: flex; flex-direction: column; }
+  .pill-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); }
+  .pill-value {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 16px;
+    font-variant-numeric: tabular-nums;
+  }
+  .pill.is-ruby .pill-value { color: var(--ruby); }
+  .pill.is-emerald .pill-value { color: var(--emerald); }
+  .pill.is-gold .pill-value { color: var(--gold-bright); }
+
+  /* ---------- Split card ---------- */
+  .split-card { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+  .donut-wrap { position: relative; width: 152px; height: 152px; flex-shrink: 0; margin: 0 auto; }
+  .donut {
+    width: 100%; height: 100%; border-radius: 50%;
+    transition: background 0.5s ease;
+    filter: drop-shadow(0 0 18px rgba(246, 187, 61, 0.25));
+  }
+  .donut-hole {
+    position: absolute;
+    inset: 22%;
+    background: linear-gradient(175deg, #1c2050, var(--card-solid));
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+  .donut-pct {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--gold-bright);
+    font-variant-numeric: tabular-nums;
+  }
+  .donut-pct-label { font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-faint); margin-top: 2px; text-align: center; }
+
+  .legend { flex: 1; min-width: 180px; display: grid; gap: 10px; }
+  .legend-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 13.5px; }
+  .legend-key { display: flex; align-items: center; gap: 9px; color: var(--ink-soft); }
+  .legend-key .sw { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+  .legend-val { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--ink); }
+  .legend-total { padding-top: 9px; border-top: 1px solid var(--line-soft); }
+  .legend-total .legend-key { font-weight: 700; color: var(--ink); padding-left: 19px; }
+  .legend-total .legend-val { font-weight: 700; }
+
+  /* ---------- Ledger table ---------- */
+  .ledger-heading {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 14px; gap: 8px; flex-wrap: wrap;
+  }
+  .ledger-heading h2 { font-family: var(--font-body); font-weight: 800; font-size: 17px; margin: 0; }
+  .ledger-heading .sub { font-size: 11.5px; color: var(--ink-faint); font-family: var(--font-mono); }
+
+  .table-scroll { overflow-x: auto; overflow-y: auto; max-height: 360px; border-radius: 10px; }
+
+  table.ledger { width: 100%; min-width: 420px; border-collapse: collapse; font-size: 13.5px; }
+  table.ledger thead th {
+    position: sticky; top: 0;
+    background: var(--card-solid);
+    text-align: left; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--ink-faint); border-bottom: 1px solid var(--line); padding: 9px 8px;
+  }
+  table.ledger th:not(:first-child), table.ledger td:not(:first-child) { text-align: right; }
+
+  table.ledger td {
+    padding: 10px 8px; border-bottom: 1px solid var(--line-soft); vertical-align: baseline; color: var(--ink);
+  }
+  table.ledger td.band-label { color: var(--ink-soft); font-weight: 700; }
+  table.ledger td.amt { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  table.ledger tr.zero td { opacity: 0.45; }
+  table.ledger tr:last-child td { border-bottom: none; }
+
+  table.ledger tfoot td {
+    border-bottom: none; border-top: 1px solid var(--line); padding-top: 12px;
+    font-weight: 700; font-family: var(--font-mono); color: var(--gold-bright);
+    position: sticky; bottom: 0; background: var(--card-solid);
+  }
+  table.ledger tfoot td:first-child { font-family: var(--font-body); color: var(--ink); }
+
+  /* ---------- Notes ---------- */
+  .notes { display: grid; gap: 10px; font-size: 12.5px; color: var(--ink-faint); }
+  .notes dt { font-weight: 700; color: var(--ink-soft); display: inline; }
+  .notes dd { display: inline; margin: 0; }
+
+  footer.page-footnote { margin-top: 22px; font-size: 11.5px; color: var(--ink-faint); line-height: 1.6; text-align: center; }
+  .last-updated { margin-top: 10px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.02em; opacity: 0.8; }
+
+  /* ---------- Actions ---------- */
+  .actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 0; }
+
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 13.5px;
+    border-radius: 12px;
+    padding: 11px 18px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .action-btn:active { transform: translateY(1px); }
+  .action-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .action-btn .arrow { font-size: 11px; transition: transform 0.15s ease; }
+  .action-btn:hover .arrow { transform: translateX(2px); }
+
+  .action-btn.is-primary {
+    background: linear-gradient(175deg, var(--gold-bright), var(--gold));
+    color: #241a03;
+    box-shadow: 0 10px 24px -10px rgba(247, 189, 60, 0.55);
+  }
+  .action-btn.is-primary:hover { box-shadow: 0 14px 28px -10px rgba(247, 189, 60, 0.7); }
+
+  .action-btn.is-ghost {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .action-btn.is-ghost:hover { border-color: var(--emerald); color: var(--emerald); }
+
+  /* ---------- Vehicle model gallery ---------- */
+  .gallery-note {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink-faint);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--gold);
+    border-radius: 10px;
+    padding: 10px 13px;
+    margin-bottom: 16px;
+  }
+  .vehicle-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  .vehicle-card {
+    background: var(--card-solid);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 0 0 12px;
+    text-align: left;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-body);
+  }
+  .vehicle-card:hover { transform: translateY(-3px); border-color: rgba(246, 187, 61, 0.4); box-shadow: 0 14px 24px -14px rgba(0, 0, 0, 0.7); }
+  .vehicle-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .vehicle-card.is-selected { border-color: var(--gold); background: rgba(246, 187, 61, 0.08); box-shadow: 0 0 0 1px rgba(246, 187, 61, 0.35); }
+
+  .vehicle-card-photo {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .vehicle-card-photo svg.vehicle-scene { width: 92%; height: auto; display: block; }
+  .vehicle-card-photo .ev-badge {
+    position: absolute;
+    top: 8px; right: 8px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  }
+  .vehicle-card-photo .ev-badge svg { width: 12px; height: 12px; }
+
+  .vehicle-card-icon.g1, .vehicle-card-photo.g1 { background: linear-gradient(135deg, var(--gold), var(--ruby)); }
+  .vehicle-card-icon.g2, .vehicle-card-photo.g2 { background: linear-gradient(135deg, var(--emerald), var(--gold)); }
+  .vehicle-card-icon.g3, .vehicle-card-photo.g3 { background: linear-gradient(135deg, var(--ruby), var(--gold-deep)); }
+  .vehicle-card-icon.g4, .vehicle-card-photo.g4 { background: linear-gradient(135deg, #7c6ff0, var(--ruby)); }
+
+  .vehicle-card-body { padding: 11px 12px 0; display: flex; flex-direction: column; gap: 8px; }
+  .vehicle-card-name { font-weight: 800; font-size: 13px; color: var(--ink); line-height: 1.3; }
+  .vehicle-card-cta { font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; }
+  .vehicle-card.is-selected .vehicle-card-cta { color: var(--gold-bright); }
+  .vehicle-card-cif { font-family: var(--font-mono); font-size: 11.5px; color: var(--gold-bright); font-weight: 700; display: none; }
+  .vehicle-card.is-selected .vehicle-card-cif { display: block; }
+  .vehicle-card.is-selected .vehicle-card-cta { display: none; }
+
+  @media (max-width: 480px) {
+    .split-card { flex-direction: column; text-align: center; }
+    .legend { width: 100%; }
+  }
+
+  /* ---------- Print / Save as PDF ---------- */
+  @media print {
+    body { background: #ffffff !important; color: #14161f !important; padding: 0 !important; }
+    body::before { display: none !important; }
+    .sheet { max-width: 100%; }
+    .masthead .stamp { border-color: #999; color: #333; background: none; }
+    .masthead-title { color: #14161f; }
+    .masthead-subtitle { color: #444; }
+
+    .card { background: #ffffff !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; border: 1px solid #ccc !important; box-shadow: none !important; border-radius: 8px; }
+    .hero-value { animation: none !important; }
+
+    .main-grid, .columns-row, .col-left, .col-right { display: block !important; }
+    #entry-card, .split-card, .actions, #faq-card, #related-card, #gallery-card { display: none !important; }
+    .site-header, .site-footer { display: none !important; }
+
+    .stat-tile { border: 1px solid #ccc; background: #fafafa !important; }
+    .stat-tile-label { color: #555; }
+    .stat-tile-value .cur { color: #666; }
+    .stat-tile-value .num { color: #14161f; }
+    .stat-tile.is-ruby .stat-tile-value .num { color: #a3402b; }
+    .stat-tile.is-emerald .stat-tile-value .num { color: #157a5c; }
+
+    .ledger-heading .sub, .ledger-heading h2 { color: #14161f; }
+    table.ledger th { color: #333; border-color: #bbb; background: #fff !important; }
+    table.ledger td { color: #14161f; border-color: #ddd; }
+    table.ledger tfoot td { color: #14161f; border-color: #14161f; background: #fff !important; }
+
+    .hero-value { color: #14161f !important; -webkit-text-fill-color: #14161f !important; background: none !important; }
+    .hero-label, .hero-sub { color: #333 !important; }
+    .pill-value { color: #14161f !important; }
+
+    .notes, footer.page-footnote { color: #444; }
+    .notes dt { color: #14161f; }
+  }
+
+  /* ================= Site-wide header / footer (Lankacal brand) ================= */
+  .skip-link{position:absolute;top:-48px;left:16px;background:var(--gold);color:#241a03;font-weight:800;padding:10px 16px;border-radius:10px;z-index:200;transition:top .15s ease;}
+  .skip-link:focus{top:16px;}
+
+  .site-header{width:100%;max-width:1280px;display:flex;justify-content:space-between;align-items:center;margin:0 auto 26px;position:relative;z-index:20;}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .brand-mark{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--ruby));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .brand-name{font-family:var(--font-display);font-weight:700;font-size:19px;color:var(--ink);}
+  .brand-name span{color:var(--ruby);}
+  .header-nav{display:flex;align-items:center;gap:22px;font-weight:700;font-size:14px;color:var(--ink-soft);}
+  .header-nav a{color:var(--ink-soft);text-decoration:none;}
+  .header-nav a:hover{color:var(--gold-bright);}
+
+  #related-card{display:flex;align-items:center;gap:18px;flex-wrap:wrap;border-color:rgba(255,79,109,0.35);}
+  #related-card .rc-icon{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--ruby),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  #related-card .rc-text{flex:1;min-width:200px;}
+  #related-card .rc-text h3{margin:0 0 4px;font-size:15px;font-weight:800;}
+  #related-card .rc-text p{margin:0;color:var(--ink-soft);font-size:12.5px;}
+  #related-card .rc-cta{white-space:nowrap;}
+
+  .site-footer{width:100%;max-width:1280px;margin:34px auto 0;padding:26px 0 0;border-top:1px solid var(--line);}
+  .footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:16px;}
+  .footer-brand{display:flex;align-items:center;gap:9px;}
+  .footer-brand .brand-mark{width:26px;height:26px;border-radius:8px;}
+  .footer-brand-text{font-weight:700;font-size:13.5px;color:var(--ink-soft);}
+  .footer-nav{display:flex;gap:20px;font-weight:700;font-size:13px;color:var(--ink-soft);flex-wrap:wrap;}
+  .footer-nav a{color:var(--ink-soft);text-decoration:none;}
+  .footer-nav a:hover{color:var(--gold-bright);}
+  .footer-disclaimer{font-size:11px;color:var(--ink-faint);line-height:1.7;padding-bottom:26px;}
+
+  @media (max-width: 640px){
+    .header-nav{gap:14px;font-size:12.5px;}
+    .header-nav .btn-hide-xs{display:none;}
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="sheet">
+
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="Lankacal home">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" style="width:17px;height:17px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+      </div>
+      <div class="brand-name">lanka<span>cal</span></div>
+    </a>
+    <nav class="header-nav" aria-label="Primary">
+      <a href="index.html#finance" class="btn-hide-xs">All Tools</a>
+      <a href="tax-calculator.html">Tax Calculator</a>
+      <a href="loan-calculator.html">Loan Calculator</a>
+      <a href="index.html">&larr; Home</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+  <header class="masthead">
+    <div class="masthead-titles">
+      <h1 class="masthead-title">Sri Lanka Vehicle Import Calculator</h1>
+      <p class="masthead-subtitle">Customs Duty, Excise, Luxury Tax &amp; VAT — full landed cost in LKR</p>
+    </div>
+    <span class="stamp">Estimate · Y/A 2026/27</span>
+  </header>
+
+  <div class="main-grid">
+
+  <div class="columns-row">
+    <div class="col-left">
+
+      <div class="card" id="entry-card">
+        <div class="entry-card-head">
+          <label class="entry-label" style="margin-bottom:0;">Vehicle &amp; shipment details</label>
+          <button class="reset-btn is-top" type="button" id="btn-reset">↺ Reset</button>
+        </div>
+
+        <div class="presets-label" style="margin-top:0;">Vehicle category</div>
+        <div class="pill-toggle" id="category-toggle" role="group" aria-label="Vehicle category">
+          <button type="button" class="pill-toggle-btn is-active" data-category="car" aria-pressed="true">🚗 Car / SUV</button>
+          <button type="button" class="pill-toggle-btn" data-category="van" aria-pressed="false">🚐 Van</button>
+          <button type="button" class="pill-toggle-btn" data-category="pickup" aria-pressed="false">🛻 Pickup</button>
+        </div>
+
+        <div class="items">
+          <div class="field-row">
+            <span class="field-label">CIF value<small>cost + insurance + freight, in LKR</small></span>
+            <div class="item-amount-well is-primary">
+              <span class="cur">Rs.</span>
+              <input type="text" inputmode="numeric" class="item-amount-input" id="in-cif" placeholder="0" aria-label="CIF value in LKR">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <span class="field-label">Fuel type</span>
+            <div class="select-field">
+              <select id="in-fuel" aria-label="Fuel type">
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+                <option value="hybridPetrol">Hybrid (Petrol)</option>
+                <option value="hybridDiesel">Hybrid (Diesel)</option>
+                <option value="phevPetrol">Plug-in Hybrid (Petrol)</option>
+                <option value="phevDiesel">Plug-in Hybrid (Diesel)</option>
+                <option value="electric">Electric</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-row" id="row-cc">
+            <span class="field-label">Engine capacity<small>cubic centimetres (cc)</small></span>
+            <div class="item-amount-well">
+              <input type="number" min="0" step="10" class="item-amount-input" id="in-cc" placeholder="0" style="width:96px;" aria-label="Engine capacity in cc">
+              <span class="cur">cc</span>
+            </div>
+          </div>
+
+          <div class="field-row" id="row-kw" hidden>
+            <span class="field-label">Motor power<small>kilowatts (kW)</small></span>
+            <div class="item-amount-well is-emerald">
+              <input type="number" min="0" step="1" class="item-amount-input" id="in-kw" placeholder="0" style="width:96px;" aria-label="Motor power in kW">
+              <span class="cur">kW</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="presets-label">CIF value presets</div>
+        <div class="presets" id="cif-presets" role="group" aria-label="Example CIF values">
+          <button class="preset-btn" type="button" data-amount="3000000">Rs. 3.0M</button>
+          <button class="preset-btn" type="button" data-amount="5000000">Rs. 5.0M</button>
+          <button class="preset-btn" type="button" data-amount="8000000">Rs. 8.0M</button>
+          <button class="preset-btn" type="button" data-amount="12000000">Rs. 12M</button>
+          <button class="preset-btn" type="button" data-amount="18000000">Rs. 18M</button>
+          <button class="preset-btn" type="button" data-amount="25000000">Rs. 25M</button>
+        </div>
+
+        <div class="presets-label">Vehicle age</div>
+        <div class="pill-toggle" id="age-toggle" role="group" aria-label="Vehicle age">
+          <button type="button" class="pill-toggle-btn is-active" data-age="new" aria-pressed="true">Brand new</button>
+          <button type="button" class="pill-toggle-btn" data-age="2-3" aria-pressed="false">2–3 years</button>
+          <button type="button" class="pill-toggle-btn" data-age="3plus" aria-pressed="false">Over 3 years</button>
+        </div>
+        <p class="field-note" id="age-note-2-3" hidden>Used vehicles are assessed by Sri Lanka Customs against their own depreciated valuation table. Enter the CIF value as invoiced/assessed — this calculator doesn't apply extra automatic depreciation on top of what you enter.</p>
+        <p class="field-note is-warning" id="age-note-3plus" hidden>Sri Lanka generally restricts importing used vehicles older than about 3 years from manufacture, with limited exceptions. Confirm current eligibility with Sri Lanka Customs or a licensed clearing agent before proceeding.</p>
+      </div>
+
+    </div>
+    <div class="col-right">
+
+      <div class="card hero" id="hero-card">
+        <div class="hero-glow" id="hero-glow"></div>
+        <div class="hero-label">Total landed cost</div>
+        <div class="hero-value" id="out-total">Rs. 0</div>
+        <div class="hero-sub">on a <b id="out-spec">— cc petrol Car / SUV</b>, CIF <b id="out-cif-sub">Rs. 0</b></div>
+        <div class="stat-pills">
+          <div class="pill is-ruby">
+            <span class="dot"></span>
+            <span class="pill-text"><span class="pill-label">Total duty &amp; tax</span><span class="pill-value" id="out-tax">Rs. 0</span></span>
+          </div>
+          <div class="pill is-emerald">
+            <span class="dot"></span>
+            <span class="pill-text"><span class="pill-label">Effective tax rate</span><span class="pill-value" id="out-rate">0%</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="stat-card">
+        <div class="ledger-heading">
+          <h2>Import summary</h2>
+          <span class="sub">estimate, LKR</span>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-tile"><div class="stat-tile-label">CIF value</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-cif">0</span></div></div>
+          <div class="stat-tile is-ruby"><div class="stat-tile-label">Excise duty</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-excise">0</span></div></div>
+          <div class="stat-tile"><div class="stat-tile-label">VAT (18%)</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-vat">0</span></div></div>
+          <div class="stat-tile is-ruby"><div class="stat-tile-label">Total duty &amp; tax</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-tax">0</span></div></div>
+          <div class="stat-tile is-emerald"><div class="stat-tile-label">Total landed cost</div><div class="stat-tile-value"><span class="cur">Rs.</span><span class="num" id="sg-total">0</span></div></div>
+          <div class="stat-tile"><div class="stat-tile-label">Effective tax rate</div><div class="stat-tile-value"><span class="num" id="sg-rate">0%</span></div></div>
+        </div>
+      </div>
+
+      <div class="card split-card">
+        <div class="donut-wrap">
+          <div class="donut" id="donut"></div>
+          <div class="donut-hole">
+            <span class="donut-pct" id="donut-pct">0%</span>
+            <span class="donut-pct-label">is tax &amp; duty</span>
+          </div>
+        </div>
+        <div class="legend">
+          <div class="legend-row">
+            <span class="legend-key"><span class="sw" style="background:var(--gold)"></span>CIF value</span>
+            <span class="legend-val" id="leg-cif">Rs. 0</span>
+          </div>
+          <div class="legend-row">
+            <span class="legend-key"><span class="sw" style="background:var(--ruby)"></span>Total duty &amp; tax</span>
+            <span class="legend-val" id="leg-tax">Rs. 0</span>
+          </div>
+          <div class="legend-row legend-total">
+            <span class="legend-key">Total landed cost</span>
+            <span class="legend-val" id="leg-total">Rs. 0</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" id="gallery-card">
+    <div class="ledger-heading">
+      <h2>Popular models</h2>
+      <span class="sub">tap one to fill in an example</span>
+    </div>
+    <p class="gallery-note">These are illustrative example CIF values for common models, not real invoice quotes — tapping a card fills in the form so you can see how the tax stacks up, then edit the CIF value to match your own shipment.</p>
+    <div class="vehicle-gallery" id="vehicle-gallery"></div>
+  </div>
+
+  <div class="card" id="ledger-card">
+    <div class="ledger-heading">
+      <h2>Duty &amp; tax breakdown</h2>
+      <span class="sub">cascading — each line applies on the running total</span>
+    </div>
+
+    <div class="table-scroll">
+      <table class="ledger">
+        <thead>
+          <tr><th>Component</th><th>Rate</th><th>Amount</th></tr>
+        </thead>
+        <tbody id="band-rows"></tbody>
+        <tfoot>
+          <tr><td>Total landed cost</td><td></td><td class="amt" id="band-total">Rs. 0</td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="actions">
+      <button class="action-btn is-primary" type="button" id="btn-print">Print <span class="arrow">▶</span></button>
+      <button class="action-btn is-ghost" type="button" id="btn-pdf">Download (PDF) <span class="arrow">▶</span></button>
+    </div>
+  </div>
+
+  <div class="card" id="notes-card">
+    <dl class="notes">
+      <div><dt>How this is calculated.</dt> <dd>CIF → + Customs Import Duty (30%) → + Ports &amp; Airports Levy (10%) → + Excise Duty (by engine cc, or kW for EVs) → + Luxury Tax (on the CIF amount above Rs. 5.0M–6.0M, depending on fuel type) → + SSCL (2.5% on the running total) → + VAT (18% on the running total) → + a fixed Rs. 15,000 Vehicle Entitlement Levy (VEL).</dd></div>
+      <div><dt>Estimate only.</dt> <dd>Sri Lanka's vehicle import duty structure changes often through Customs gazette notifications, and rates vary by exact HS code. This tool combines the most consistent figures across several public calculators and guides — always confirm your final figure with a licensed customs clearing agent or Sri Lanka Customs before importing.</dd></div>
+      <div><dt>Hybrid &amp; plug-in hybrid.</dt> <dd>A verified hybrid-specific excise rate table wasn't available, so this estimate conservatively applies the standard petrol/diesel per-cc excise schedule to hybrids and PHEVs. In practice, hybrid excise duty is often lower — treat this as an upper-bound estimate for those fuel types.</dd></div>
+      <div><dt>Vans &amp; pickups.</dt> <dd>This estimate applies the same passenger-vehicle duty schedule across all categories for simplicity. Vans and pickups classified under a goods-vehicle HS code may be assessed differently in practice — confirm with your clearing agent.</dd></div>
+      <div><dt>Used vehicles.</dt> <dd>Enter the CIF value as invoiced or as assessed by Customs. This calculator doesn't apply an additional automatic age-based depreciation to your entered CIF value.</dd></div>
+    </dl>
+  </div>
+
+  </div>
+
+  <div class="card" id="faq-card">
+    <div class="ledger-heading">
+      <h2>Frequently asked questions</h2>
+    </div>
+    <dl class="notes">
+      <div><dt>What taxes apply when importing a vehicle to Sri Lanka?</dt> <dd>Customs Import Duty (CID), Excise Duty, Ports and Airports Levy (PAL), Luxury Tax (above certain CIF thresholds), the Social Security Contribution Levy (SSCL), Value Added Tax (VAT), and a fixed Vehicle Entitlement Levy (VEL) — each calculated in sequence on top of the running total.</dd></div>
+      <div><dt>What is CIF value?</dt> <dd>Cost, Insurance and Freight — the vehicle's purchase price plus international insurance and shipping to a Sri Lankan port. Every import duty and tax is calculated from this CIF value.</dd></div>
+      <div><dt>Can I import a used vehicle to Sri Lanka?</dt> <dd>Generally only vehicles up to around 3 years from their date of manufacture, with limited exceptions. Confirm current eligibility with Sri Lanka Customs or a licensed clearing agent before committing to an import.</dd></div>
+      <div><dt>How accurate is this calculator?</dt> <dd>It's an estimate built from publicly available rate information, cross-checked across several sources. Rates change often via Customs gazette notifications — always confirm your final figure with a licensed clearing agent before importing.</dd></div>
+    </dl>
+  </div>
+
+  <div class="card" id="related-card">
+    <div class="rc-icon"><svg viewBox="0 0 24 24" style="width:22px;height:22px;stroke:#0b0d24;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+    <div class="rc-text">
+      <h3>Financing this import?</h3>
+      <p>Try the Lankacal Loan Calculator for your EMI, total interest and full amortization schedule.</p>
+    </div>
+    <a href="loan-calculator.html" class="action-btn is-ghost rc-cta" target="_blank" rel="noopener">Open Loan Calculator <span class="arrow">▶</span></a>
+  </div>
+
+  <footer class="page-footnote">
+    Estimates only — not customs or financial advice. Rates change frequently via Customs gazette notifications; confirm your final figure with a licensed clearing agent.
+    <div class="last-updated">Last updated <span id="last-updated-date">—</span></div>
+  </footer>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:white;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+      </div>
+      <div class="footer-brand-text">Lankacal &mdash; free calculators built for Sri Lanka</div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="index.html#finance">All Tools</a>
+      <a href="tax-calculator.html">Tax Calculator</a>
+      <a href="loan-calculator.html">Loan Calculator</a>
+    </nav>
+  </div>
+  <div class="footer-disclaimer">
+    Lankacal's calculators provide estimates for general information only and are not affiliated with Sri Lanka Customs, the Inland Revenue Department, or any Sri Lankan government body. For a customs-accurate figure, check with a licensed clearing agent.
+  </div>
+</footer>
+
+<script>
+  (function () {
+    "use strict";
+
+    var REDUCE_MOTION = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var fmt = new Intl.NumberFormat("en-LK", { maximumFractionDigits: 0 });
+    function money(n) { return "Rs. " + fmt.format(Math.max(0, Math.round(n))); }
+    function num(n) { return fmt.format(Math.max(0, Math.round(n))); }
+
+    function formatThousands(digits) {
+      return digits.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    function parseAmount(str) {
+      return parseFloat(String(str).replace(/,/g, "")) || 0;
+    }
+    function attachThousandsFormat(input) {
+      input.addEventListener("input", function () {
+        var oldPos = input.selectionStart;
+        var oldValue = input.value;
+        var digitsBeforeCursor = oldValue.slice(0, oldPos).replace(/[^\d]/g, "").length;
+        var rawDigits = oldValue.replace(/[^\d]/g, "");
+        var formatted = formatThousands(rawDigits);
+        input.value = formatted;
+        var seen = 0, newPos = formatted.length;
+        for (var i = 0; i < formatted.length; i++) {
+          if (/\d/.test(formatted[i])) seen++;
+          if (seen === digitsBeforeCursor) { newPos = i + 1; break; }
+        }
+        if (digitsBeforeCursor === 0) newPos = 0;
+        input.setSelectionRange(newPos, newPos);
+      });
+    }
+
+    /* ---------- Duty & tax model (estimate — see notes card for sources/assumptions) ---------- */
+    var CID_RATE = 0.30;    // Customs Import Duty: 20% base + 50% surcharge ≈ 30% of CIF
+    var PAL_RATE = 0.10;    // Ports & Airports Levy
+    var SSCL_RATE = 0.025;  // Social Security Contribution Levy
+    var VAT_RATE = 0.18;
+    var VEL_FLAT = 15000;   // Vehicle Entitlement Levy, fixed
+
+    var EXCISE_CC_BANDS = [
+      { max: 1000, rate: 2450 },
+      { max: 1300, rate: 3850 },
+      { max: 1500, rate: 4450 },
+      { max: 1600, rate: 5150 },
+      { max: 1800, rate: 6400 },
+      { max: 2000, rate: 7700 },
+      { max: 2500, rate: 8450 },
+      { max: 2750, rate: 9650 },
+      { max: 3000, rate: 10850 },
+      { max: 4000, rate: 12050 },
+      { max: Infinity, rate: 13300 }
+    ];
+    var EXCISE_EV_RATE_PER_KW = 9050;
+
+    var LUXURY = {
+      petrol:       { threshold: 5000000, rate: 1.00, label: "Petrol" },
+      diesel:       { threshold: 5000000, rate: 1.20, label: "Diesel" },
+      hybridPetrol: { threshold: 5500000, rate: 0.80, label: "Hybrid (Petrol)" },
+      hybridDiesel: { threshold: 5500000, rate: 0.90, label: "Hybrid (Diesel)" },
+      phevPetrol:   { threshold: 5500000, rate: 0.80, label: "Plug-in Hybrid (Petrol)" },
+      phevDiesel:   { threshold: 5500000, rate: 0.90, label: "Plug-in Hybrid (Diesel)" },
+      electric:     { threshold: 6000000, rate: 0.60, label: "Electric" }
+    };
+
+    function exciseRatePerCc(cc) {
+      for (var i = 0; i < EXCISE_CC_BANDS.length; i++) {
+        if (cc <= EXCISE_CC_BANDS[i].max) return EXCISE_CC_BANDS[i].rate;
+      }
+      return EXCISE_CC_BANDS[EXCISE_CC_BANDS.length - 1].rate;
+    }
+
+    function computeImport(cif, fuelKey, cc, kw) {
+      var isEv = fuelKey === "electric";
+      var excise = isEv ? kw * EXCISE_EV_RATE_PER_KW : cc * exciseRatePerCc(cc);
+      var cid = cif * CID_RATE;
+      var pal = cif * PAL_RATE;
+      var lux = LUXURY[fuelKey] || LUXURY.petrol;
+      var luxuryTax = cif > lux.threshold ? (cif - lux.threshold) * lux.rate : 0;
+      var sscl = (cif + cid + pal + excise + luxuryTax) * SSCL_RATE;
+      var vat = (cif + cid + pal + excise + luxuryTax + sscl) * VAT_RATE;
+      var vel = VEL_FLAT;
+      var totalTax = cid + pal + excise + luxuryTax + sscl + vat + vel;
+      var total = cif + totalTax;
+      return {
+        cif: cif, cid: cid, pal: pal, excise: excise, luxuryTax: luxuryTax,
+        sscl: sscl, vat: vat, vel: vel, totalTax: totalTax, total: total,
+        luxuryThreshold: lux.threshold, luxuryRate: lux.rate
+      };
+    }
+
+    /* ---------- DOM refs ---------- */
+    var inCif = document.getElementById("in-cif");
+    var inFuel = document.getElementById("in-fuel");
+    var inCc = document.getElementById("in-cc");
+    var inKw = document.getElementById("in-kw");
+    var rowCc = document.getElementById("row-cc");
+    var rowKw = document.getElementById("row-kw");
+
+    attachThousandsFormat(inCif);
+
+    var outTotal = document.getElementById("out-total");
+    var outSpec = document.getElementById("out-spec");
+    var outCifSub = document.getElementById("out-cif-sub");
+    var outTax = document.getElementById("out-tax");
+    var outRate = document.getElementById("out-rate");
+    var heroGlow = document.getElementById("hero-glow");
+
+    var legCif = document.getElementById("leg-cif");
+    var legTax = document.getElementById("leg-tax");
+    var legTotal = document.getElementById("leg-total");
+    var donut = document.getElementById("donut");
+    var donutPct = document.getElementById("donut-pct");
+
+    var sgCif = document.getElementById("sg-cif");
+    var sgExcise = document.getElementById("sg-excise");
+    var sgVat = document.getElementById("sg-vat");
+    var sgTax = document.getElementById("sg-tax");
+    var sgTotal = document.getElementById("sg-total");
+    var sgRate = document.getElementById("sg-rate");
+
+    var bandRows = document.getElementById("band-rows");
+    var bandTotal = document.getElementById("band-total");
+
+    var FUEL_DISPLAY = {
+      petrol: "petrol", diesel: "diesel", hybridPetrol: "hybrid petrol", hybridDiesel: "hybrid diesel",
+      phevPetrol: "PHEV petrol", phevDiesel: "PHEV diesel", electric: "electric"
+    };
+    var CATEGORY_DISPLAY = { car: "Car / SUV", van: "Van", pickup: "Pickup" };
+
+    /* ---------- Category & age toggles ---------- */
+    var currentCategory = "car";
+    document.querySelectorAll("#category-toggle .pill-toggle-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        document.querySelectorAll("#category-toggle .pill-toggle-btn").forEach(function (b) {
+          b.classList.remove("is-active"); b.setAttribute("aria-pressed", "false");
+        });
+        btn.classList.add("is-active"); btn.setAttribute("aria-pressed", "true");
+        currentCategory = btn.getAttribute("data-category");
+        recalc();
+      });
+    });
+
+    var ageNote23 = document.getElementById("age-note-2-3");
+    var ageNote3plus = document.getElementById("age-note-3plus");
+    document.querySelectorAll("#age-toggle .pill-toggle-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        document.querySelectorAll("#age-toggle .pill-toggle-btn").forEach(function (b) {
+          b.classList.remove("is-active"); b.setAttribute("aria-pressed", "false");
+        });
+        btn.classList.add("is-active"); btn.setAttribute("aria-pressed", "true");
+        var age = btn.getAttribute("data-age");
+        ageNote23.hidden = age !== "2-3";
+        ageNote3plus.hidden = age !== "3plus";
+      });
+    });
+
+    /* ---------- Fuel type row toggling ---------- */
+    inFuel.addEventListener("change", function () {
+      var isEv = inFuel.value === "electric";
+      rowCc.hidden = isEv;
+      rowKw.hidden = !isEv;
+      clearGallerySelection();
+      recalc();
+    });
+
+    /* ---------- Presets ---------- */
+    document.querySelectorAll("#cif-presets .preset-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        inCif.value = formatThousands(btn.getAttribute("data-amount"));
+        document.querySelectorAll("#cif-presets .preset-btn").forEach(function (b) { b.classList.remove("is-active"); });
+        btn.classList.add("is-active");
+        clearGallerySelection();
+        recalc();
+      });
+    });
+
+    document.getElementById("btn-reset").addEventListener("click", function () {
+      inCif.value = "";
+      inCc.value = "";
+      inKw.value = "";
+      inFuel.value = "petrol";
+      rowCc.hidden = false;
+      rowKw.hidden = true;
+      document.querySelectorAll(".preset-btn").forEach(function (b) { b.classList.remove("is-active"); });
+      document.querySelectorAll("#category-toggle .pill-toggle-btn").forEach(function (b, i) {
+        b.classList.toggle("is-active", i === 0); b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+      });
+      currentCategory = "car";
+      document.querySelectorAll("#age-toggle .pill-toggle-btn").forEach(function (b, i) {
+        b.classList.toggle("is-active", i === 0); b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+      });
+      ageNote23.hidden = true;
+      ageNote3plus.hidden = true;
+      clearGallerySelection();
+      recalc();
+      inCif.focus();
+    });
+
+    [inCif, inCc, inKw].forEach(function (el) {
+      el.addEventListener("input", function () {
+        document.querySelectorAll("#cif-presets .preset-btn").forEach(function (b) { b.classList.remove("is-active"); });
+        clearGallerySelection();
+        recalc();
+      });
+    });
+
+    /* ---------- Popular models gallery (illustrative example CIF values) ---------- */
+    var VEHICLE_SHADOW = '<ellipse cx="50" cy="41" rx="38" ry="3" fill="rgba(35,27,66,0.15)"/>';
+    function wheelSvg(cx, r) {
+      r = r || 7;
+      return '<circle cx="' + cx + '" cy="35" r="' + r + '" fill="#241f3d"></circle><circle cx="' + cx + '" cy="35" r="' + (r - 4.4) + '" fill="#f3f0fa"></circle>';
+    }
+    var BODY_SVGS = {
+      hatchback:
+        '<path d="M10,33 Q10,27 16,27 L23,27 L30,15 Q32,12 36,12 L52,12 Q55,12 57,14 L64,22 L74,22 Q80,22 80,28 L80,33 Z" fill="#fbf8ff"></path>' +
+        '<path d="M25,26 L31,16 Q32.5,14 35,14 L51,14 Q53,14 54.5,15.5 L60,22 L63,26 Z" fill="rgba(20,16,40,0.4)"></path>' +
+        wheelSvg(24) + wheelSvg(66),
+      sedan:
+        '<path d="M6,33 Q6,27 12,27 L20,27 L27,15 Q29,12 33,12 L48,12 Q51,12 53,14 L59,21 L68,21 Q73,21 74,25 L86,25 Q91,25 91,29 L91,33 Z" fill="#fbf8ff"></path>' +
+        '<path d="M23,26 L29,16 Q30.5,14 33,14 L47,14 Q49,14 50.5,15.5 L58,21 L66,21 L66,25 L60,25 Z" fill="rgba(20,16,40,0.4)"></path>' +
+        wheelSvg(20) + wheelSvg(78),
+      suv:
+        '<path d="M8,33 Q8,25 15,25 L22,25 L29,10 Q31,7 35,7 L54,7 Q57,7 59,9 L66,18 L74,18 Q82,18 82,26 L82,33 Z" fill="#fbf8ff"></path>' +
+        '<path d="M24,24 L30,11 Q31.5,9 34,9 L53,9 Q55,9 56.5,10.5 L63,18 L72,18 L72,24 Z" fill="rgba(20,16,40,0.4)"></path>' +
+        wheelSvg(23, 8) + wheelSvg(68, 8),
+      pickup:
+        '<path d="M8,33 Q8,27 14,27 L20,27 L27,14 Q29,11 33,11 L44,11 Q47,11 48,13 L52,20 L52,24 L84,24 Q88,24 88,28 L88,33 Z" fill="#fbf8ff"></path>' +
+        '<path d="M23,26 L29,15 Q30.5,13 33,13 L43,13 Q45,13 46,14.5 L50,20 L51,24 Z" fill="rgba(20,16,40,0.4)"></path>' +
+        wheelSvg(22, 7.5) + wheelSvg(74, 7.5),
+      van:
+        '<path d="M6,33 L6,16 Q6,10 13,10 L68,10 Q76,10 78,16 L84,16 Q88,16 88,22 L88,33 Z" fill="#fbf8ff"></path>' +
+        '<path d="M12,26 L12,14 Q12,12 15,12 L66,12 Q70,12 71,15 L76,20 L76,26 Z" fill="rgba(20,16,40,0.4)"></path>' +
+        wheelSvg(20) + wheelSvg(76)
+    };
+    var EV_BOLT = '<svg viewBox="0 0 24 24" fill="none" stroke="#0d7a58" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path></svg>';
+
+    function vehicleSceneSvg(body) {
+      return '<svg class="vehicle-scene" viewBox="0 0 100 46">' + VEHICLE_SHADOW + (BODY_SVGS[body] || BODY_SVGS.hatchback) + '</svg>';
+    }
+
+    var VEHICLE_PRESETS = [
+      { name: "Maruti Suzuki Alto", category: "car", body: "hatchback", fuel: "petrol", cc: 800, cif: 2200000 },
+      { name: "Suzuki WagonR 2024", category: "car", body: "hatchback", fuel: "petrol", cc: 1000, cif: 2600000 },
+      { name: "Toyota Yaris 2024", category: "car", body: "hatchback", fuel: "petrol", cc: 1500, cif: 3800000 },
+      { name: "Toyota Taisor", category: "car", body: "suv", fuel: "petrol", cc: 1200, cif: 3600000 },
+      { name: "Daihatsu Taft (SUV)", category: "car", body: "suv", fuel: "petrol", cc: 1000, cif: 4200000 },
+      { name: "Toyota Raize Turbo", category: "car", body: "suv", fuel: "petrol", cc: 1000, cif: 4500000 },
+      { name: "Toyota Aqua Hybrid", category: "car", body: "hatchback", fuel: "hybridPetrol", cc: 1500, cif: 4000000 },
+      { name: "Toyota Prius 2024", category: "car", body: "sedan", fuel: "hybridPetrol", cc: 1800, cif: 6500000 },
+      { name: "Honda Vezel Petrol", category: "car", body: "suv", fuel: "petrol", cc: 1500, cif: 5500000 },
+      { name: "Mazda CX-5 Petrol", category: "car", body: "suv", fuel: "petrol", cc: 2000, cif: 6800000 },
+      { name: "Subaru Forester Petrol", category: "car", body: "suv", fuel: "petrol", cc: 2000, cif: 7500000 },
+      { name: "Nissan X-Trail Petrol", category: "car", body: "suv", fuel: "petrol", cc: 2000, cif: 7200000 },
+      { name: "Toyota Camry Hybrid", category: "car", body: "sedan", fuel: "hybridPetrol", cc: 2500, cif: 8500000 },
+      { name: "Toyota Hilux 2024", category: "pickup", body: "pickup", fuel: "diesel", cc: 2800, cif: 8000000 },
+      { name: "Audi A3 Hybrid 1000cc", category: "car", body: "hatchback", fuel: "phevPetrol", cc: 1000, cif: 9500000 },
+      { name: "Mercedes C Class Petrol", category: "car", body: "sedan", fuel: "petrol", cc: 2000, cif: 13000000 },
+      { name: "Toyota Alphard", category: "van", body: "van", fuel: "petrol", cc: 2500, cif: 16000000 },
+      { name: "Land Cruiser 250-series", category: "car", body: "suv", fuel: "diesel", cc: 3300, cif: 22000000 },
+      { name: "BYD Atto 3", category: "car", body: "suv", fuel: "electric", kw: 150, cif: 6500000 },
+      { name: "Tesla Model Y", category: "car", body: "suv", fuel: "electric", kw: 220, cif: 11000000 }
+    ];
+
+    var galleryEl = document.getElementById("vehicle-gallery");
+    var galleryCards = [];
+
+    function clearGallerySelection() {
+      galleryCards.forEach(function (c) { c.card.classList.remove("is-selected"); });
+    }
+
+    VEHICLE_PRESETS.forEach(function (v, i) {
+      var card = document.createElement("button");
+      card.type = "button";
+      card.className = "vehicle-card";
+      card.setAttribute("aria-label", v.name + " — example CIF " + money(v.cif));
+      var gradeClass = "g" + ((i % 4) + 1);
+      var isEvModel = v.fuel === "electric";
+      card.innerHTML =
+        '<div class="vehicle-card-photo ' + gradeClass + '">' + vehicleSceneSvg(v.body) +
+          (isEvModel ? '<div class="ev-badge">' + EV_BOLT + '</div>' : '') +
+        '</div>' +
+        '<div class="vehicle-card-body">' +
+          '<div class="vehicle-card-name">' + v.name + '</div>' +
+          '<div class="vehicle-card-cta">Tap for example CIF</div>' +
+          '<div class="vehicle-card-cif">' + money(v.cif) + '</div>' +
+        '</div>';
+      card.addEventListener("click", function () {
+        clearGallerySelection();
+        card.classList.add("is-selected");
+
+        document.querySelectorAll("#category-toggle .pill-toggle-btn").forEach(function (b) {
+          var match = b.getAttribute("data-category") === v.category;
+          b.classList.toggle("is-active", match);
+          b.setAttribute("aria-pressed", match ? "true" : "false");
+        });
+        currentCategory = v.category;
+
+        inFuel.value = v.fuel;
+        var isEv = v.fuel === "electric";
+        rowCc.hidden = isEv;
+        rowKw.hidden = !isEv;
+        if (isEv) { inKw.value = v.kw; inCc.value = ""; }
+        else { inCc.value = v.cc; inKw.value = ""; }
+
+        inCif.value = formatThousands(String(v.cif));
+        document.querySelectorAll("#cif-presets .preset-btn").forEach(function (b) { b.classList.remove("is-active"); });
+
+        recalc();
+      });
+      galleryEl.appendChild(card);
+      galleryCards.push({ card: card, preset: v });
+    });
+
+    /* ---------- Animated counting ---------- */
+    var current = { total: 0, tax: 0, cif: 0 };
+    var raf = null;
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function paintDonut(taxPct) {
+      donut.style.background = "conic-gradient(var(--ruby) 0% " + taxPct + "%, var(--gold) " + taxPct + "% 100%)";
+    }
+
+    function animateTo(target) {
+      if (raf) cancelAnimationFrame(raf);
+      var from = { total: current.total, tax: current.tax, cif: current.cif };
+      current.total = target.total; current.tax = target.tax; current.cif = target.cif;
+
+      function paint(t) {
+        var total = from.total + (target.total - from.total) * t;
+        var tax = from.tax + (target.tax - from.tax) * t;
+        var cif = from.cif + (target.cif - from.cif) * t;
+        outTotal.textContent = money(total);
+        legTax.textContent = money(tax);
+        legCif.textContent = money(cif);
+        legTotal.textContent = money(total);
+        var taxPct = total > 0 ? (tax / total) * 100 : 0;
+        donutPct.textContent = Math.round(taxPct) + "%";
+        paintDonut(taxPct);
+      }
+
+      if (REDUCE_MOTION) { paint(1); return; }
+      heroGlow.style.setProperty("--glow-opacity", "1");
+      var changed = target.total !== from.total;
+      if (changed) outTotal.classList.add("is-pop");
+      var duration = 420;
+      var start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var t = Math.min(1, (ts - start) / duration);
+        paint(easeOutCubic(t));
+        if (t < 1) {
+          raf = requestAnimationFrame(step);
+        } else {
+          heroGlow.style.setProperty("--glow-opacity", "0.55");
+          outTotal.classList.remove("is-pop");
+        }
+      }
+      raf = requestAnimationFrame(step);
+    }
+
+    /* ---------- Recalculate ---------- */
+    function recalc() {
+      var cif = parseAmount(inCif.value);
+      if (cif < 0) cif = 0;
+      var fuelKey = inFuel.value;
+      var isEv = fuelKey === "electric";
+      var cc = Math.max(0, parseFloat(inCc.value) || 0);
+      var kw = Math.max(0, parseFloat(inKw.value) || 0);
+
+      var r = computeImport(cif, fuelKey, cc, kw);
+      var effRate = cif > 0 ? (r.totalTax / cif) * 100 : 0;
+
+      animateTo({ total: r.total, tax: r.totalTax, cif: cif });
+
+      outTax.textContent = money(r.totalTax);
+      outRate.textContent = Math.round(effRate) + "%";
+      outCifSub.textContent = money(cif);
+      var specText = (isEv ? (kw ? num(kw) + " kW" : "— kW") : (cc ? num(cc) + " cc" : "— cc")) + " " + FUEL_DISPLAY[fuelKey] + " " + CATEGORY_DISPLAY[currentCategory];
+      outSpec.textContent = specText;
+
+      sgCif.textContent = num(cif);
+      sgExcise.textContent = num(r.excise);
+      sgVat.textContent = num(r.vat);
+      sgTax.textContent = num(r.totalTax);
+      sgTotal.textContent = num(r.total);
+      sgRate.textContent = Math.round(effRate) + "%";
+
+      var rows = [
+        { label: "CIF value", rate: "—", amt: r.cif, zero: false },
+        { label: "Customs Import Duty", rate: "30%", amt: r.cid, zero: false },
+        { label: "Ports & Airports Levy", rate: "10%", amt: r.pal, zero: false },
+        { label: "Excise Duty", rate: isEv ? "per kW" : "per cc", amt: r.excise, zero: false },
+        { label: "Luxury Tax", rate: r.luxuryTax > 0 ? (Math.round(r.luxuryRate * 100) + "% of excess") : "below threshold", amt: r.luxuryTax, zero: r.luxuryTax <= 0 },
+        { label: "SSCL", rate: "2.5%", amt: r.sscl, zero: false },
+        { label: "VAT", rate: "18%", amt: r.vat, zero: false },
+        { label: "Vehicle Entitlement Levy", rate: "fixed", amt: r.vel, zero: false }
+      ];
+      bandRows.innerHTML = "";
+      rows.forEach(function (row) {
+        var tr = document.createElement("tr");
+        if (row.zero) tr.className = "zero";
+        tr.innerHTML =
+          '<td class="band-label">' + row.label + '</td>' +
+          '<td class="rate">' + row.rate + '</td>' +
+          '<td class="amt">' + money(row.amt) + '</td>';
+        bandRows.appendChild(tr);
+      });
+      bandTotal.textContent = money(r.total);
+    }
+
+    function triggerPrint(filenameHint) {
+      var prevTitle = document.title;
+      document.title = filenameHint;
+      var restored = false;
+      function restore() {
+        if (restored) return;
+        restored = true;
+        document.title = prevTitle;
+      }
+      window.addEventListener("afterprint", restore, { once: true });
+      setTimeout(restore, 3000);
+      window.print();
+    }
+
+    document.getElementById("btn-print").addEventListener("click", function () {
+      triggerPrint("Vehicle-Import-Estimate");
+    });
+    document.getElementById("btn-pdf").addEventListener("click", function () {
+      triggerPrint("Vehicle-Import-Estimate");
+    });
+
+    paintDonut(0);
+    recalc();
+    inCif.focus();
+
+    var luEl = document.getElementById("last-updated-date");
+    if (luEl) {
+      var lm = new Date(document.lastModified);
+      luEl.textContent = isNaN(lm.getTime())
+        ? "—"
+        : lm.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+      fetch("https://api.github.com/repos/dinukainfo92-lang/lankacal/commits?path=vehicle-import-calculator.html&page=1&per_page=1")
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data || !data[0]) return;
+          var d = new Date(data[0].commit.committer.date);
+          if (!isNaN(d.getTime())) {
+            luEl.textContent = d.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+          }
+        })
+        .catch(function () { /* offline or rate-limited — keep the fallback date */ });
+    }
+  })();
+</script>
+
+</body>
+</html>
