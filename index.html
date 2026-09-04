@@ -127,9 +127,12 @@
   nav a:hover:not(.btn-primary){color:var(--gold-bright) !important;}
   .btn-primary.is-emerald{background:linear-gradient(175deg,#5eead4,var(--emerald));color:#04231a;box-shadow:0 6px 14px -10px rgba(47,224,172,0.35);}
   .btn-primary.is-emerald:hover{box-shadow:0 8px 18px -10px rgba(47,224,172,0.45);}
+  .btn-primary.is-ruby{background:linear-gradient(175deg,#ff8fa3,var(--ruby));color:#3a0712;box-shadow:0 6px 14px -10px rgba(255,79,109,0.4);}
+  .btn-primary.is-ruby:hover{box-shadow:0 8px 18px -10px rgba(255,79,109,0.5);}
   .icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
   @keyframes ctaPulse{0%,100%{box-shadow:0 6px 14px -10px rgba(246,187,61,0.4);}50%{box-shadow:0 8px 16px -10px rgba(246,187,61,0.5);}}
   @keyframes ctaPulseEmerald{0%,100%{box-shadow:0 6px 14px -10px rgba(47,224,172,0.35);}50%{box-shadow:0 8px 16px -10px rgba(47,224,172,0.45);}}
+  @keyframes ctaPulseRuby{0%,100%{box-shadow:0 6px 14px -10px rgba(255,79,109,0.4);}50%{box-shadow:0 8px 16px -10px rgba(255,79,109,0.5);}}
   @keyframes badgeBounce{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-6px) scale(1.06);}}
   @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
   @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
@@ -208,6 +211,7 @@
   .hero-ctas{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
   .hero-ctas .btn-primary{animation:ctaPulse 2.6s ease-in-out infinite;}
   .hero-ctas .btn-primary.is-emerald{animation:ctaPulseEmerald 2.6s ease-in-out infinite;}
+  .hero-ctas .btn-primary.is-ruby{animation:ctaPulseRuby 2.6s ease-in-out infinite;}
 
   .trust-bar{margin-top:34px;display:flex;gap:22px;flex-wrap:wrap;}
   .trust-item{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink-soft);font-weight:600;}
@@ -307,11 +311,12 @@
     <div class="hero-wrap">
       <div class="hero-copy">
         <div class="eyebrow">🇱🇰 Built for Sri Lanka · IRD 2026/27 rates live</div>
-        <h1>Your tax &amp; loan numbers, <span class="accent-gold">sorted in seconds.</span></h1>
-        <p class="hero-sub">Lankacal is a free, growing toolkit of calculators built specifically for Sri Lanka. Start with <b style="color:var(--ink);">income tax (APIT)</b> and <b style="color:var(--ink);">loan EMI</b> — instant results, no sign-up, no spreadsheets.</p>
+        <h1>Your tax, loan &amp; import numbers, <span class="accent-gold">sorted in seconds.</span></h1>
+        <p class="hero-sub">Lankacal is a free, growing toolkit of calculators built specifically for Sri Lanka. Start with <b style="color:var(--ink);">income tax (APIT)</b>, <b style="color:var(--ink);">loan EMI</b> and <b style="color:var(--ink);">vehicle import duty</b> — instant results, no sign-up, no spreadsheets.</p>
         <div class="hero-ctas">
           <a href="tax-calculator.html" class="btn-primary" target="_blank" rel="noopener">Try Tax Calculator &rarr;</a>
           <a href="loan-calculator.html" class="btn-primary is-emerald" target="_blank" rel="noopener">Try Loan Calculator &rarr;</a>
+          <a href="vehicle-import-calculator.html" class="btn-primary is-ruby" target="_blank" rel="noopener">Try Vehicle Import Calculator &rarr;</a>
         </div>
         <div class="trust-bar">
           <span class="trust-item"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>100% free, forever</span>
@@ -363,7 +368,7 @@
       <div class="section-head">
         <div class="pill-label" style="background:rgba(255,79,109,0.14);color:var(--ruby);border:1px solid rgba(255,79,109,0.35);">FINANCE &amp; MONEY</div>
         <h2 class="section-title">Tools for tax, loans &amp; everyday spending</h2>
-        <p class="section-sub">The Sri Lanka-specific essentials, starting with the two tools live today.</p>
+        <p class="section-sub">The Sri Lanka-specific essentials, starting with the three tools live today.</p>
       </div>
       <div class="tool-grid cols-4">
 
